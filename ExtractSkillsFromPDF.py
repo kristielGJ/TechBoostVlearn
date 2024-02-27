@@ -17,7 +17,10 @@ def detect_skills_from_pdf(pdf_path, sought_out_skills):
         'Project Management': ['Project Management', 'Risk Management', 'Stakeholder Management', 'Agile Project Management'],
         'Cloud Computing': ['Cloud Computing', 'AWS', 'Azure', 'Google Cloud Platform', 'DevOps'],
         'UX Design': ['User Experience (UX) Design', 'Wireframing', 'Prototyping', 'Usability Testing'],
-        'AI/ML': ['Artificial Intelligence (AI)', 'Machine Learning (ML)', 'Deep Learning', 'Natural Language Processing']
+        'AI/ML': ['Artificial Intelligence (AI)', 'Machine Learning (ML)', 'Deep Learning', 'Natural Language Processing'],
+        'Sales': ['Sales', 'Negotiation', 'Client Relationship Management', 'Lead Generation'],
+        'Marketing': ['Marketing', 'Brand Management', 'Market Research', 'Advertising'],
+        'Languages': ['Languages', 'Fluent in English', 'Spanish Proficiency', 'French (Basic)'],
     }
 
     # Define programming language recommendations based on skill categories
@@ -29,7 +32,10 @@ def detect_skills_from_pdf(pdf_path, sought_out_skills):
         'Project Management': [],
         'Cloud Computing': [],
         'UX Design': [],
-        'AI/ML': ['Python', 'R', 'Java']
+        'AI/ML': ['Python', 'R', 'Java'],
+        'Sales': [],
+        'Marketing': [],
+        'Languages': []
     }
 
     # Define similar skills recommendations based on skill categories
@@ -41,7 +47,10 @@ def detect_skills_from_pdf(pdf_path, sought_out_skills):
         'Project Management': ['Agile Methodology', 'Scrum', 'Lean Management'],
         'Cloud Computing': ['DevOps', 'Big Data', 'Serverless Architecture'],
         'UX Design': ['UI Design', 'Interaction Design', 'Information Architecture'],
-        'AI/ML': ['Deep Learning', 'Natural Language Processing', 'Computer Vision']
+        'AI/ML': ['Deep Learning', 'Natural Language Processing', 'Computer Vision'],
+        'Sales': ['Customer Service', 'Cold Calling', 'Sales Strategy'],
+        'Marketing': ['Content Marketing', 'Digital Marketing', 'Brand Management'],
+        'Languages': ['Fluent in English', 'Spanish Proficiency', 'French (Basic)']
     }
 
     # Detect skills from the extracted text
@@ -61,25 +70,31 @@ sought_out_skills = [
     'Project Management',
     'Cloud Computing',
     'UX Design',
-    'AI/ML'
+    'AI/ML',
+    'Sales',
+    'Marketing',
+    'Languages'
 ]
 
-# Example usage
-pdf_path = 'RandomCV.pdf'  
+while True:
+    try:
+        pdf_path = input("Enter the path to the PDF file: ")
+        
+        skills_found = detect_skills_from_pdf(pdf_path, sought_out_skills)
 
-skills_found = detect_skills_from_pdf(pdf_path, sought_out_skills)
-
-if skills_found:
-    print("Skills detected in the PDF:")
-    for skill, keywords, languages, similar_skills in skills_found:
-        print("- {} (Related keywords: {})".format(skill, ', '.join(keywords)))
-        if languages:
-            print("  Recommended programming languages:", ', '.join(languages))
+        if skills_found:
+            print("Skills detected in the PDF:")
+            for skill, keywords, languages, similar_skills in skills_found:
+                print("- {} (Related keywords: {})".format(skill, ', '.join(keywords)))
+                if languages:
+                    print("  Recommended programming languages:", ', '.join(languages))
+                else:
+                    print("  No programming language recommendations for this skill category.")
+                if similar_skills:
+                    print("  Similar skills recommendations:", ', '.join(similar_skills))
+                else:
+                    print("  No similar skills recommendations for this skill category.")
         else:
-            print("  No programming language recommendations for this skill category.")
-        if similar_skills:
-            print("  Similar skills recommendations:", ', '.join(similar_skills))
-        else:
-            print("  No similar skills recommendations for this skill category.")
-else:
-    print("No skills detected in the PDF.")
+            print("No skills detected in the PDF.")
+    except FileNotFoundError:
+        print("File not found. Please provide a valid file path.")
