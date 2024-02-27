@@ -8,7 +8,7 @@ def detect_skills_from_pdf(pdf_path, sought_out_skills):
     with open(pdf_path, 'rb') as file:
         text = extract_text(file)
 
-    # Categories for skills along with additional relevant keywords
+    # Define categories for skills along with additional relevant keywords
     skill_categories = {
         'Digital Marketing': ['Digital Marketing', 'SEO', 'SEM', 'Content Marketing', 'Email Marketing'],
         'Data Analysis': ['Data Analysis', 'Data Visualization', 'Data Mining', 'Statistical Analysis'],
@@ -32,11 +32,23 @@ def detect_skills_from_pdf(pdf_path, sought_out_skills):
         'AI/ML': ['Python', 'R', 'Java']
     }
 
+    # Define similar skills recommendations based on skill categories
+    similar_skills_recommendations = {
+        'Digital Marketing': ['Social Media Marketing', 'Content Writing', 'Google Analytics'],
+        'Data Analysis': ['Data Science', 'Business Intelligence', 'Predictive Modeling'],
+        'Business Analysis': ['Process Improvement', 'Product Management', 'Requirements Analysis'],
+        'Software Development': ['Web Development', 'Mobile Development', 'Software Engineering'],
+        'Project Management': ['Agile Methodology', 'Scrum', 'Lean Management'],
+        'Cloud Computing': ['DevOps', 'Big Data', 'Serverless Architecture'],
+        'UX Design': ['UI Design', 'Interaction Design', 'Information Architecture'],
+        'AI/ML': ['Deep Learning', 'Natural Language Processing', 'Computer Vision']
+    }
+
     # Detect skills from the extracted text
     for skill, keywords in skill_categories.items():
         # Check if any keyword for the skill is present in the text
         if any(re.search(r'\b{}\b'.format(keyword), text, re.IGNORECASE) for keyword in keywords):
-            detected_skills.append((skill, keywords, language_recommendations.get(skill)))
+            detected_skills.append((skill, keywords, language_recommendations.get(skill), similar_skills_recommendations.get(skill)))
 
     return detected_skills
 
@@ -47,25 +59,27 @@ sought_out_skills = [
     'Business Analysis',
     'Software Development',
     'Project Management',
-    'Search Engine Optimization (SEO)',
-    'Social Media Marketing',
     'Cloud Computing',
-    'User Experience (UX) Design',
-    'Artificial Intelligence (AI) and Machine Learning (ML)'
+    'UX Design',
+    'AI/ML'
 ]
 
 # Example usage
-pdf_path = 'cv.pdf'  # Change to your PDF file path
+pdf_path = 'RandomCV.pdf'  
+
 skills_found = detect_skills_from_pdf(pdf_path, sought_out_skills)
 
 if skills_found:
     print("Skills detected in the PDF:")
-    for skill, keywords, languages in skills_found:
+    for skill, keywords, languages, similar_skills in skills_found:
         print("- {} (Related keywords: {})".format(skill, ', '.join(keywords)))
         if languages:
             print("  Recommended programming languages:", ', '.join(languages))
         else:
             print("  No programming language recommendations for this skill category.")
+        if similar_skills:
+            print("  Similar skills recommendations:", ', '.join(similar_skills))
+        else:
+            print("  No similar skills recommendations for this skill category.")
 else:
     print("No skills detected in the PDF.")
-
