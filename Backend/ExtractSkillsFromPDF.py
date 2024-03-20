@@ -1,7 +1,7 @@
 from pdfminer.high_level import extract_text
 import re
 
-def detect_skills_from_pdf(pdf_path, sought_out_skills):
+def detect_skills_from_pdf(pdf_path):
     detected_skills = []
 
     # Convert PDF to text
@@ -61,6 +61,7 @@ def detect_skills_from_pdf(pdf_path, sought_out_skills):
 
     return detected_skills
 
+'''
 # List of sought-out skills
 sought_out_skills = [
     'Digital Marketing',
@@ -98,3 +99,4 @@ while True:
             print("No skills detected in the PDF.")
     except FileNotFoundError:
         print("File not found. Please provide a valid file path.")
+'''

@@ -1,44 +1,56 @@
+import os
+import tempfile
+from ExtractSkillsFromPDF import detect_skills_from_pdf
+import chardet  # Library for character encoding detection
 from pdfminer.high_level import extract_text
-import re
 
 class CVParser:
-    def detect_skills_from_pdf(self, cv_file):
+
+    @staticmethod
+    def extract_text_from_pdf(cv_file):
         try:
-            detected_skills = []
+            # Save the uploaded CV to a temporary file
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
+                temp_file_path = temp_file.name
+                cv_file.save(temp_file_path)
 
-            # Convert PDF to text
-            text = self.extract_text_from_pdf(cv_file)
+            # Read the content of the temporary file with various encodings
+            with open(temp_file_path, 'rb') as f:
+                raw_content = f.read()
+                # Detect the encoding of the content
+                encoding = chardet.detect(raw_content)['encoding']
+                # If encoding cannot be detected, use a default encoding like 'utf-8'
+                if encoding is None:
+                    encoding = 'utf-8'
+                # Decode the content using the detected encoding, ignoring errors
+                cv_content = raw_content.decode(encoding, errors='ignore')
 
-            # Define categories for skills along with additional relevant keywords
-            skill_categories = {
-                'Digital Marketing': ['Digital Marketing', 'SEO', 'SEM', 'Content Marketing', 'Email Marketing'],
-                'Data Analysis': ['Data Analysis', 'Data Visualization', 'Data Mining', 'Statistical Analysis'],
-                'Business Analysis': ['Business Analysis', 'Requirement Gathering', 'Process Modeling', 'SWOT Analysis'],
-                'Software Development': ['Software Development', 'Programming', 'Agile Methodology', 'Version Control'],
-                'Project Management': ['Project Management', 'Risk Management', 'Stakeholder Management', 'Agile Project Management'],
-                'Cloud Computing': ['Cloud Computing', 'AWS', 'Azure', 'Google Cloud Platform', 'DevOps'],
-                'UX Design': ['User Experience (UX) Design', 'Wireframing', 'Prototyping', 'Usability Testing'],
-                'AI/ML': ['Artificial Intelligence (AI)', 'Machine Learning (ML)', 'Deep Learning', 'Natural Language Processing'],
-                'Sales': ['Sales', 'Negotiation', 'Client Relationship Management', 'Lead Generation'],
-                'Marketing': ['Marketing', 'Brand Management', 'Market Research', 'Advertising'],
-                'Languages': ['Languages', 'Fluent in English', 'Spanish Proficiency', 'French (Basic)'],
-            }
+            # Process the content to detect skills
+            skills_found = detect_skills_from_pdf(temp_file_path)
 
-            # Detect skills from the extracted text
-            for skill, keywords in skill_categories.items():
-                if any(re.search(r'\b{}\b'.format(keyword), text, re.IGNORECASE) for keyword in keywords):
-                    detected_skills.append(skill)
+            text = ""
 
-            return detected_skills
-        except Exception as e:
-            # Log the exception for debugging
-            print("An error occurred while detecting skills from PDF:", str(e))
-            return []
+            if skills_found:
+                text += "Skills detected in the PDF:\n"
+                for skill, keywords, languages, similar_skills in skills_found:
+                    text += "- {} (Related keywords: {})\n".format(skill, ', '.join(keywords))
+                    if languages:
+                        text += "  Recommended programming languages: {}\n".format(', '.join(languages))
+                    else:
+                        text += "  No programming language recommendations for this skill category.\n"
+                    if similar_skills:
+                        text += "  Similar skills recommendations: {}\n".format(', '.join(similar_skills))
+                    else:
+                        text += "  No similar skills recommendations for this skill category.\n"
+            else:
+                text = "No skills detected in the PDF."
 
-    def extract_text_from_pdf(self, cv_file):
-        try:
-            return extract_text(cv_file)
+            return text
+
         except Exception as e:
             # Log the exception for debugging
             print("An error occurred while extracting text from PDF:", str(e))
             return ""
+        finally:
+            # Clean up: Delete the temporary file
+            os.unlink(temp_file_path)

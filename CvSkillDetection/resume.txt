@@ -40,3 +40,17 @@ Worked with the marketing cloud team, the marketing cloud sales team as well as 
 Vodafone: Group Work Experience
 Kingdom street, Paddington, London (February 2018)
 Learnt and produced presentations with three to four colleagues in the following fields: - HR (Learning and Development) - Technology (System Architecture) - Commercial Marketing
+
+ {
+                'Digital Marketing': ['Digital Marketing', 'SEO', 'SEM', 'Content Marketing', 'Email Marketing'],
+                'Data Analysis': ['Data Analysis', 'Data Visualization', 'Data Mining', 'Statistical Analysis'],
+                'Business Analysis': ['Business Analysis', 'Requirement Gathering', 'Process Modeling', 'SWOT Analysis'],
+                'Software Development': ['Software Development', 'Programming', 'Agile Methodology', 'Version Control'],
+                'Project Management': ['Project Management', 'Risk Management', 'Stakeholder Management', 'Agile Project Management'],
+                'Cloud Computing': ['Cloud Computing', 'AWS', 'Azure', 'Google Cloud Platform', 'DevOps'],
+                'UX Design': ['User Experience (UX) Design', 'Wireframing', 'Prototyping', 'Usability Testing'],
+                'AI/ML': ['Artificial Intelligence (AI)', 'Machine Learning (ML)', 'Deep Learning', 'Natural Language Processing'],
+                'Sales': ['Sales', 'Negotiation', 'Client Relationship Management', 'Lead Generation'],
+                'Marketing': ['Marketing', 'Brand Management', 'Market Research', 'Advertising'],
+                'Languages': ['Languages', 'Fluent in English', 'Spanish Proficiency', 'French (Basic)'],
+            }
