@@ -6,7 +6,7 @@ V1.0 - 21/03- Skill detection via CV Upload
 # Backend
 ## app.py (*Backend/app.py*)
 This runs the flask app, please cd to this folder in your terminal, ensure you are in the backend folder 
-###Requirements: 
+### Requirements: 
 - Python, the code is compatible with Python 3.x versions. 
   Please use pip to install the libraries once python is downloaded:
 
@@ -33,9 +33,9 @@ Press CTRL+C to quit
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Frontend
 ## App.js (*Frontend/v-learn/src/App.js*)
- ### Requirements:
--Node.js
--NPM 
+### Requirements:
+- Node.js
+- NPM 
 
 Once node and npm are downloaded , use terninal to navigate to the frontend folder 
 ```cd Frontend```
@@ -44,14 +44,14 @@ Type in : ```npm install```   (to download missing files I removed using gitigno
 To run the app, use the commands:   ``` cd v-learn 
                                         npm start ```
 
-      MAKE SURE YOU RUN THE BACKEND AND THE FRONTEND TOGETHER 
-      OTHERWISE YOU WILL GET ERRORS
-      TWO SEPERATE TERMINALS :p
-      <img width="753" alt="Screenshot 2024-03-21 at 01 37 31" src="https://github.com/kristielGJ/TechBoostVlearn/assets/38893338/7aa7c21a-6485-402b-ab67-fa394964c9ac">
+MAKE SURE YOU RUN THE BACKEND AND THE FRONTEND TOGETHER OTHERWISE YOU WILL GET ERRORS
+Ensure you use two seperate terminals like so:
+
+<img width="753" alt="Screenshot 2024-03-21 at 01 37 31" src="https://github.com/kristielGJ/TechBoostVlearn/assets/38893338/7aa7c21a-6485-402b-ab67-fa394964c9ac">
 
 
-      Expected output:
-      
+### Expected output: 
+```
       Compiled successfully!
 
       You can now view v-learn in the browser.
@@ -63,3 +63,4 @@ To run the app, use the commands:   ``` cd v-learn
       To create a production build, use npm run build.
 
       webpack compiled successfully
+```
