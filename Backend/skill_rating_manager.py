@@ -1,3 +1,3 @@
 class SkillRatingManager:
-    # Implement skill rating management logic here
+    # Implement skill rating management , and quiz generation
     pass

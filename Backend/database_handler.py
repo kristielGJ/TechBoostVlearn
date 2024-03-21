@@ -1,3 +1,4 @@
 class DatabaseHandler:
-    # Implement database handling logic here
+    # Implement database handling 
+    ''' possible task: put all skill detection key words in a database?'''
     pass

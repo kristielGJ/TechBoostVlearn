@@ -1,3 +1,7 @@
+/*
+THIS IS ONE OF THE COMPONENTS DISPLAYED IN THE REACT APP. MAKE CHANGES HERE!
+*/
+
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -5,6 +9,8 @@ const CourseGenerator = () => {
   const [cvFile, setCvFile] = useState(null);
   const [cvText, setCvText] = useState('');
   const [error, setError] = useState(null);
+  const [detectedSkills, setDetectedSkills] = useState([]);
+  const [skillRatings, setSkillRatings] = useState({});
 
   const handleCVUpload = (event) => {
     setCvFile(event.target.files[0]);
@@ -21,12 +27,12 @@ const CourseGenerator = () => {
         }
       });
 
-      const { text, error } = response.data;
-      if (error) {
-        setError(error);
-      } else {
-        setCvText(text);
-      }
+      const { text, skills } = response.data;
+      console.log('Skills detected:', skills);
+
+      // Update state with detected skills
+      setDetectedSkills(skills);
+      setCvText(text);
     } catch (error) {
       console.error('Error detecting skills:', error);
       setError('Error detecting skills. Please try again.');
@@ -42,17 +48,46 @@ const CourseGenerator = () => {
     await detectSkillsFromPDF();
   };
 
+  const handleSkillRatingChange = (skill, rating) => {
+    setSkillRatings({ ...skillRatings, [skill]: rating });
+  };
+
   return (
     <div>
       <h2>Upload your CV</h2>
-      <input type="file" accept=".pdf,.doc,.docx" onChange={handleCVUpload} />
+      <input type="file" accept=".pdf" onChange={handleCVUpload} />
       <button onClick={handleGenerateRecommendations}>Generate Recommendations</button>
-      {error && <p>Error: {error}</p>}
+      {error && <p>{error}</p>}
       {cvText && (
         <div>
           <h2>PDF Text:</h2>
           <pre>{cvText}</pre>
         </div>
+      )}
+      {detectedSkills && detectedSkills.length > 0 ? (
+        <div>
+          <h2>Detected Skills:</h2>
+          <ul>
+            {detectedSkills.map((skill, index) => (
+              <li key={index}>{skill}</li>
+            ))}
+          </ul>
+          <h2>Skill Ratings:</h2>
+          {detectedSkills.map((skill, index) => (
+            <div key={index}>
+              <label>{skill}:</label>
+              <input
+                type="number"
+                min="1"
+                max="5"
+                value={skillRatings[skill] || ''}
+                onChange={(e) => handleSkillRatingChange(skill, parseInt(e.target.value))}
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p> </p>
       )}
     </div>
   );

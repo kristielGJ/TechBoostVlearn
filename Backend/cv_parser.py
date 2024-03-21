@@ -1,12 +1,17 @@
 import os
 import tempfile
-from ExtractSkillsFromPDF import detect_skills_from_pdf
+from extract_skills import ExtractSkills
 import chardet  # Library for character encoding detection
 from pdfminer.high_level import extract_text
 
+'''
+Authors: Gera Jahja
+This code is an initial attempt at detecting skills in a cv, and generating reccomendations with it.
+The code interacts with app.py (sends data to the react app on port 3000, the backend is on port 8000)
+It uses ExtractSkillsFronPDF.py instead of a database atm.
+'''
 class CVParser:
-
-    @staticmethod
+    
     def extract_text_from_pdf(cv_file):
         try:
             # Save the uploaded CV to a temporary file
@@ -14,21 +19,18 @@ class CVParser:
                 temp_file_path = temp_file.name
                 cv_file.save(temp_file_path)
 
-            # Read the content of the temporary file with various encodings
             with open(temp_file_path, 'rb') as f:
                 raw_content = f.read()
-                # Detect the encoding of the content
+                # Detect the encoding 
                 encoding = chardet.detect(raw_content)['encoding']
-                # If encoding cannot be detected, use a default encoding like 'utf-8'
+                # Use a default encoding 'utf-8' if not detected
                 if encoding is None:
                     encoding = 'utf-8'
-                # Decode the content using the detected encoding, ignoring errors
                 cv_content = raw_content.decode(encoding, errors='ignore')
 
-            # Process the content to detect skills
-            skills_found = detect_skills_from_pdf(temp_file_path)
+            skills_found = ExtractSkills.detect_skills_from_pdf(temp_file_path)
 
-            text = ""
+            text = ""  #THIS TEXT IS DISPLYED ON THE REACT APP
 
             if skills_found:
                 text += "Skills detected in the PDF:\n"
@@ -48,9 +50,8 @@ class CVParser:
             return text
 
         except Exception as e:
-            # Log the exception for debugging
             print("An error occurred while extracting text from PDF:", str(e))
             return ""
         finally:
-            # Clean up: Delete the temporary file
+            # Delete the temporary file
             os.unlink(temp_file_path)
