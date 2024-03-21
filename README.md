@@ -1,4 +1,7 @@
-# Setup:
+# V-Learn
+Generate personalised courses using langchain based on a user's personal experience.
+
+V1.0 - 21/03- Skill detection via CV Upload
 
 # Backend
 ## app.py (*Backend/app.py*)
