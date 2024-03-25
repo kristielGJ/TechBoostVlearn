@@ -14,7 +14,7 @@ class ExtractSkills:
     
     def detect_skills_from_pdf(pdf_path):
         detected_skills = []
-
+        detected_skills_recs=[]
         #  PDF to text
         with open(pdf_path, 'rb') as file:
             text = extract_text(file)
@@ -67,6 +67,7 @@ class ExtractSkills:
         for skill, keywords in skill_categories.items():
             # Check if any keyword for the skill is present in the text
             if any(re.search(r'\b{}\b'.format(keyword), text, re.IGNORECASE) for keyword in keywords):
-                detected_skills.append((skill, keywords, language_recommendations.get(skill), similar_skills_recommendations.get(skill)))
+                detected_skills.append(skill)
+                detected_skills_recs.append((skill, keywords, language_recommendations.get(skill), similar_skills_recommendations.get(skill)))
 
-        return detected_skills
+        return [detected_skills, detected_skills_recs]

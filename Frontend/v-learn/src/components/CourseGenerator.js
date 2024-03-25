@@ -11,6 +11,7 @@ const CourseGenerator = () => {
   const [error, setError] = useState(null);
   const [detectedSkills, setDetectedSkills] = useState([]);
   const [skillRatings, setSkillRatings] = useState({});
+  const [genCourse, setGenCourse] = useState([]);
 
   const handleCVUpload = (event) => {
     setCvFile(event.target.files[0]);
@@ -51,6 +52,30 @@ const CourseGenerator = () => {
   const handleSkillRatingChange = (skill, rating) => {
     setSkillRatings({ ...skillRatings, [skill]: rating });
   };
+  const getCourses = async () => {
+    try {
+      const formData = new FormData();
+      formData.append('cv', cvFile);
+
+      const response = await axios.post('http://localhost:8000/display_course', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+
+      const { courses } = response.data;
+      console.log('Courses detected:', courses);
+
+      // Update state with detected skills
+      setGenCourse(courses);
+      
+    } catch (error) {
+      console.error('Error detecting skills:', error);
+      setError('Error detecting skills. Please try again.');
+    }
+    await detectSkillsFromPDF();
+
+  };
 
   return (
     <div>
@@ -85,6 +110,12 @@ const CourseGenerator = () => {
               />
             </div>
           ))}
+          <h2>Detected Course:</h2>
+          <ul>
+            {genCourse.map((course, index) => (
+              <li key={index}>{course}</li>
+            ))}
+          </ul>
         </div>
       ) : (
         <p> </p>

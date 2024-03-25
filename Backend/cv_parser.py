@@ -28,13 +28,15 @@ class CVParser:
                     encoding = 'utf-8'
                 cv_content = raw_content.decode(encoding, errors='ignore')
 
-            skills_found = ExtractSkills.detect_skills_from_pdf(temp_file_path)
+            skills_data = ExtractSkills.detect_skills_from_pdf(temp_file_path)
+            skills_found = skills_data[0]
+            skill_Recs = skills_data[1]
 
             text = ""  #THIS TEXT IS DISPLYED ON THE REACT APP
 
             if skills_found:
                 text += "Skills detected in the PDF:\n"
-                for skill, keywords, languages, similar_skills in skills_found:
+                for skill, keywords, languages, similar_skills in skill_Recs:
                     text += "- {} (Related keywords: {})\n".format(skill, ', '.join(keywords))
                     if languages:
                         text += "  Recommended programming languages: {}\n".format(', '.join(languages))
@@ -47,7 +49,7 @@ class CVParser:
             else:
                 text = "No skills detected in the PDF."
 
-            return text
+            return [text,skills_found]
 
         except Exception as e:
             print("An error occurred while extracting text from PDF:", str(e))

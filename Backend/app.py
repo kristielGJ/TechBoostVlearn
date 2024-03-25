@@ -14,7 +14,7 @@ Requirements: - Python, the code is compatible with Python 3.x versions.
                 - chardet: A character encoding detection library.
                 - PyMuPDF: A library for PDF processing.
 
-Expected output: 
+Expected output:
 
 * Serving Flask app 'app'
 * Debug mode: on
@@ -28,6 +28,7 @@ Press CTRL+C to quit
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from cv_parser import CVParser
+from course_generator import CourseGenerator
 
 app = Flask(__name__)
 CORS(app)  # Allow CORS for all routes
@@ -36,14 +37,26 @@ CORS(app)  # Allow CORS for all routes
 def detect_skills():
     try:
         cv_file = request.files['cv']
-
-        text = CVParser.extract_text_from_pdf(cv_file)
-
+        data=CVParser.extract_text_from_pdf(cv_file)
+        text=data[0]
+        skills=data[1]
         # Return the extracted text as JSON response, 200 means the code works!
-        return jsonify({'text': text}), 200
+        return jsonify({'text': text,'skills': skills}), 200
 
     except Exception as e:
         # Return error response if an exception occurs, 500, 430 etc are error codes
+        return jsonify({'error': str(e)}), 500
+
+# This function returns the skill ratings and Course recomendations
+def display_course():
+    try:
+        cv_file = request.files['cv']
+        skill_ratings=[1,2,3,4,5,6,7,8,9] #Replace this with laras solution
+        courses = CourseGenerator.generate_courses(cv_file, skill_ratings)
+
+        return jsonify({'courses': courses}), 200
+
+    except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 
