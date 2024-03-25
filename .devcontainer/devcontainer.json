@@ -1,0 +1,14 @@
+{
+    "name": "V-learn",
+    
+    "dockerFile": "Dockerfile",
+
+    "customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot",
+				"GitHub.copilot-chat"
+			]
+		}
+	}
+}
