@@ -1,0 +1,8 @@
+{
+    "name": "V-Learn",
+
+    "build" {
+        "dockerfile": "Dockerfile"
+    }
+
+}
