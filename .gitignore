@@ -8,6 +8,10 @@
 \f0\fs24 \cf0 # Dependency directories\
 node_modules/\
 \
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
 # Environment files\
 .env.local\
 .env.development.local\
