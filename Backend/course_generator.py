@@ -3,6 +3,7 @@ import fitz  # PyMuPDF library for PDF processing
 
 '''
 Authors: Gera Jahja
+Piri
 
     WIP
     Task: use lang chain here to generate courses
