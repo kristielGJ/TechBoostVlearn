@@ -20,6 +20,7 @@ class ExtractSkills:
             text = extract_text(file)
 
         #  categories for skills along with additional relevant keywords
+        # hello
         skill_categories = {
             'Digital Marketing': ['Digital Marketing', 'SEO', 'SEM', 'Content Marketing', 'Email Marketing'],
             'Data Analysis': ['Data Analysis', 'Data Visualization', 'Data Mining', 'Statistical Analysis'],
