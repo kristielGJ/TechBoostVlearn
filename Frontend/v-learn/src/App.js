@@ -1,44 +1,29 @@
-/*
-MAIN CODE
-DO NOT ADD CODE HERE , ONLY DISPLAY COMPONENTS 
-
-Requirements: - Node.js
-              - NPM 
-      Once node and nop are downloaded , use terninal to navigate to the frontend folder (cd Frontend)
-      Type in : npm install   (to download missing files I removed using gitignore, i.e node_modules)          
-
-      To run the app, use the commands:   cd v-learn 
-                                          npm start
-
-      MAKE SURE YOU RUN THE BACKEND AND THE FRONTEND TOGETHER 
-      OTHERWISE YOU WILL GET ERRORS
-      TWO SEPERATE TERMINALS :p
-
-      Expected output:
-      
-      Compiled successfully!
-
-      You can now view v-learn in the browser.
-
-        Local:            http://localhost:3000
-        On Your Network:  http://192.168.0.155:3000
-
-      Note that the development build is not optimized.
-      To create a production build, use npm run build.
-
-      webpack compiled successfully
-
-*/
+import logo from './logo.svg';
+import './App.css';
 import CourseGenerator from './components/CourseGenerator';
-
+import NavBar from './components/NavBar';
+import { Routes, Route } from "react-router-dom";
+import WelcomePage from './pages/WelcomePage';
+import LearnPage from './pages/LearnPage';
+import ProfilePage from './pages/ProfilePage';
+import LeaderBoardPage from './pages/LeaderboardPage';
 function App() {
   return (
-    <div className="App">
-      <CourseGenerator />
-      {/* Other components or content */}
+    <div>
+      <div className="bg-gradient-to-t from-red-700 ...">
+        <NavBar />
+      </div>
+      <div>
+        <Routes>
+          <Route path="/" element={<WelcomePage />}/>
+          <Route path="/" element={<LeaderBoardPage/>}/>
+          <Route path="/learn" element={<LearnPage />}/>
+          <Route path="/profile" element={<ProfilePage />}/>
+          <Route path="/leaderboard" element={<LeaderBoardPage />}/>
+        </Routes>
+      </div>
     </div>
   );
 }
 
 export default App;
-

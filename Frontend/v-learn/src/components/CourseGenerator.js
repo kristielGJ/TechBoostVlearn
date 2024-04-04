@@ -2,10 +2,12 @@
 THIS IS ONE OF THE COMPONENTS DISPLAYED IN THE REACT APP. MAKE CHANGES HERE!
 */
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import axios from 'axios';
+import { useDropzone } from 'react-dropzone'
 
-const CourseGenerator = () => {
+
+const CourseGenerator = ({ className }) => {
   const [cvFile, setCvFile] = useState(null);
   const [cvText, setCvText] = useState('');
   const [error, setError] = useState(null);
@@ -13,9 +15,25 @@ const CourseGenerator = () => {
   const [skillRatings, setSkillRatings] = useState({});
   const [genCourse, setGenCourse] = useState([]);
 
-  const handleCVUpload = (event) => {
-    setCvFile(event.target.files[0]);
-  };
+
+  const onDrop = useCallback(acceptedFiles => {
+    console.log(acceptedFiles)
+    setCvFile(acceptedFiles[0])
+    console.log(cvFile)
+  }, [])
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    maxFiles: 1,
+    accept: {
+      'application/pdf': ['.pdf']
+    }
+  })
+
+  // const handleCVUpload = (event) => {
+  //   setCvFile(event.target.files[0]);
+  //   console.log(event.target.files[0])
+  // };
 
   const detectSkillsFromPDF = async () => {
     try {
@@ -68,7 +86,7 @@ const CourseGenerator = () => {
 
       // Update state with detected skills
       setGenCourse(courses);
-      
+
     } catch (error) {
       console.error('Error detecting skills:', error);
       setError('Error detecting skills. Please try again.');
@@ -78,44 +96,72 @@ const CourseGenerator = () => {
   };
 
   return (
-    <div>
-      <h2>Upload your CV</h2>
-      <input type="file" accept=".pdf" onChange={handleCVUpload} />
-      <button onClick={handleGenerateRecommendations}>Generate Recommendations</button>
+    <div >
+
+
+      <div className='grid grid-cols-4'>
+        <h2 className="text-3xl font-bold text-center text-white col-span-4">Upload your CV</h2>
+        <div {...getRootProps({
+          className: className
+        })}>
+          <input {...getInputProps()} />
+          {
+            isDragActive ?
+              <p>Drop the files here ...</p> :
+              <p>Drag 'n' drop your CV as a PDF, or click to select files</p>
+          }
+
+
+
+
+        </div>
+        <div className="flex flex-row col-start-2 col-end-4 items-center mt-5" >
+          <div >
+            <button className="boarder rounded-full text-white  bg-black min-h-10 min-w-60 " onClick={handleGenerateRecommendations}>Generate Recommendations</button>
+          </div>
+          {cvFile && (<p className='text-right col-span-1 ml-3'>{cvFile.name}</p>)}
+        </div>
+      </div>
+
+
+
+
       {error && <p>{error}</p>}
+
+
       {cvText && (
-        <div>
-          <h2>PDF Text:</h2>
-          <pre>{cvText}</pre>
+        <div className="mt-7">
+          <h2 className={"text-white"}>PDF Text:</h2>
+          <pre className='text-pretty'>{cvText}</pre>
         </div>
       )}
       {detectedSkills && detectedSkills.length > 0 ? (
-        <div>
-          <h2>Detected Skills:</h2>
-          <ul>
+        <div className="grid grid-cols-2">
+          <div>
+            <h2 className={"text-white"}>Skills Found:</h2>
+            <p > Please  rank your skill level</p>
             {detectedSkills.map((skill, index) => (
-              <li key={index}>{skill}</li>
+              <div className="grid grid-cols-2 mb-3"key={index}>
+                <label>{skill}:</label>
+                <input
+                  className='w-10'
+                  type="number"
+                  min="1"
+                  max="5"
+                  value={skillRatings[skill] || ''}
+                  onChange={(e) => handleSkillRatingChange(skill, parseInt(e.target.value))}
+                />
+              </div>
             ))}
-          </ul>
-          <h2>Skill Ratings:</h2>
-          {detectedSkills.map((skill, index) => (
-            <div key={index}>
-              <label>{skill}:</label>
-              <input
-                type="number"
-                min="1"
-                max="5"
-                value={skillRatings[skill] || ''}
-                onChange={(e) => handleSkillRatingChange(skill, parseInt(e.target.value))}
-              />
-            </div>
-          ))}
-          <h2>Detected Course:</h2>
-          <ul>
-            {genCourse.map((course, index) => (
-              <li key={index}>{course}</li>
-            ))}
-          </ul>
+          </div>
+          <div>
+            <h2 className={"text-white"}> Detected Course:</h2>
+            <ul>
+              {genCourse.map((course, index) => (
+                <li key={index}>{course}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       ) : (
         <p> </p>
