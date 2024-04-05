@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import CourseGenerator from './components/CourseGenerator';
 import NavBar from './components/NavBar';
 import { Routes, Route } from "react-router-dom";
 import WelcomePage from './pages/WelcomePage';
