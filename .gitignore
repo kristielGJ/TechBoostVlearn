@@ -35,3 +35,5 @@ yarn-error.log*\
 *.sln\
 *.swp\
 }
+/Backend/__pycache__
+/Backend/__pycache____pycache__/
