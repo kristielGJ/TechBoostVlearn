@@ -93,6 +93,19 @@ def user_create():
  
     return jsonify({"message": "User created"})  # Optional message for GET
 
+@app.route('/users/<int:user_id>', methods=['DELETE'])
+def user_delete(user_id):
+
+    user = User.query.get(user_id)
+
+    if not user:
+        return jsonify({'error': 'User not found'})
+ 
+    db.session.delete(user)
+    db.session.commit()
+
+    return jsonify({'success': 'User and associated user role deleted'})
+
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True) # In some cases you may get errors, try changing the port number if your app is not working
