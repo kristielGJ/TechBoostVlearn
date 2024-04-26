@@ -74,8 +74,24 @@ def display_course():
 
 @app.route("/users")
 def user_list():
-    users = db.session.execute(db.select(User).order_by(User.username)).scalars()
-    return render_template("user/list.html", users=users)
+    users = db.session.query(User).order_by(User.username).all()
+    # Convert user objects to dictionaries
+    user_data = [user.serialize() for user in users]
+    return jsonify(user_data)
+ 
+@app.route("/users/create", methods=["GET", "POST"])
+def user_create():
+    if request.method == "POST":
+        user = User(
+            username=request.form["username"],
+            email=request.form["email"],
+        )
+        db.session.add(user)
+        db.session.commit()
+        # Return user data as JSON
+        return jsonify(user.serialize())
+ 
+    return jsonify({"message": "User created"})  # Optional message for GET
 
 
 if __name__ == "__main__":
