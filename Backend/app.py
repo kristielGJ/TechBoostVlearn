@@ -51,7 +51,7 @@ def detect_skills():
 def display_course():
     try:
         cv_file = request.files['cv']
-        skill_ratings=[1,2,3,4,5,6,7,8,9] #Replace this with laras solution
+        skill_ratings=[1,2,3] #Replace this with laras solution
         courses = CourseGenerator.generate_courses(cv_file, skill_ratings)
 
         return jsonify({'courses': courses}), 200
