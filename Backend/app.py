@@ -106,6 +106,5 @@ def user_delete(user_id):
 
     return jsonify({'success': 'User and associated user role deleted'})
 
-
 if __name__ == "__main__":
     app.run(port=8000, debug=True) # In some cases you may get errors, try changing the port number if your app is not working
