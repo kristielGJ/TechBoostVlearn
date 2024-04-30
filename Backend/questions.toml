@@ -1,0 +1,67 @@
+# questions.toml
+# Each question is stored inside an individual questions table
+# With key-value pairs for the question text, correct answer and alternatives
+
+[python]
+label = "Python"
+
+[[python.questions]]
+question = "Given a function that does not return any value, what value is shown when executed at the shell"
+answers = ["None"]
+alternatives = ["int", "bool", "void"]
+
+[[python.questions]]    
+question = "Which module in Python supports regular expressions" 
+answers = ["re"]
+alternatives = ["regex", "pyregex", "None of these options"]
+
+[[python.questions]]    
+question = "Which of the following is not a complex number"
+answers = ["k = 2 + 3l"]
+alternatives = ["k = 2+3j", "k = complex(2, 3)", "k = 2 + 3J"]
+hint = "Blah blah"
+Explanation = "Blah blah"
+
+[[python.questions]]    
+question = "Given a string s='Welcome', which of the following is incorrect"
+answers = ["s[1]='r'"]
+alternatives = ["print s[0]", "print s.lower()", "print s.strip()"]
+
+[javascript]
+label = "JavaScript"
+
+[[javascript.questions]]    
+question = "What is JavaScript"
+answers = ["JavaScript is a scripting language used to make the website interactive"]
+alternatives = [
+    "JavaScript is an assembly language used to make the website interactive",
+    "JavaScript is a compiled language used to make the website interactive", 
+    "None of the mentioned"
+    ]
+
+[[javascript.questions]]    
+question = "Which of the following is correct about JavaScript"
+answers = ["JavaScript is an Object-Based language"]
+alternatives = [
+    "JavaScript is Assembly-language",
+    "JavaScript is an Object-Oriented language", 
+    "JavaScript is a High-level language"
+    ]
+
+[[javascript.questions]]    
+question = "Arrays in JavaScript are defined by which of the following statements"
+answers = ["It is an ordered list of values"]
+alternatives = [
+    "It is an ordered list of objects",
+    "It is an ordered list of string", 
+    "It is an ordered list of functions"
+    ]
+
+[[javascript.questions]]    
+question = "Which of the following is not a JavaScript data type"
+answers = ["All of the mentioned"]
+alternatives = [
+    "Null type",
+    "Undefined type", 
+    "Number type"
+    ]

@@ -1,0 +1,320 @@
+{
+  "Bank": [
+      {
+          "Topic": "Python",
+          "questions": [
+              {
+                  "question": "What is Python?",
+                  "options": [
+                      "A. A type of snake",
+                      "B. A programming language",
+                      "C. A type of food",
+                      "D. A computer brand"
+                  ],
+                  "answer": "B"
+              },
+              {
+                  "question": "Which of the following is not a valid Python data type?",
+                  "options": [
+                      "A. Integer",
+                      "B. String",
+                      "C. Float",
+                      "D. Boolean",
+                      "E. Character"
+                  ],
+                  "answer": "E"
+              },
+              {
+                  "question": "Which keyword is used to define a function in Python?",
+                  "options": [
+                      "A. define",
+                      "B. def",
+                      "C. function",
+                      "D. define_function"
+                  ],
+                  "answer": "B"
+              },
+              {
+                  "question": "What is the result of 2 + 2?",
+                  "options": [
+                      "A. 3",
+                      "B. 4",
+                      "C. 5",
+                      "D. 6"
+                  ],
+                  "answer": "B"
+              },
+              {
+                  "question": "Which symbol is used for comments in Python?",
+                  "options": [
+                      "A. //",
+                      "B. /* */",
+                      "C. <!-- -->",
+                      "D. #"
+                  ],
+                  "answer": "D"
+              },
+              {
+                  "question": "What is the output of the following code?\n\nprint('Hello, world!')",
+                  "options": [
+                      "A. Hello, world!",
+                      "B. 'Hello, world!'",
+                      "C. Nothing is printed",
+                      "D. Error"
+                  ],
+                  "answer": "A"
+              },
+              {
+                  "question": "Which function is used to take user input in Python?",
+                  "options": [
+                      "A. input()",
+                      "B. get_input()",
+                      "C. user_input()",
+                      "D. take_input()"
+                  ],
+                  "answer": "A"
+              },
+              {
+                  "question": "How do you start a multiline comment in Python?",
+                  "options": [
+                      "A. /*",
+                      "B. */",
+                      "C. <!--",
+                      "D. '''"
+                  ],
+                  "answer": "D"
+              },
+              {
+                  "question": "Which of the following is a Python data structure?",
+                  "options": [
+                      "A. Array",
+                      "B. List",
+                      "C. Tuple",
+                      "D. All of the above"
+                  ],
+                  "answer": "D"
+              },
+              {
+                  "question": "What is the output of the following code? \n\nprint(3 * 'abc')",
+                  "options": [
+                      "A. abc",
+                      "B. abcabc",
+                      "C. abcabcabc",
+                      "D. Error"
+                  ],
+                  "answer": "C"
+              }
+          ]
+      },
+      {
+          "Topic": "JavaScript",
+          "questions": [
+              {
+                  "question": "What is JavaScript?",
+                  "options": [
+                      "A. A type of coffee",
+                      "B. A programming language",
+                      "C. A type of car",
+                      "D. A data structure"
+                  ],
+                  "answer": "B"
+              },
+              {
+                  "question": "Which keyword is used to declare a variable in JavaScript?",
+                  "options": [
+                      "A. var",
+                      "B. let",
+                      "C. const",
+                      "D. declare"
+                  ],
+                  "answer": "A"
+              },
+              {
+                  "question": "What does DOM stand for in JavaScript?",
+                  "options": [
+                      "A. Document Object Model",
+                      "B. Data Object Model",
+                      "C. Document Oriented Module",
+                      "D. Display Object Management"
+                  ],
+                  "answer": "A"
+              },
+              {
+                  "question": "What is the result of 2 + 2 in JavaScript?",
+                  "options": [
+                      "A. 3",
+                      "B. 4",
+                      "C. 5",
+                      "D. 6"
+                  ],
+                  "answer": "B"
+              },
+              {
+                  "question": "Which symbol is used for comments in JavaScript?",
+                  "options": [
+                      "A. //",
+                      "B. /* */",
+                      "C. <!-- -->",
+                      "D. #"
+                  ],
+                  "answer": "A"
+              },
+              {
+                  "question": "What is the output of the following code?\n\nconsole.log('Hello, world!');",
+                  "options": [
+                      "A. Hello, world!",
+                      "B. 'Hello, world!'",
+                      "C. Nothing is printed",
+                      "D. Error"
+                  ],
+                  "answer": "A"
+              },
+              {
+                  "question": "Which function is used to prompt the user for input in JavaScript?",
+                  "options": [
+                      "A. input()",
+                      "B. get_input()",
+                      "C. prompt()",
+                      "D. user_input()"
+                  ],
+                  "answer": "C"
+              },
+              {
+                  "question": "How do you start a multiline comment in JavaScript?",
+                  "options": [
+                      "A. /*",
+                      "B. */",
+                      "C. <!--",
+                      "D. <!---"
+                  ],
+                  "answer": "A"
+              },
+              {
+                  "question": "Which of the following is not a JavaScript data type?",
+                  "options": [
+                      "A. Number",
+                      "B. String",
+                      "C. Boolean",
+                      "D. Character"
+                  ],
+                  "answer": "D"
+              },
+              {
+                  "question": "What is the output of the following code?\n\nconsole.log('abc' + 3);",
+                  "options": [
+                      "A. abc",
+                      "B. abc3",
+                      "C. Error",
+                      "D. NaN"
+                  ],
+                  "answer": "B"
+              }
+          ]
+      },
+      {
+          "Topic": "Accounting",
+          "questions": [
+              {
+                  "question": "What is the basic accounting equation?",
+                  "options": [
+                      "A. Assets = Liabilities + Equity",
+                      "B. Assets = Liabilities - Equity",
+                      "C. Assets + Liabilities = Equity",
+                      "D. Assets - Liabilities = Equity"
+                  ],
+                  "answer": "A"
+              },
+              {
+                  "question": "Which financial statement shows a company's revenues and expenses over a period of time?",
+                  "options": [
+                      "A. Income Statement",
+                      "B. Balance Sheet",
+                      "C. Statement of Cash Flows",
+                      "D. Statement of Retained Earnings"
+                  ],
+                  "answer": "A"
+              },
+              {
+                  "question": "What does GAAP stand for in accounting?",
+                  "options": [
+                      "A. Generally Accepted Accounting Principles",
+                      "B. Generally Accepted Auditing Procedures",
+                      "C. Generally Authorized Accounting Practices",
+                      "D. General Accounting and Analysis Procedures"
+                  ],
+                  "answer": "A"
+              },
+              {
+                  "question": "Which of the following is an example of a current asset?",
+                  "options": [
+                      "A. Buildings",
+                      "B. Equipment",
+                      "C. Inventory",
+                      "D. Land"
+                  ],
+                  "answer": "C"
+              },
+              {
+                  "question": "What does ROI stand for in accounting?",
+                  "options": [
+                      "A. Return on Investment",
+                      "B. Revenue on Income",
+                      "C. Return on Income",
+                      "D. Revenue of Interest"
+                  ],
+                  "answer": "A"
+              },
+              {
+                  "question": "Which accounting principle states that expenses should be recorded when they are incurred, regardless of when cash is paid?",
+                  "options": [
+                      "A. Matching Principle",
+                      "B. Revenue Recognition Principle",
+                      "C. Time Period Principle",
+                      "D. Expense Recognition Principle"
+                  ],
+                  "answer": "D"
+              },
+              {
+                  "question": "Which financial statement reports a company's financial position at a specific point in time?",
+                  "options": [
+                      "A. Income Statement",
+                      "B. Balance Sheet",
+                      "C. Statement of Cash Flows",
+                      "D. Statement of Retained Earnings"
+                  ],
+                  "answer": "B"
+              },
+              {
+                  "question": "What is depreciation?",
+                  "options": [
+                      "A. The process of increasing an asset's value",
+                      "B. The process of decreasing an asset's value over time",
+                      "C. The process of converting assets into cash",
+                      "D. The process of recording revenues"
+                  ],
+                  "answer": "B"
+              },
+              {
+                  "question": "Which of the following is not a type of business entity?",
+                  "options": [
+                      "A. Corporation",
+                      "B. Partnership",
+                      "C. Limited Liability Company",
+                      "D. Sole Proprietorship"
+                  ],
+                  "answer": "D"
+              },
+              {
+                  "question": "What is the formula for calculating net income?",
+                  "options": [
+                      "A. Net Income = Revenues - Expenses",
+                      "B. Net Income = Revenues + Expenses",
+                      "C. Net Income = Revenues / Expenses",
+                      "D. Net Income = Expenses - Revenues"
+                  ],
+                  "answer": "A"
+              }
+          ]
+      }
+  ]
+}
