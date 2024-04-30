@@ -58,7 +58,7 @@ def display_course():
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-
+        
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True) # In some cases you may get errors, try changing the port number if your app is not working
