@@ -91,7 +91,7 @@ const CourseGenerator = ({ className }) => {
       console.error('Error detecting skills:', error);
       setError('Error detecting skills. Please try again.');
     }
-    await detectSkillsFromPDF();
+    await handleSkillRatingChange();
 
   };
 

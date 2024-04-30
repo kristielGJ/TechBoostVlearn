@@ -62,5 +62,5 @@ Ensure you use two seperate terminals like so:
       Note that the development build is not optimized.
       To create a production build, use npm run build.
 
-      webpack compiled successfully
+      webpack compiled successfully 
 ```
