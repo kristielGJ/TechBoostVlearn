@@ -29,9 +29,22 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from cv_parser import CVParser
 from course_generator import CourseGenerator
+from database import db
 
 app = Flask(__name__)
 CORS(app)  # Allow CORS for all routes
+
+# configure the SQLite database, relative to the app instance folder
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
+
+# initialize the app with the extension
+db.init_app(app)
+
+with app.app_context():
+    from model import User
+    db.create_all()
+
+
 
 @app.route('/detect_skills', methods=['POST'])
 def detect_skills():
@@ -58,6 +71,11 @@ def display_course():
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+@app.route("/users")
+def user_list():
+    users = db.session.execute(db.select(User).order_by(User.username)).scalars()
+    return render_template("user/list.html", users=users)
 
 
 if __name__ == "__main__":
