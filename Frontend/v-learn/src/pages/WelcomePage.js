@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Link } from "react-router-dom"
 import { HashLink } from "react-router-hash-link";
-
 const WelcomePage = () => {
     const container = useRef();
     const text = useRef();
