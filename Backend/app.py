@@ -106,5 +106,10 @@ def user_delete(user_id):
 
     return jsonify({'success': 'User and associated user role deleted'})
 
+@app.route('/quiz', methods=['GET'])
+def get_quiz(User_Skills, User_Rankings):
+    # we receive the topics selected by the user and user rating from the front end
+    return jsonify(User_Skills, User_Rankings)
+
 if __name__ == "__main__":
     app.run(port=8000, debug=True) # In some cases you may get errors, try changing the port number if your app is not working

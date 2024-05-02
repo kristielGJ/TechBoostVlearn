@@ -11,10 +11,10 @@ files = os.listdir(cwd) # Get all files in that directory
 
 class SkillRatingManager:
 
-    @app.route('/quiz', methods=['GET'])
-    def get_quiz(User_Skills, User_Rankings):
+#    @app.route('/quiz', methods=['GET'])
+#    def get_quiz(User_Skills, User_Rankings):
         # we receive the topics selected by the user and user rating from the front end
-        return jsonify(User_Skills, User_Rankings)
+#        return jsonify(User_Skills, User_Rankings)
     
     # getting the correct questions IN PYTHON FIRST
     NUM_Q_PER_QUIZ = 5
@@ -24,7 +24,6 @@ class SkillRatingManager:
         obj_data = json.load(json_file)
  
         # getting hold of skills and their ranking from the dictionary
-        
         
         skills = obj_data['Skills']
         skill_ranking = obj_data['Skill Ranking']
