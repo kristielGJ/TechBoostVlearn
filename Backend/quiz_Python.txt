@@ -1,0 +1,21 @@
+- Multiple-choice:
+- Questions:
+    1. What is a data structure in Python programming?
+        a. A way to store and organize data
+        b. A programming language
+        c. A type of loop
+        d. A sorting algorithm
+    2. Which of the following is not a built-in data structure in Python?
+        a. List
+        b. Tuple
+        c. Stack
+        d. Tree
+    3. Which data structure in Python uses the Last In First Out (LIFO) principle?
+        a. Queue
+        b. Stack
+        c. Linked List
+        d. Tree
+- Answers:
+    1. a
+    2. d
+    3. b

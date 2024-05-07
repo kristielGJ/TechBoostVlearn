@@ -1,0 +1,10 @@
+- Open-ended:
+    Questions:
+    - 1. What is the difference between stocks and bonds in finance?
+    - 2. Can you explain the concept of compound interest?
+    - 3. How do financial ratios help in analyzing a company's performance? 
+
+    Answers: 
+        1. Stocks represent ownership in a company, while bonds represent debt that the company owes to investors. 
+        2. Compound interest is the interest calculated on the initial principal and also on the accumulated interest of previous periods. 
+        3. Financial ratios help in analyzing a company's performance by providing insights into its profitability, liquidity, efficiency, and solvency.
