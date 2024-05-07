@@ -35,5 +35,7 @@ yarn-error.log*\
 *.sln\
 *.swp\
 }
+<<<<<<< HEAD
 /Backend/__pycache__
 *.pyc
+Backend/instance/project.db

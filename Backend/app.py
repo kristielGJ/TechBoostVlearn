@@ -44,8 +44,6 @@ with app.app_context():
     from model import User
     db.create_all()
 
-
-
 @app.route('/detect_skills', methods=['POST'])
 def detect_skills():
     try:
@@ -78,6 +76,13 @@ def user_list():
     # Convert user objects to dictionaries
     user_data = [user.serialize() for user in users]
     return jsonify(user_data)
+
+@app.route('/users/<int:user_id>', methods=['GET'])
+def get_user(user_id):
+    user = User.query.get(user_id)
+    if not user:
+        return jsonify({'error': 'User not found'})
+    return jsonify(user.serialize())
  
 @app.route("/users/create", methods=["GET", "POST"])
 def user_create():
@@ -85,6 +90,7 @@ def user_create():
         user = User(
             username=request.form["username"],
             email=request.form["email"],
+            password=request.form["password"],
         )
         db.session.add(user)
         db.session.commit()
@@ -92,6 +98,22 @@ def user_create():
         return jsonify(user.serialize())
  
     return jsonify({"message": "User created"})  # Optional message for GET
+
+@app.route('/users/update/<int:user_id>', methods=['PATCH'])
+def user_update(user_id):
+    user = User.query.get(user_id)
+    if not user:
+        return jsonify({'error': 'User not found'})
+
+    if 'username' in request.form:
+        user.username = request.form['username']
+    if 'email' in request.form:
+        user.email = request.form['email']
+    if 'password' in request.form:
+        user.password = request.form['password']
+
+    db.session.commit()
+    return jsonify({'success': 'User updated'})
 
 @app.route('/users/<int:user_id>', methods=['DELETE'])
 def user_delete(user_id):
