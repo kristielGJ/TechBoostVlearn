@@ -37,3 +37,4 @@ yarn-error.log*\
 }
 /Backend/__pycache__
 *.pyc
+Backend/.env
