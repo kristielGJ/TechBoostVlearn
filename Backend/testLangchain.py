@@ -88,20 +88,19 @@ prompt.format(num_questions=3, quiz_type="multiple-choice", quiz_context="Data S
 
 chain = LLMChain(llm=ChatOpenAI(temperature=0.0),prompt=prompt)
 
-quiz_response = chain.run(num_questions=3, quiz_type="multiple-choice", quiz_context="Data Structures in Python Programming",)
+quiz_response = chain.run(num_questions=9, quiz_type="multiple-choice", quiz_context="Data Structures in Python Programming",)
 
 f = open("quiz_Python.txt", "a")
 f.write(quiz_response)
 f.close()
 
 
-quiz_response = chain.run(num_questions=5, quiz_type="True-false", quiz_context="Marketing", verbose=True)
+quiz_response = chain.run(num_questions=3, quiz_type="True-false", quiz_context="Marketing", verbose=True)
 f = open("quiz_m.txt", "a")
 f.write(quiz_response)
 f.close()
 
-quiz_response = chain.run(num_questions=3, quiz_type="Open-ended", quiz_context="Finance")
-print(quiz_response)
+quiz_response = chain.run(num_questions=5, quiz_type="Open-ended", quiz_context="Finance")
 f = open("quiz_fin.txt", "a")
 f.write(quiz_response)
 f.close()

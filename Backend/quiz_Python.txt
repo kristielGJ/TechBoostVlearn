@@ -18,4 +18,60 @@
 - Answers:
     1. a
     2. d
-    3. b
+    3. b- Multiple-choice:
+- Questions:
+    1. What is a data structure in Python programming?
+        a. A way to store and organize data
+        b. A programming language
+        c. A type of loop
+        d. A sorting algorithm
+    2. Which data structure in Python is used to store multiple items in a single variable?
+        a. List
+        b. Tuple
+        c. Dictionary
+        d. Set
+    3. Which data structure in Python is used to store key-value pairs?
+        a. List
+        b. Tuple
+        c. Dictionary
+        d. Set
+    4. Which data structure in Python is used to store unique elements?
+        a. List
+        b. Tuple
+        c. Dictionary
+        d. Set
+    5. Which data structure in Python is used to implement a Last In First Out (LIFO) behavior?
+        a. Queue
+        b. Stack
+        c. Heap
+        d. Linked List
+    6. Which data structure in Python is used to implement a First In First Out (FIFO) behavior?
+        a. Queue
+        b. Stack
+        c. Heap
+        d. Linked List
+    7. Which data structure in Python is used to represent a hierarchical relationship between elements?
+        a. Queue
+        b. Stack
+        c. Tree
+        d. Graph
+    8. Which data structure in Python is used to represent a collection of nodes connected by edges?
+        a. Queue
+        b. Stack
+        c. Tree
+        d. Graph
+    9. Which data structure in Python is used to find the shortest path between nodes?
+        a. Queue
+        b. Stack
+        c. Tree
+        d. Graph
+- Answers:
+    1. a
+    2. a
+    3. c
+    4. d
+    5. b
+    6. a
+    7. c
+    8. d
+    9. d

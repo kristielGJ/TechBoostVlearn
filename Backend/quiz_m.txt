@@ -1,0 +1,9 @@
+- True-false:
+    - Questions:
+        1. Marketing is only about advertising and promotions. True or False?
+        2. Marketing research is not important for making informed business decisions. True or False?
+        3. Digital marketing is not relevant in today's business environment. True or False?
+    - Answers:
+        1. False
+        2. False
+        3. False
