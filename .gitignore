@@ -35,11 +35,7 @@ yarn-error.log*\
 *.sln\
 *.swp\
 }
-<<<<<<< HEAD
 /Backend/__pycache__
 *.pyc
-=======
-
->>>>>>> Lara---Skills-Rating-Manager
 Backend/.env
 Backend/instance/project.db
