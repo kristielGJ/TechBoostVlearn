@@ -3,19 +3,14 @@ import os
 from flask import Flask, jsonify, request
 import random
 import pathlib
+from sqlalchemy import insert
 
 cwd = os.getcwd() # Get current working directory
 files = os.listdir(cwd) # Get all files in that directory
 # print ("Files in %r:%s" % (cwd, files))
     # Implement skill rating management , and quiz generation
 
-class SkillRatingManager:
-
-#    @app.route('/quiz', methods=['GET'])
-#    def get_quiz(User_Skills, User_Rankings):
-        # we receive the topics selected by the user and user rating from the front end
-#        return jsonify(User_Skills, User_Rankings)
-    
+class create_user_quiz:
     # getting the correct questions IN PYTHON FIRST
     NUM_Q_PER_QUIZ = 5
     USER_DATA = pathlib.Path(__file__).parent / "dummy_user_data.json"
@@ -43,6 +38,18 @@ class SkillRatingManager:
             if topic in skills:
                 print(topic, questions)
             
+class update_sql:
+    # getting user from results json file
+    with open("user_results.json","r") as results_file: # loading the quiz bank
+        obj_results = json.load(results_file)
+
+    user = obj_results['ID']
+    skill_level_result = obj_results['Skill Ranking']
+
+    stmt = (
+        insert('user_scores')
+        values('User' = user, 'scores' = skill_level_result)
+    )
 
 ###### GERA WORK ######
 # This function returns the skill ratings and Course recomendations
@@ -58,4 +65,4 @@ class SkillRatingManager:
 #        return jsonify({'error': str(e)}), 500
 #####
 
-pass
+    pass
