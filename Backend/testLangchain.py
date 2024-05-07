@@ -9,15 +9,13 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
 from langchain import PromptTemplate
 import re
+import codecs, json
 
 #load api key from env file
 load_dotenv()
 my_key=os.getenv("OPENAI_API_KEY")
 
 llm = OpenAI(temperature=0,openai_api_key=my_key)
-text="What is AI?"
-print(llm(text))
-
 
 def get_response(prompt_question):
     response = openai.chat.completions.create(
@@ -28,82 +26,111 @@ def get_response(prompt_question):
 
     return response.choices[0].message.content
 
-template = """
-You are an expert quiz maker for technical fields. Let's think step by step and
-create a quiz with {num_questions} {quiz_type} questions about the following concept/content: {quiz_context}.
+template ="""
+You are an expert quiz maker for technical fields. Let's think step by step and create a quiz with {num_questions} {quiz_type} questions about the following concept/content: {quiz_context}.Only provide JSON code as a response, no other response.
 
-The format of the quiz could be one of the following:
-- Multiple-choice: 
-- Questions:
-    <Question1>: <a. Answer 1>, <b. Answer 2>, <c. Answer 3>, <d. Answer 4>
-    <Question2>: <a. Answer 1>, <b. Answer 2>, <c. Answer 3>, <d. Answer 4>
-    ....
-- Answers:
-    <Answer1>: <a|b|c|d>
-    <Answer2>: <a|b|c|d>
-    ....
-    Example:
-    - Questions:
-    - 1. What is the time complexity of a binary search tree?
-        a. O(n)
-        b. O(log n)
-        c. O(n^2)
-        d. O(1)
-    - Answers: 
-        1. b
-- True-false:
-    - Questions:
-        <Question1>: <True|False>
-        <Question2>: <True|False>
-        .....
-    - Answers:
-        <Answer1>: <True|False>
-        <Answer2>: <True|False>
-        .....
-    Example:
-    - Questions:
-        - 1. What is a binary search tree?
-        - 2. How are binary search trees implemented?
-    - Answers:
-        - 1. True
-        - 2. False
-- Open-ended:
-- Questions:
-    <Question1>: 
-    <Question2>:
-- Answers:    
-    <Answer1>:
-    <Answer2>:
-Example:
-    Questions:
-    - 1. What is a binary search tree?
-    - 2. How are binary search trees implemented?
-    
-    - Answers: 
-        1. A binary search tree is a data structure that is used to store data in a sorted manner.
-        2. Binary search trees are implemented using linked lists.
+The format of the quiz could be stored in JSON format as follows:
+
+- For Multiple-choice questions:
+{{
+  "quizType": "Multiple-choice",
+  "quizContext": "{{quiz_context}}",
+  "questions": [
+    {{
+      "question": "Question1 text here",
+      "options": {{
+        "a": "Answer 1",
+        "b": "Answer 2",
+        "c": "Answer 3",
+        "d": "Answer 4"
+      }},
+      "correctAnswer": "a|b|c|d"
+    }},
+    {{
+      "question": "Question2 text here",
+      "options": {{
+        "a": "Answer 1",
+        "b": "Answer 2",
+        "c": "Answer 3",
+        "d": "Answer 4"
+      }},
+      "correctAnswer": "a|b|c|d"
+    }}
+  ]
+}}
+- For True/false questions:
+
+{{
+  "quizType": "True-False",
+  "quizContext": "{{quiz_context}}",
+  "questions": [
+    {{
+      "question": "Question1 text here",
+      "correctAnswer": "True|False"
+    }},
+    {{
+      "question": "Question2 text here",
+      "correctAnswer": "True|False"
+    }}
+  ]
+}}
+- For Open-ended questions:
+
+{{
+  "quizType": "Open-ended",
+  "quizContext": "{{quiz_context}}",
+  "questions": [
+    {{
+      "question": "Question1 text here",
+      "answer": "Detailed answer here"
+    }},
+    {{
+      "question": "Question2 text here",
+      "answer": "Detailed answer here"
+    }}
+  ]
+}}
+- Example for Multiple-choice:
+
+{{
+  "quizType": "Multiple-choice",
+  "quizContext": "Binary search tree complexities",
+  "questions": [
+    {{
+      "question": "What is the time complexity of a binary search tree?",
+      "options": {{
+        "a": "O(n)",
+        "b": "O(log n)",
+        "c": "O(n^2)",
+        "d": "O(1)"
+      }},
+      "correctAnswer": "b"
+    }}
+  ]
+}}
 """
 prompt = PromptTemplate.from_template(template)
 prompt.format(num_questions=3, quiz_type="multiple-choice", quiz_context="Data Structures in Python Programming")
 
 chain = LLMChain(llm=ChatOpenAI(temperature=0.0),prompt=prompt)
 
-quiz_response = chain.run(num_questions=9, quiz_type="multiple-choice", quiz_context="Data Structures in Python Programming",)
-
-f = open("quiz_Python.txt", "a")
-f.write(quiz_response)
-f.close()
-
-
+quiz_response = chain.run(num_questions=5, quiz_type="multiple-choice", quiz_context="Data Structures in Python Programming",)
+'''
 quiz_response = chain.run(num_questions=3, quiz_type="True-false", quiz_context="Marketing", verbose=True)
-f = open("quiz_m.txt", "a")
-f.write(quiz_response)
-f.close()
 
 quiz_response = chain.run(num_questions=5, quiz_type="Open-ended", quiz_context="Finance")
-f = open("quiz_fin.txt", "a")
-f.write(quiz_response)
-f.close()
+'''
+# Write JSON file
+filename = 'quiz_data.json'
+
+try:
+    json_data = json.loads(quiz_response)
+except json.JSONDecodeError as e:
+    print("JSON Decode Error:", e)
+    json_data = None
+
+with open(filename, 'w') as file:
+    json.dump(json_data, file, indent=4)
 
 '''
 # Load, chunk and index the contents of the blog.

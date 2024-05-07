@@ -1,0 +1,56 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Data Structures in Python Programming",
+    "questions": [
+        {
+            "question": "Which data structure in Python is used to store multiple elements in a single variable?",
+            "options": {
+                "a": "List",
+                "b": "Tuple",
+                "c": "Set",
+                "d": "Dictionary"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "Which data structure in Python is immutable?",
+            "options": {
+                "a": "List",
+                "b": "Tuple",
+                "c": "Set",
+                "d": "Dictionary"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "question": "Which data structure in Python does not allow duplicate elements?",
+            "options": {
+                "a": "List",
+                "b": "Tuple",
+                "c": "Set",
+                "d": "Dictionary"
+            },
+            "correctAnswer": "c"
+        },
+        {
+            "question": "Which data structure in Python is used to store key-value pairs?",
+            "options": {
+                "a": "List",
+                "b": "Tuple",
+                "c": "Set",
+                "d": "Dictionary"
+            },
+            "correctAnswer": "d"
+        },
+        {
+            "question": "Which data structure in Python is best suited for implementing stacks and queues?",
+            "options": {
+                "a": "List",
+                "b": "Tuple",
+                "c": "Set",
+                "d": "Deque"
+            },
+            "correctAnswer": "d"
+        }
+    ]
+}
