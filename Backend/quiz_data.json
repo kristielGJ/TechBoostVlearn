@@ -3,7 +3,7 @@
     "quizContext": "Data Structures in Python Programming",
     "questions": [
         {
-            "question": "Which data structure in Python is used to store multiple elements in a single variable?",
+            "question": "What data structure in Python is used to store multiple elements in a single variable?",
             "options": {
                 "a": "List",
                 "b": "Tuple",
@@ -13,17 +13,7 @@
             "correctAnswer": "a"
         },
         {
-            "question": "Which data structure in Python is immutable?",
-            "options": {
-                "a": "List",
-                "b": "Tuple",
-                "c": "Set",
-                "d": "Dictionary"
-            },
-            "correctAnswer": "b"
-        },
-        {
-            "question": "Which data structure in Python does not allow duplicate elements?",
+            "question": "Which data structure in Python is unordered and does not allow duplicate elements?",
             "options": {
                 "a": "List",
                 "b": "Tuple",
@@ -33,7 +23,17 @@
             "correctAnswer": "c"
         },
         {
-            "question": "Which data structure in Python is used to store key-value pairs?",
+            "question": "What data structure in Python is immutable?",
+            "options": {
+                "a": "List",
+                "b": "Tuple",
+                "c": "Set",
+                "d": "Dictionary"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "question": "Which data structure in Python uses key-value pairs to store elements?",
             "options": {
                 "a": "List",
                 "b": "Tuple",
@@ -43,14 +43,14 @@
             "correctAnswer": "d"
         },
         {
-            "question": "Which data structure in Python is best suited for implementing stacks and queues?",
+            "question": "Which data structure in Python is used to implement a Last-In-First-Out (LIFO) approach?",
             "options": {
                 "a": "List",
                 "b": "Tuple",
-                "c": "Set",
-                "d": "Deque"
+                "c": "Stack",
+                "d": "Queue"
             },
-            "correctAnswer": "d"
+            "correctAnswer": "c"
         }
     ]
 }
