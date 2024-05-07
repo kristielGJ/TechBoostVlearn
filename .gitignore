@@ -42,3 +42,4 @@ yarn-error.log*\
 
 >>>>>>> Lara---Skills-Rating-Manager
 Backend/.env
+Backend/instance/project.db
