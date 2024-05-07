@@ -47,38 +47,6 @@ class QuizGenerator:
             }}
         ]
         }}
-        - For True/false questions:
-
-        {{
-        "quizType": "True-False",
-        "quizContext": "{{quiz_context}}",
-        "questions": [
-            {{
-            "question": "Question1 text here",
-            "correctAnswer": "True|False"
-            }},
-            {{
-            "question": "Question2 text here",
-            "correctAnswer": "True|False"
-            }}
-        ]
-        }}
-        - For Open-ended questions:
-
-        {{
-        "quizType": "Open-ended",
-        "quizContext": "{{quiz_context}}",
-        "questions": [
-            {{
-            "question": "Question1 text here",
-            "answer": "Detailed answer here"
-            }},
-            {{
-            "question": "Question2 text here",
-            "answer": "Detailed answer here"
-            }}
-        ]
-        }}
         - Example for Multiple-choice:
 
         {{
@@ -137,3 +105,36 @@ if __name__ == "__main__":
     quiz_response = quiz_gen.generate_quiz(5, "multiple-choice", "Data Structures in Python Programming")
     quiz_gen.save_quiz_to_file(quiz_response)
 '''
+''' - For True/false questions:
+
+        {{
+        "quizType": "True-False",
+        "quizContext": "{{quiz_context}}",
+        "questions": [
+            {{
+            "question": "Question1 text here",
+            "correctAnswer": "True|False"
+            }},
+            {{
+            "question": "Question2 text here",
+            "correctAnswer": "True|False"
+            }}
+        ]
+        }}
+        - For Open-ended questions:
+
+        {{
+        "quizType": "Open-ended",
+        "quizContext": "{{quiz_context}}",
+        "questions": [
+            {{
+            "question": "Question1 text here",
+            "answer": "Detailed answer here"
+            }},
+            {{
+            "question": "Question2 text here",
+            "answer": "Detailed answer here"
+            }}
+        ]
+        }}
+        '''
