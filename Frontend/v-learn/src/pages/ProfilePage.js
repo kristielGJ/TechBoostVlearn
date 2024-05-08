@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import EnrolledCourseInfo from "../components/EnrolledCourseInfo"
 import ProfileInfo from "../components/ProfileInfo"
 import SkillsInfo from "../components/SkillsInfo"
@@ -16,14 +15,6 @@ const ProfilePage = () => {
             </div>
             </div>
 
-=======
-import ProfileInfo from "../components/ProfileInfo"
-
-const ProfilePage = () =>{
-    return(
-        <div className="bg-logo h-screen w screen py-10 px-10">
-            <ProfileInfo/>
->>>>>>> Lara---Skills-Rating-Manager
         </div>
     )
 }
