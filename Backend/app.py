@@ -14,6 +14,7 @@ Requirements: - Python, the code is compatible with Python 3.x versions.
                 - chardet: A character encoding detection library.
                 - PyMuPDF: A library for PDF processing.
 
+Additional libraries added: pip install flask_sqlalchemy                
 Expected output:
 
 * Serving Flask app 'app'
