@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import logo from "../assets/vfLogoW.png"
+<<<<<<< HEAD
+=======
 
+>>>>>>> main
 import { Link } from 'react-router-dom';
 const NavBar = () => {
     return (
