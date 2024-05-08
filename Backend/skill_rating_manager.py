@@ -51,18 +51,4 @@ class update_sql:
         values('User' = user, 'scores' = skill_level_result)
     )
 
-###### GERA WORK ######
-# This function returns the skill ratings and Course recomendations
-#def display_course():
-#    try:
-#        cv_file = request.files['cv']
-#        skill_ratings=[1,2,3,4,5,6,7,8,9] #Replace this with laras solution
-#        courses = CourseGenerator.generate_courses(cv_file, skill_ratings)
-#
-#        return jsonify({'courses': courses}), 200
-#
-#    except Exception as e:
-#        return jsonify({'error': str(e)}), 500
-#####
-
     pass
