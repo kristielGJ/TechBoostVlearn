@@ -71,7 +71,6 @@ def display_course():
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-<<<<<<< HEAD
 
 @app.route("/users")
 def user_list():
@@ -107,9 +106,6 @@ def user_delete(user_id):
 
     return jsonify({'success': 'User and associated user role deleted'})
 
-=======
-        
->>>>>>> Lara---Skills-Rating-Manager
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True) # In some cases you may get errors, try changing the port number if your app is not working
