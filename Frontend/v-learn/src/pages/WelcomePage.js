@@ -29,7 +29,7 @@ const WelcomePage = () => {
                 </div>
             </div>
             <div id="about" className="py-10 px-10">
-                <div className="bg-slate-200 ">
+                <div className="bg-slate-200 rounded ">
                     <h1 className="text-bold text-3xl py-3 px-2">About Platform</h1>
                     <p className="py-3 px-3">The V-Skills Hub Education Platform generates personalised content for upskilling purposes, based on a user’s CV, skills and career progression preferences. Presently, there is a plethora of information on education platforms internally and externally, such as Percipio or YouTube, but no simple way to quickly and cost effectively construct bespoke non-standard learning pathways. We hope to achieve this using GenAI to analyse user preferences and learning content. </p>
 

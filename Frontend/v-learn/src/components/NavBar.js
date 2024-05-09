@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import logo from "../assets/vfLogoW.png"
-<<<<<<< HEAD
-=======
 
->>>>>>> main
 import { Link } from 'react-router-dom';
 const NavBar = () => {
     return (
         <nav class="flex items-center justify-between flex-wrap bg-black p-6">
             <div class="flex items-center flex-shrink-0 text-white mr-6">
                 
-                <Link to="/" class="flex flex-row ">
+                <Link to="/" class="flex flex-row">
                 <img className="ill-current h-12 w-20 mr-2 "src={logo} alt="logo"/>
                 <h1 className="text-xl font-semibold place-self-center">V-Learn</h1>
                 </Link>
