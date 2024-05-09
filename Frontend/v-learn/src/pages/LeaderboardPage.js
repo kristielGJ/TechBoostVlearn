@@ -12,7 +12,6 @@ const LeaderBoardPage = () => {
 
 
 
-
     useEffect(() => {
         const timer = setTimeout(() => { fetchData() }, 2500)
 
