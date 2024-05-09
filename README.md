@@ -30,6 +30,18 @@ Press CTRL+C to quit
  * Debugger is active!
  * Debugger PIN: 118-649-118
 ```
+
+## skill_rating_manager.py (*Backend/skill_rating_manager.py*)
+The two main functions of this code are to 
+1) Receive the skills the user wishes to develop and generate a 5 question quiz for that particular skill based on their self-assigned skill level.
+2) After completing the quiz, their new skill level is updated in the SQL database.
+
+### Still to do:
+- (Backend) Loop through skills detected, create a quiz for each one
+- (Backend) Create a json file for front end
+- (Backend) Use front end respoinse to quiz to set skill level
+- Create corresponding frontend
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Frontend
 ## App.js (*Frontend/v-learn/src/App.js*)
@@ -37,7 +49,7 @@ Press CTRL+C to quit
 - Node.js
 - NPM 
 
-Once node and npm are downloaded , use terninal to navigate to the frontend folder 
+Once node and npm are downloaded , use terminal to navigate to the frontend folder 
 ```cd Frontend```
 Type in : ```npm install```   (to download missing files I removed using gitignore, i.e node_modules)          
 
