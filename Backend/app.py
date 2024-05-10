@@ -26,6 +26,7 @@ Press CTRL+C to quit
  * Debugger is active!
  * Debugger PIN: 118-649-118
 '''
+import json
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from cv_parser import CVParser
@@ -108,9 +109,11 @@ def user_delete(user_id):
     return jsonify({'success': 'User and associated user role deleted'})
 
 @app.route('/quiz', methods=['GET'])
-def get_quiz(User_Skills, User_Rankings):
+def get_quiz():
     # we receive the topics selected by the user and user rating from the front end
-    return jsonify(User_Skills, User_Rankings)
+    with open ("quiz_data.json","r") as file:
+        result=json.load(file)
+    return jsonify(result)
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True) # In some cases you may get errors, try changing the port number if your app is not working
