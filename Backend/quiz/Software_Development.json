@@ -1,0 +1,56 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Software Development",
+    "questions": [
+        {
+            "question": "What is the purpose of version control in software development?",
+            "options": {
+                "a": "To track changes in code",
+                "b": "To create backups of files",
+                "c": "To test software performance",
+                "d": "To design user interfaces"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "Which programming language is commonly used for web development?",
+            "options": {
+                "a": "Java",
+                "b": "Python",
+                "c": "HTML/CSS",
+                "d": "C++"
+            },
+            "correctAnswer": "c"
+        },
+        {
+            "question": "What is the purpose of unit testing in software development?",
+            "options": {
+                "a": "To ensure the entire system works correctly",
+                "b": "To test individual units of code",
+                "c": "To design user interfaces",
+                "d": "To track changes in code"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "question": "What is an API in software development?",
+            "options": {
+                "a": "Application Programming Interface",
+                "b": "Advanced Programming Interface",
+                "c": "Automated Programming Interface",
+                "d": "Application Process Interface"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "What is the purpose of agile methodology in software development?",
+            "options": {
+                "a": "To create detailed project plans",
+                "b": "To prioritize customer collaboration",
+                "c": "To avoid testing software",
+                "d": "To work in isolation"
+            },
+            "correctAnswer": "b"
+        }
+    ]
+}

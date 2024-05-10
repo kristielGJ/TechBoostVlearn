@@ -50,6 +50,8 @@ class QuizGenerator:
         self.prompt_template = PromptTemplate.from_template(self.template)
         self.chain = LLMChain(llm=ChatOpenAI(temperature=0.0), prompt=self.prompt_template)
         self.generated_quizzes = {}  # Dictionary to store generated quizzes
+        self.quiz_dir = "quiz"  # Directory to store quiz files
+        os.makedirs(self.quiz_dir, exist_ok=True)  # Ensure the directory exists
 
     def generate_quiz(self, num_questions, quiz_type, quiz_context):
         try:
@@ -63,10 +65,9 @@ class QuizGenerator:
             self.generated_quizzes[quiz_context] = quiz_response  # Store the new quiz
 
         # Save the quiz to a file (always)
-        filename = f'{quiz_context.replace(" ", "_")}_quiz.json'
+        filename = os.path.join(self.quiz_dir, f'{quiz_context.replace(" ", "_")}_quiz.json')
         self.save_quiz_to_file(quiz_response, filename)
         return quiz_response
-
 
     def save_quiz_to_file(self, quiz_response, filename):
         # Save the quiz to a JSON file
@@ -87,13 +88,13 @@ class QuizGenerator:
     def get_template(self):
         return self.template
 
-
+'''
 # Example usage
 if __name__ == "__main__":
     quiz_gen = QuizGenerator()
-    quiz_response = quiz_gen.generate_quiz(5, "multiple-choice", "Data Structures in Java Programming")
+    quiz_response = quiz_gen.generate_quiz(5, "multiple-choice", "Software Development")
 
-''''''
+'''
 ''' - For True/false questions:
 
         {{
