@@ -86,6 +86,7 @@ def user_create():
         user = User(
             username=request.form["username"],
             email=request.form["email"],
+            password=request.form["password"]
         )
         db.session.add(user)
         db.session.commit()
