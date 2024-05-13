@@ -44,13 +44,7 @@ class Role(db.Model):
     role_name = db.Column(db.String(255), unique=True)
     permissions = db.Column(db.Text)
     user_roles = db.relationship('UserRole', back_populates='role')
- 
-class Course(db.Model):
-    __tablename__ = 'courses'
-    course_id = db.Column(db.Integer, primary_key=True)
-    course_name = db.Column(db.String(255), unique=True, nullable=False)
-    description = db.Column(db.Text)
- 
+
 class EnrolledCourse(db.Model):
     __tablename__ = 'enrolled_courses'
     id = db.Column(db.Integer, primary_key=True)
@@ -58,8 +52,3 @@ class EnrolledCourse(db.Model):
     courses = db.relationship('Course', secondary=enrollment, backref=db.backref('enrolled_courses', lazy='dynamic'))
     user = db.relationship('User', back_populates='enrolled_courses')
  
-class UserScore(db.Model):
-    __tablename__ = 'user_scores'
-    id = db.Column(db.Integer, primary_key=True)
-    score = db.Column(db.Integer)
-    users = db.relationship('User', secondary=user_scores_association, back_populates='scores')
