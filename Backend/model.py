@@ -6,12 +6,7 @@ enrollment = db.Table('enrollment',
     db.Column('enrolled_course_id', db.Integer, db.ForeignKey('enrolled_courses.id'), primary_key=True),
     db.Column('course_id', db.Integer, db.ForeignKey('courses.course_id'), primary_key=True)
 )
- 
-user_scores_association = db.Table('user_scores_association',
-    db.Column('user_id', db.Integer, db.ForeignKey('users.id'), primary_key=True),
-    db.Column('user_score_id', db.Integer, db.ForeignKey('user_scores.id'), primary_key=True),
-    db.Column('course_id', db.Integer, db.ForeignKey('courses.course_id'))
-)
+
 
 class User(db.Model):
     __tablename__ = 'users'
@@ -21,7 +16,6 @@ class User(db.Model):
     email = db.Column(db.String(255), unique=True, nullable=False)
     user_role = db.relationship('UserRole', back_populates='user', uselist=False, cascade="all, delete, delete-orphan")
     enrolled_courses = db.relationship('EnrolledCourse', back_populates='user', cascade="all, delete-orphan")
-    scores = db.relationship('UserScore', secondary=user_scores_association, back_populates='users')
 
     def serialize(self):
         return {
@@ -49,6 +43,5 @@ class EnrolledCourse(db.Model):
     __tablename__ = 'enrolled_courses'
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    courses = db.relationship('Course', secondary=enrollment, backref=db.backref('enrolled_courses', lazy='dynamic'))
     user = db.relationship('User', back_populates='enrolled_courses')
  
