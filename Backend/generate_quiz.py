@@ -1,5 +1,4 @@
 # Required libraries: pip install jupyterlab python-dotenv langchain openai
-
 import os
 import json
 import openai
@@ -15,11 +14,11 @@ class QuizGenerator:
         load_dotenv()
         my_key = os.getenv("OPENAI_API_KEY")
         self.llm = OpenAI(temperature=0, openai_api_key=my_key)
-        self.template ="""
-        You are an expert quiz maker for technical fields. Let's think step by step and create a quiz with {num_questions} {quiz_type} questions about the following concept/content: {quiz_context}.Only provide JSON code as a response, no other response.
-
+        self.template = """
+        You are an expert quiz maker for technical fields. Let's think step by step and create a quiz with {num_questions} {quiz_type} questions about the following concept/content: {quiz_context}. Only provide JSON code as a response, no other response.
+        
         The format of the quiz could be stored in JSON format as follows:
-
+        
         - For Multiple-choice questions:
         {{
         "quizType": "Multiple-choice",
@@ -47,40 +46,30 @@ class QuizGenerator:
             }}
         ]
         }}
-        - Example for Multiple-choice:
-
-        {{
-        "quizType": "Multiple-choice",
-        "quizContext": "Binary search tree complexities",
-        "questions": [
-            {{
-            "question": "What is the time complexity of a binary search tree?",
-            "options": {{
-                "a": "O(n)",
-                "b": "O(log n)",
-                "c": "O(n^2)",
-                "d": "O(1)"
-            }},
-            "correctAnswer": "b"
-            }}
-        ]
-        }}
         """
         self.prompt_template = PromptTemplate.from_template(self.template)
         self.chain = LLMChain(llm=ChatOpenAI(temperature=0.0), prompt=self.prompt_template)
-
-    def get_response(self, prompt_question):
-        response = openai.chat.completions.create(
-            model="gpt-4",
-            messages=[{"role": "system", "content": "You are a helpful research and programming assistant"},
-                      {"role": "user", "content": prompt_question}]
-        )
-        return response.choices[0].message.content
+        self.generated_quizzes = {}  # Dictionary to store generated quizzes
+        self.quiz_dir = "quiz"  # Directory to store quiz files
+        os.makedirs(self.quiz_dir, exist_ok=True)  # Ensure the directory exists
 
     def generate_quiz(self, num_questions, quiz_type, quiz_context):
-        return self.chain.run(num_questions=num_questions, quiz_type=quiz_type, quiz_context=quiz_context)
+        try:
+            # Attempt to use an existing quiz
+            quiz_response = self.generated_quizzes[quiz_context]
+            print("Using existing quiz for context:", quiz_context)
+        except KeyError:
+            # If no quiz exists for the context, generate a new one
+            print("Generating new quiz for context:", quiz_context)
+            quiz_response = self.chain.run(num_questions=num_questions, quiz_type=quiz_type, quiz_context=quiz_context)
+            self.generated_quizzes[quiz_context] = quiz_response  # Store the new quiz
 
-    def save_quiz_to_file(self, quiz_response, filename='quiz_data.json'):
+        # Save the quiz to a file (always)
+        filename = os.path.join(self.quiz_dir, f'{quiz_context.replace(" ", "_")}_quiz.json')
+        self.save_quiz_to_file(quiz_response, filename)
+        return quiz_response
+
+    def save_quiz_to_file(self, quiz_response, filename):
         # Save the quiz to a JSON file
         try:
             json_data = json.loads(quiz_response)
@@ -98,12 +87,13 @@ class QuizGenerator:
     @property
     def get_template(self):
         return self.template
+
 '''
 # Example usage
 if __name__ == "__main__":
     quiz_gen = QuizGenerator()
-    quiz_response = quiz_gen.generate_quiz(5, "multiple-choice", "Data Structures in Python Programming")
-    quiz_gen.save_quiz_to_file(quiz_response)
+    quiz_response = quiz_gen.generate_quiz(5, "multiple-choice", "Software Development")
+
 '''
 ''' - For True/false questions:
 

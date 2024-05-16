@@ -1,0 +1,56 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Test your knowledge on Data Structures in Python Programming",
+    "questions": [
+        {
+            "question": "What is a data structure in Python?",
+            "options": {
+                "a": "A way of organizing and storing data for efficient access and modification",
+                "b": "A function that performs mathematical operations on data",
+                "c": "A type of loop in Python",
+                "d": "A built-in Python module"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "Which data structure in Python is used to store multiple elements of the same data type?",
+            "options": {
+                "a": "List",
+                "b": "Tuple",
+                "c": "Dictionary",
+                "d": "Set"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "Which data structure in Python is immutable?",
+            "options": {
+                "a": "List",
+                "b": "Tuple",
+                "c": "Dictionary",
+                "d": "Set"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "question": "Which data structure in Python is used to store key-value pairs?",
+            "options": {
+                "a": "List",
+                "b": "Tuple",
+                "c": "Dictionary",
+                "d": "Set"
+            },
+            "correctAnswer": "c"
+        },
+        {
+            "question": "Which data structure in Python does not allow duplicate elements?",
+            "options": {
+                "a": "List",
+                "b": "Tuple",
+                "c": "Dictionary",
+                "d": "Set"
+            },
+            "correctAnswer": "d"
+        }
+    ]
+}

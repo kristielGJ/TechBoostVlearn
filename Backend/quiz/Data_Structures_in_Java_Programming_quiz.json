@@ -1,0 +1,56 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Test your knowledge on Data Structures in Java Programming.",
+    "questions": [
+        {
+            "question": "What is a data structure in Java?",
+            "options": {
+                "a": "A way to store and organize data in memory",
+                "b": "A programming language",
+                "c": "A type of loop in Java",
+                "d": "A Java library"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "Which data structure is used to store elements in a sorted order in Java?",
+            "options": {
+                "a": "Array",
+                "b": "Linked List",
+                "c": "Stack",
+                "d": "TreeSet"
+            },
+            "correctAnswer": "d"
+        },
+        {
+            "question": "What is the time complexity of adding an element to the end of an ArrayList in Java?",
+            "options": {
+                "a": "O(1)",
+                "b": "O(log n)",
+                "c": "O(n)",
+                "d": "O(n^2)"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "Which data structure uses LIFO (Last In First Out) principle in Java?",
+            "options": {
+                "a": "Queue",
+                "b": "Stack",
+                "c": "LinkedList",
+                "d": "HashMap"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "question": "What is the main advantage of using a HashMap in Java?",
+            "options": {
+                "a": "Allows duplicate keys",
+                "b": "Maintains insertion order",
+                "c": "Provides constant-time performance for basic operations",
+                "d": "Automatically sorts elements"
+            },
+            "correctAnswer": "c"
+        }
+    ]
+}
