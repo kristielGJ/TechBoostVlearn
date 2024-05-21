@@ -16,6 +16,7 @@ class User(db.Model):
     email = db.Column(db.String(255), unique=True, nullable=False)
     user_role = db.relationship('UserRole', back_populates='user', uselist=False, cascade="all, delete, delete-orphan")
     enrolled_courses = db.relationship('EnrolledCourse', back_populates='user', cascade="all, delete-orphan")
+    total_score = db.Column(db.Integer)
 
     def serialize(self):
         return {
@@ -43,5 +44,6 @@ class EnrolledCourse(db.Model):
     __tablename__ = 'enrolled_courses'
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    completion = db.Column(db.Float, nullable=False, default=0)
     user = db.relationship('User', back_populates='enrolled_courses')
  
