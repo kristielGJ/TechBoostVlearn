@@ -4,7 +4,6 @@ from database import db
 
 enrollment = db.Table('enrollment',
     db.Column('enrolled_course_id', db.Integer, db.ForeignKey('enrolled_courses.id'), primary_key=True),
-    db.Column('course_id', db.Integer, db.ForeignKey('courses.course_id'), primary_key=True)
 )
 
 
@@ -14,10 +13,10 @@ class User(db.Model):
     username = db.Column(db.String(255), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), unique=True, nullable=False)
+    total_score = db.Column(db.Integer)
     user_role = db.relationship('UserRole', back_populates='user', uselist=False, cascade="all, delete, delete-orphan")
     enrolled_courses = db.relationship('EnrolledCourse', back_populates='user', cascade="all, delete-orphan")
-    total_score = db.Column(db.Integer)
-
+    
     def serialize(self):
         return {
             'id': self.id,
