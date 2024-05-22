@@ -1,0 +1,29 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Exception Handling",
+    "questions": [
+        {
+            "education": "Exception handling is a programming concept that deals with how to handle unexpected or exceptional situations that may occur during the execution of a program. These exceptions can be caused by various factors such as invalid input, hardware failures, or network issues. By using exception handling mechanisms, programmers can gracefully handle these situations and prevent the program from crashing.",
+            "question": "What is the purpose of exception handling in programming?",
+            "options": {
+                "a": "To crash the program",
+                "b": "To ignore errors",
+                "c": "To handle unexpected situations",
+                "d": "To speed up program execution"
+            },
+            "correctAnswer": "c"
+        },
+        {
+            "education": "In most programming languages, exception handling is implemented using try-catch blocks. The try block contains the code that may throw an exception, while the catch block is used to handle the exception if it occurs. Additionally, programmers can also use finally blocks to execute code that should always run, regardless of whether an exception is thrown or not.",
+            "question": "Which block is used to handle exceptions in most programming languages?",
+            "options": {
+                "a": "if-else",
+                "b": "switch-case",
+                "c": "try-catch",
+                "d": "for loop"
+            },
+            "correctAnswer": "c"
+        }
+    ],
+    "nextTopic": "No more topics"
+}

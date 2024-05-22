@@ -1,0 +1,29 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Control Flow and Loops",
+    "questions": [
+        {
+            "education": "Control flow refers to the order in which the program's code is executed. It allows the program to make decisions based on conditions and execute specific blocks of code accordingly. Loops are used to repeat a block of code multiple times until a certain condition is met. There are different types of loops such as for loops, while loops, and do-while loops.",
+            "question": "What is the purpose of control flow in programming?",
+            "options": {
+                "a": "To execute code in a specific order",
+                "b": "To repeat a block of code multiple times",
+                "c": "To store data in variables",
+                "d": "To perform mathematical calculations"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "education": "Loops are used to repeat a block of code multiple times until a certain condition is met. They help in automating repetitive tasks and iterating over data structures. Common types of loops include for loops, while loops, and do-while loops.",
+            "question": "Which type of loop is used to repeat a block of code a specific number of times?",
+            "options": {
+                "a": "For loop",
+                "b": "While loop",
+                "c": "Do-while loop",
+                "d": "If statement"
+            },
+            "correctAnswer": "a"
+        }
+    ],
+    "nextTopic": "No more topics"
+}

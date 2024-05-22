@@ -1,0 +1,29 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Functions and Modules",
+    "questions": [
+        {
+            "education": "In programming, functions are blocks of code that perform a specific task. They are reusable and help in organizing code. Modules, on the other hand, are files that contain related functions, classes, and variables. They help in organizing code into separate files for better maintainability and reusability.",
+            "question": "What is a function in programming?",
+            "options": {
+                "a": "A block of code that performs a specific task",
+                "b": "A file that contains related functions and variables",
+                "c": "A data structure that stores values",
+                "d": "A programming language"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "education": "Functions can be defined and called in programming languages. When a function is defined, it specifies what the function does. When a function is called, the code inside the function is executed. Modules help in organizing functions and variables into separate files, making code more manageable.",
+            "question": "What is the purpose of modules in programming?",
+            "options": {
+                "a": "To define functions",
+                "b": "To organize code into separate files",
+                "c": "To store data values",
+                "d": "To execute code"
+            },
+            "correctAnswer": "b"
+        }
+    ],
+    "nextTopic": "No more topics"
+}

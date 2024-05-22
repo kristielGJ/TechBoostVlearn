@@ -1,0 +1,29 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Working with Strings",
+    "questions": [
+        {
+            "education": "Strings are a fundamental data type in programming that represent a sequence of characters. In many programming languages, strings are treated as objects with various methods and properties that allow manipulation and processing. When working with strings, it is important to understand concepts like string concatenation, substring extraction, string comparison, and case manipulation.",
+            "question": "Which method is used to concatenate two strings in most programming languages?",
+            "options": {
+                "a": "concat()",
+                "b": "join()",
+                "c": "merge()",
+                "d": "combine()"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "education": "String comparison is a common operation when working with strings. It involves checking if two strings are equal or determining their relative order. Most programming languages provide comparison operators or methods to perform string comparison based on character sequences.",
+            "question": "Which operator is used to check if two strings are equal in most programming languages?",
+            "options": {
+                "a": "==",
+                "b": "===",
+                "c": "equals()",
+                "d": "compare()"
+            },
+            "correctAnswer": "a"
+        }
+    ],
+    "nextTopic": "No more topics"
+}

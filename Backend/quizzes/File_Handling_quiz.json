@@ -1,0 +1,29 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "File Handling",
+    "questions": [
+        {
+            "education": "File handling is the process of working with files on a computer. This includes creating, reading, writing, and deleting files. In programming, file handling is essential for tasks such as storing data, reading configuration files, and processing input/output operations.",
+            "question": "What function is used to open a file in Python?",
+            "options": {
+                "a": "open()",
+                "b": "read()",
+                "c": "write()",
+                "d": "close()"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "education": "When working with files, it is important to properly close them after use to free up system resources and ensure data integrity. The close() function is used to close an open file in Python.",
+            "question": "Which function is used to close a file in Python?",
+            "options": {
+                "a": "open()",
+                "b": "read()",
+                "c": "write()",
+                "d": "close()"
+            },
+            "correctAnswer": "d"
+        }
+    ],
+    "nextTopic": "No more topics"
+}

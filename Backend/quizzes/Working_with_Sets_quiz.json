@@ -1,0 +1,29 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Working with Sets",
+    "questions": [
+        {
+            "education": "Sets are collections of distinct elements. In mathematics, sets are often denoted by curly braces {}. When working with sets, it is important to understand operations such as union, intersection, and difference.",
+            "question": "What is the result of the union of two sets A and B?",
+            "options": {
+                "a": "The set of all elements that are in A or B, or both",
+                "b": "The set of all elements that are in both A and B",
+                "c": "The set of all elements that are only in A but not in B",
+                "d": "The set of all elements that are in A and not in B"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "education": "When working with sets, the intersection operation results in a new set that contains only the elements that are common to both sets. This operation is denoted by the symbol \u2229.",
+            "question": "What is the result of the intersection of two sets A and B?",
+            "options": {
+                "a": "The set of all elements that are in A or B, or both",
+                "b": "The set of all elements that are in both A and B",
+                "c": "The set of all elements that are only in A but not in B",
+                "d": "The set of all elements that are in A and not in B"
+            },
+            "correctAnswer": "b"
+        }
+    ],
+    "nextTopic": "No more topics"
+}
