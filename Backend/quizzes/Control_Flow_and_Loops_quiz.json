@@ -14,16 +14,16 @@
             "correctAnswer": "a"
         },
         {
-            "education": "Loops are used to repeat a block of code multiple times until a certain condition is met. They help in automating repetitive tasks and iterating over data structures. Common types of loops include for loops, while loops, and do-while loops.",
-            "question": "Which type of loop is used to repeat a block of code a specific number of times?",
+            "education": "A for loop is used to iterate over a sequence of elements for a specified number of times. It consists of an initialization, a condition, and an increment/decrement statement. The loop continues to execute as long as the condition is true. This type of loop is commonly used when the number of iterations is known.",
+            "question": "What is the purpose of a for loop in programming?",
             "options": {
-                "a": "For loop",
-                "b": "While loop",
-                "c": "Do-while loop",
-                "d": "If statement"
+                "a": "To iterate over a sequence of elements for a specified number of times",
+                "b": "To repeat a block of code until a condition is met",
+                "c": "To execute code based on a condition",
+                "d": "To store data in variables"
             },
             "correctAnswer": "a"
         }
     ],
-    "nextTopic": "No more topics"
+    "nextTopic": "Functions and Modules"
 }

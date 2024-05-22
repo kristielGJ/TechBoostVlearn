@@ -15,16 +15,21 @@ Authors: Gera Jahja
 
     To Do: -  generate content using existing vodafone content
             - add tasks/ programming tasks for technical courses. 
+
 '''
+
 class QuizGenerator:
+    """ 
+        Initializes the QuizGenerator by setting up the OpenAI API, 
+        loading the template for quiz generation, and ensuring the quiz directory exists.
+    """
     def __init__(self):
-        # Load API key from the .env file
         load_dotenv()
         my_key = os.getenv("OPENAI_API_KEY")
         self.llm = OpenAI(temperature=0, openai_api_key=my_key)
         self.template = """
         You are an expert quiz maker and educator for technical fields. Let's think step by step and create a quiz with {num_questions} {quiz_type} questions about the following concept/content: {quiz_context}.
-        For each question, provide a brief educational content explaining the topic in detail before presenting the question.
+        For each question, provide a brief educational content explaining the topic in detail before presenting the question. This can include visuals.
         Only provide JSON code as a response.
 
         The format of the quiz should be stored in JSON format as follows:
@@ -62,37 +67,45 @@ class QuizGenerator:
         """
         self.prompt_template = PromptTemplate.from_template(self.template)
         self.chain = LLMChain(llm=ChatOpenAI(temperature=0.0), prompt=self.prompt_template)
-        self.generated_quizzes = {}  
+        self.generated_quizzes = {} 
         self.quiz_dir = "quizzes"  
         os.makedirs(self.quiz_dir, exist_ok=True) 
-        self.topic_flow = {
-            "Python Programming for Beginners": "Data Types in Python",
-            "Data Types in Python": "User Input in Python",
-            "User Input in Python": "Control Structures in Python",
-            "Control Structures in Python": "Functions in Python",
-            # Add more topics
-            }
 
-    def generate_quiz(self, num_questions, quiz_type, topic):
-        quiz_context = topic
-        next_topic = self.topic_flow.get(topic, "No more topics")
-        try:
-            quiz_response = self.generated_quizzes[topic]
-            print("Using existing quiz for topic:", topic)
-        except KeyError:
-            # If no quiz exists for the topic, generate a new one
-            print("Generating new quiz for topic:", topic)
-            quiz_response = self.chain.run(
-                num_questions=num_questions, quiz_type=quiz_type, quiz_context=topic, next_topic=next_topic)
-            self.generated_quizzes[topic] = quiz_response  
+    """
+    Generates a quiz for the given topic if it doesn't already exist. 
+        The quiz includes educational content and multiple-choice questions.
 
-        # Save the quiz to a file (always)
-        filename = os.path.join(self.quiz_dir, f'{topic.replace(" ", "_")}_quiz.json')
-        self.save_quiz_to_file(quiz_response, filename)
+        Parameters:
+            num_questions (int): Number of questions to generate.
+            quiz_type (str): Type of quiz, e.g., "Multiple-choice".
+            quiz_context (str): The context or topic for the quiz.
+            next_topic (str): The next topic to be addressed in the course.
+
+        Returns:
+            str: The generated quiz content in JSON format.
+    """
+    def generate_quiz(self, num_questions, quiz_type, quiz_context, next_topic):
+
+        quiz_filename = os.path.join(self.quiz_dir, f'{quiz_context.replace(" ", "_")}_quiz.json')
+        if os.path.exists(quiz_filename):
+            print(f"Quiz for topic '{quiz_context}' already exists. Skipping generation.")
+            with open(quiz_filename, 'r') as file:
+                return file.read()
+
+        print(f"Generating quiz for topic '{quiz_context}'...")
+        quiz_response = self.chain.run(
+            num_questions=num_questions, quiz_type=quiz_type, quiz_context=quiz_context, next_topic=next_topic)
+        self.save_quiz_to_file(quiz_response, quiz_filename)
         return quiz_response
 
+    """
+    Saves the generated quiz to a file in JSON format.
+
+        Parameters:
+            quiz_response (str): The quiz content in JSON format.
+            filename (str): The name of the file to save the quiz content.
+    """
     def save_quiz_to_file(self, quiz_response, filename):
-        # Save the quiz to a JSON file
         try:
             json_data = json.loads(quiz_response)
         except json.JSONDecodeError as e:
@@ -102,21 +115,7 @@ class QuizGenerator:
         with open(filename, 'w') as file:
             json.dump(json_data, file, indent=4)
 
-    @property
-    def get_llm(self):
-        return self.llm
 
-    @property
-    def get_template(self):
-        return self.template
-
-'''
-# Example usage
-if __name__ == "__main__":
-    quiz_gen = QuizGenerator()
-    quiz_response = quiz_gen.generate_quiz(5, "multiple-choice", "Software Development")
-
-'''
 ''' - For True/false questions:
 
         {{
@@ -148,5 +147,4 @@ if __name__ == "__main__":
             "answer": "Detailed answer here"
             }}
         ]
-        }}
-        '''
+        }}'''

@@ -3,26 +3,26 @@
     "quizContext": "Working with Sets",
     "questions": [
         {
-            "education": "Sets are collections of distinct elements. In mathematics, sets are often denoted by curly braces {}. When working with sets, it is important to understand operations such as union, intersection, and difference.",
-            "question": "What is the result of the union of two sets A and B?",
+            "education": "A set is a collection of distinct objects, considered as an object in its own right. Sets are fundamental in mathematics and have applications in various fields. In set theory, the objects in a set are called elements. Sets can be represented using curly braces { } and listing the elements separated by commas. For example, the set of even numbers less than 10 can be written as {2, 4, 6, 8}.",
+            "question": "What is the intersection of two sets?",
             "options": {
-                "a": "The set of all elements that are in A or B, or both",
-                "b": "The set of all elements that are in both A and B",
-                "c": "The set of all elements that are only in A but not in B",
-                "d": "The set of all elements that are in A and not in B"
-            },
-            "correctAnswer": "a"
-        },
-        {
-            "education": "When working with sets, the intersection operation results in a new set that contains only the elements that are common to both sets. This operation is denoted by the symbol \u2229.",
-            "question": "What is the result of the intersection of two sets A and B?",
-            "options": {
-                "a": "The set of all elements that are in A or B, or both",
-                "b": "The set of all elements that are in both A and B",
-                "c": "The set of all elements that are only in A but not in B",
-                "d": "The set of all elements that are in A and not in B"
+                "a": "The union of the two sets",
+                "b": "The elements that are common to both sets",
+                "c": "The elements that are only in one of the sets",
+                "d": "The difference between the two sets"
             },
             "correctAnswer": "b"
+        },
+        {
+            "education": "In set theory, the complement of a set is the set of all elements in the universal set that are not in the given set. The universal set is the set of all possible elements under consideration. The complement of a set A is denoted by A'. For example, if the universal set is the set of integers and A is the set of even numbers, then A' would be the set of odd numbers.",
+            "question": "What is the complement of a set?",
+            "options": {
+                "a": "The union of the set with the universal set",
+                "b": "The intersection of the set with the universal set",
+                "c": "The set of all elements not in the given set",
+                "d": "The set of all elements in the given set"
+            },
+            "correctAnswer": "c"
         }
     ],
     "nextTopic": "No more topics"

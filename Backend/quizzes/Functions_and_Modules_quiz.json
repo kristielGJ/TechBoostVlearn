@@ -3,27 +3,27 @@
     "quizContext": "Functions and Modules",
     "questions": [
         {
-            "education": "In programming, functions are blocks of code that perform a specific task. They are reusable and help in organizing code. Modules, on the other hand, are files that contain related functions, classes, and variables. They help in organizing code into separate files for better maintainability and reusability.",
-            "question": "What is a function in programming?",
+            "education": "In programming, functions are blocks of code that perform a specific task. They can take input, perform computations, and return output. Functions help in organizing code, making it reusable and easier to understand. Modules, on the other hand, are files that contain Python code. They can define functions, classes, and variables that can be used in other Python files by importing the module. Modules help in organizing code into separate files for better maintainability and reusability.",
+            "question": "What is the purpose of functions in programming?",
             "options": {
-                "a": "A block of code that performs a specific task",
-                "b": "A file that contains related functions and variables",
-                "c": "A data structure that stores values",
-                "d": "A programming language"
+                "a": "To perform a specific task",
+                "b": "To define variables",
+                "c": "To import modules",
+                "d": "To organize code into files"
             },
             "correctAnswer": "a"
         },
         {
-            "education": "Functions can be defined and called in programming languages. When a function is defined, it specifies what the function does. When a function is called, the code inside the function is executed. Modules help in organizing functions and variables into separate files, making code more manageable.",
-            "question": "What is the purpose of modules in programming?",
+            "education": "When working with modules in Python, you can import them using the 'import' keyword followed by the module name. This allows you to access the functions, classes, and variables defined in the module. By importing modules, you can reuse code across different Python files and projects, making your code more modular and maintainable.",
+            "question": "How can you use modules in Python?",
             "options": {
-                "a": "To define functions",
-                "b": "To organize code into separate files",
-                "c": "To store data values",
-                "d": "To execute code"
+                "a": "By defining functions",
+                "b": "By using the 'import' keyword",
+                "c": "By organizing code into files",
+                "d": "By writing comments"
             },
             "correctAnswer": "b"
         }
     ],
-    "nextTopic": "No more topics"
+    "nextTopic": "Working with Lists and Dictionaries"
 }

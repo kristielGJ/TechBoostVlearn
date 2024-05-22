@@ -3,27 +3,27 @@
     "quizContext": "Exception Handling",
     "questions": [
         {
-            "education": "Exception handling is a programming concept that deals with how to handle unexpected or exceptional situations that may occur during the execution of a program. These exceptions can be caused by various factors such as invalid input, hardware failures, or network issues. By using exception handling mechanisms, programmers can gracefully handle these situations and prevent the program from crashing.",
-            "question": "What is the purpose of exception handling in programming?",
+            "education": "Exception handling is a mechanism to handle runtime errors in a program. When an exception occurs, the program execution is transferred to a specific block of code known as the 'exception handler'. This allows the program to gracefully handle errors and prevent abrupt termination. There are different types of exceptions such as checked exceptions and unchecked exceptions.",
+            "question": "What is the purpose of exception handling?",
             "options": {
-                "a": "To crash the program",
-                "b": "To ignore errors",
-                "c": "To handle unexpected situations",
-                "d": "To speed up program execution"
+                "a": "To ignore errors and continue execution",
+                "b": "To gracefully handle errors and prevent abrupt termination",
+                "c": "To introduce bugs in the program",
+                "d": "To slow down the program execution"
             },
-            "correctAnswer": "c"
+            "correctAnswer": "b"
         },
         {
-            "education": "In most programming languages, exception handling is implemented using try-catch blocks. The try block contains the code that may throw an exception, while the catch block is used to handle the exception if it occurs. Additionally, programmers can also use finally blocks to execute code that should always run, regardless of whether an exception is thrown or not.",
-            "question": "Which block is used to handle exceptions in most programming languages?",
+            "education": "In exception handling, the 'try-catch' block is commonly used. The 'try' block contains the code that may throw an exception, and the 'catch' block handles the exception if it occurs. Additionally, there is an optional 'finally' block that is executed regardless of whether an exception is thrown or not. This block is used for cleanup tasks like closing files or releasing resources.",
+            "question": "What is the purpose of the 'finally' block in exception handling?",
             "options": {
-                "a": "if-else",
-                "b": "switch-case",
-                "c": "try-catch",
-                "d": "for loop"
+                "a": "To handle exceptions",
+                "b": "To ignore errors",
+                "c": "To execute cleanup tasks regardless of exceptions",
+                "d": "To slow down the program execution"
             },
             "correctAnswer": "c"
         }
     ],
-    "nextTopic": "No more topics"
+    "nextTopic": "Object-Oriented Programming (OOP)"
 }
