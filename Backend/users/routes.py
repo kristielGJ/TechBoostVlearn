@@ -31,6 +31,17 @@ def user_create():
  
     return jsonify({"message": "User created"})  # Optional message for GET
 
+
+@users.route('/users/<int:user_id>', methods=['GET'])
+def user_get(user_id):
+    try:
+        user = User.query.get(user_id)
+        if not user:
+            return jsonify({'error': 'User not found'}), 404
+        return jsonify(user.serialize()), 200
+    except:
+        return jsonify({'error': 'Cannot get user'}), 500
+
 @users.route('/users/update/<int:user_id>', methods=['PUT'])
 def user_update(user_id):
     try:
@@ -52,13 +63,10 @@ def user_delete(user_id):
 
     try:
         user = User.query.get(user_id)
-
         if not user:
             return jsonify({'error': 'User not found'}), 404
-    
         db.session.delete(user)
         db.session.commit()
-
         return jsonify({'success': 'User and associated user role deleted'}), 200
     except:
         return jsonify({'error': 'Cannot delete user'}), 500
