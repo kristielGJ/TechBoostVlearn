@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from model import User
+from model import User, EnrolledCourse
 from database import db
 
 
@@ -70,3 +70,15 @@ def user_delete(user_id):
         return jsonify({'success': 'User and associated user role deleted'}), 200
     except:
         return jsonify({'error': 'Cannot delete user'}), 500
+
+@users.route('/users/<int:user_id>/courses', methods=['GET'])
+def user_courses_get(user_id):
+    try:
+        user = User.query.get(user_id)
+        if not user:
+            return jsonify({'error': 'User not found'}), 404
+        courses = user.enrolled_courses
+        course_data = [course.serialize() for course in courses]
+        return jsonify(course_data), 200
+    except:
+        return jsonify({'error': 'Cannot get user courses'}), 500

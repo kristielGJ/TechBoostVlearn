@@ -3,6 +3,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from database import db
 
 enrollment = db.Table('enrollment',
+    db.Column('user_id', db.Integer, db.ForeignKey('users.id'), primary_key=True),
     db.Column('enrolled_course_id', db.Integer, db.ForeignKey('enrolled_courses.id'), primary_key=True),
 )
 
