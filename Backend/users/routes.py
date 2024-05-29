@@ -1,4 +1,5 @@
 from flask import Blueprint, jsonify, request
+from flask_jwt_extended import jwt_required
 from model import User, EnrolledCourse
 from database import db
 import os.path

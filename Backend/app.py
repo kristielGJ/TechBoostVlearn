@@ -29,7 +29,6 @@ Press CTRL+C to quit
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity
-from hashing import bcrypt
 from dotenv import load_dotenv
 import os
 from cv_parser import CVParser
