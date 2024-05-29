@@ -20,10 +20,19 @@ def user_list_get():
 @users.route("/users/create", methods=["GET", "POST"])
 def user_create():
     if request.method == "POST":
-        user = User(
-            username=request.form["username"],
-            email=request.form["email"],
-            password=request.form["password"]
+        username=request.form["username"]
+        email=request.form["email"]
+        password = request.form["password"]
+        if not username or not email or not password:
+            return jsonify({"message": "Missing username, email, or password"}), 400
+        if User.query.filter_by(username=username).first():
+            return jsonify({"message": "Username already exists"}), 400
+        if User.query.filter_by(email=email).first():
+            return jsonify({"message": "Email already exists"}), 400
+        
+        user = User(username=username, 
+                    email=email, 
+                    password=password            
         )
         db.session.add(user)
         db.session.commit()
