@@ -7,9 +7,9 @@ import axios from 'axios';
 import { useDropzone } from 'react-dropzone'
 
 
-const CourseGenerator = ({ className }) => {
+const CourseGenerator = ({ className, callback }) => {
   const [cvFile, setCvFile] = useState(null);
-  const [cvText, setCvText] = useState('');
+  //const [cvText, setCvText] = useState('');
   const [error, setError] = useState(null);
   const [detectedSkills, setDetectedSkills] = useState([]);
   const [skillRatings, setSkillRatings] = useState({});
@@ -29,6 +29,11 @@ const CourseGenerator = ({ className }) => {
       'application/pdf': ['.pdf']
     }
   })
+
+  const handleRatingSubmit =(event) =>{
+    event.preventDefault();
+    callback(skillRatings);
+} 
 
   // const handleCVUpload = (event) => {
   //   setCvFile(event.target.files[0]);
@@ -51,7 +56,7 @@ const CourseGenerator = ({ className }) => {
 
       // Update state with detected skills
       setDetectedSkills(skills);
-      setCvText(text);
+     // setCvText(text);
     } catch (error) {
       console.error('Error detecting skills:', error);
       setError('Error detecting skills. Please try again.');
@@ -96,11 +101,9 @@ const CourseGenerator = ({ className }) => {
   };
 
   return (
-    <div >
-
-
-      <div className='grid grid-cols-4'>
-        <h2 className="text-3xl font-bold text-center text-white col-span-4">Upload your CV</h2>
+    <div className=' flex flex-col justify-start w-screen' >
+      <div className='flex flex-col '>
+        <h2 className="text-3xl font-bold text-center text-white ">Upload your CV</h2>
         <div {...getRootProps({
           className: className
         })}>
@@ -110,16 +113,11 @@ const CourseGenerator = ({ className }) => {
               <p>Drop the files here ...</p> :
               <p>Drag 'n' drop your CV as a PDF, or click to select files</p>
           }
-
-
-
-
         </div>
-        <div className="flex flex-row col-start-2 col-end-4 items-center mt-5" >
-          <div >
-            <button className="boarder rounded-full text-white  bg-black min-h-10 min-w-60 " onClick={handleGenerateRecommendations}>Generate Recommendations</button>
-          </div>
-          {cvFile && (<p className='text-right col-span-1 ml-3'>{cvFile.name}</p>)}
+        <div className="flex flex-row items-center justify-center mt-7" >
+          
+            <button className="btn-black " onClick={handleGenerateRecommendations}>Generate Recommendations</button>
+          {cvFile && (<p className='text-right  ml-3'>{cvFile.name}</p>)}
         </div>
       </div>
 
@@ -128,34 +126,41 @@ const CourseGenerator = ({ className }) => {
 
       {error && <p>{error}</p>}
 
-
-      {cvText && (
+        <div>
+      {/*cvText && (
         <div className="mt-7">
           <h2 className={"text-white"}>PDF Text:</h2>
           <pre className='text-pretty'>{cvText}</pre>
         </div>
-      )}
+      )*/}
+
       {detectedSkills && detectedSkills.length > 0 ? (
-        <div className="grid grid-cols-2">
-          <div>
-            <h2 className={"text-white"}>Skills Found:</h2>
-            <p > Please  rank your skill level</p>
+        <div className="flex flex-row mt-10">
+          <div className='pl-10 w-1/2'>
+            <p  className='text-2xl font-bold text-white mb-5'> Please rank your skills :</p>
+            <form onSubmit={handleRatingSubmit}>
             {detectedSkills.map((skill, index) => (
-              <div className="grid grid-cols-2 mb-3"key={index}>
+              <div className="grid grid-cols-2 mb-3 pl-5"key={index}>
                 <label>{skill}:</label>
                 <input
+                  id={skill}
                   className='w-10'
                   type="number"
                   min="1"
                   max="5"
                   value={skillRatings[skill] || ''}
                   onChange={(e) => handleSkillRatingChange(skill, parseInt(e.target.value))}
+                  required
                 />
               </div>
             ))}
+                <div className='flex justify-center items-center'>
+                  <button className="btn-black" type="submit"> Submit Ratings</button>
+                </div>
+            </form>
           </div>
           <div>
-            <h2 className={"text-white"}> Detected Course:</h2>
+            <h2 className={"text-2xl font-bold text-white mb-5"}> Detected Course:</h2>
             <ul>
               {genCourse.map((course, index) => (
                 <li key={index}>{course}</li>
@@ -166,7 +171,11 @@ const CourseGenerator = ({ className }) => {
       ) : (
         <p> </p>
       )}
+
+
+      </div>
     </div>
+
   );
 };
 

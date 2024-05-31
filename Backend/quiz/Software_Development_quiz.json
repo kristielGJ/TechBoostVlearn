@@ -1,0 +1,56 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Software Development",
+    "questions": [
+        {
+            "question": "What is the purpose of version control in software development?",
+            "options": {
+                "a": "To track changes in code",
+                "b": "To ensure code quality",
+                "c": "To test software performance",
+                "d": "To design user interfaces"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "Which programming language is commonly used for web development?",
+            "options": {
+                "a": "Java",
+                "b": "Python",
+                "c": "HTML/CSS",
+                "d": "C++"
+            },
+            "correctAnswer": "c"
+        },
+        {
+            "question": "What is the purpose of unit testing in software development?",
+            "options": {
+                "a": "To test the entire software system",
+                "b": "To test individual units or components",
+                "c": "To deploy the software to production",
+                "d": "To design the user interface"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "question": "What is the Agile methodology in software development known for?",
+            "options": {
+                "a": "Strict adherence to a fixed plan",
+                "b": "Continuous iteration and improvement",
+                "c": "Long development cycles",
+                "d": "Limited communication with stakeholders"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "question": "What is the purpose of a software design pattern?",
+            "options": {
+                "a": "To create unique software solutions",
+                "b": "To standardize common solutions to recurring problems",
+                "c": "To slow down the development process",
+                "d": "To increase software complexity"
+            },
+            "correctAnswer": "b"
+        }
+    ]
+}

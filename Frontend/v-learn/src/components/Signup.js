@@ -19,10 +19,10 @@ const SignUpForm = ({callback}) =>{
                 E-mail
             </label>
             <input
-                id="password"
-                type="password"
+                id="email"
+                type="text"
                 className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
-                value={password}
+                value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
             />
@@ -58,10 +58,10 @@ const SignUpForm = ({callback}) =>{
                 Repeat Password
             </label>
             <input
-                id="password"
+                id="password2"
                 type="password"
                 className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
-                value={password}
+                value={passwordTwo}
                 onChange={(e) => setPasswordTwo(e.target.value)}
                 required
             />

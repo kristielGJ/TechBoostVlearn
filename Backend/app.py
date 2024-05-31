@@ -32,6 +32,7 @@ from flask_cors import CORS
 from cv_parser import CVParser
 from course_generator import CourseGenerator
 from database import db
+from generate_quiz import QuizGenerator
 
 app = Flask(__name__)
 CORS(app)  # Allow CORS for all routes
@@ -46,7 +47,7 @@ with app.app_context():
     from model import User
     db.create_all()
 
-
+quiz_gen = QuizGenerator()
 
 @app.route('/detect_skills', methods=['POST'])
 def detect_skills():
@@ -111,10 +112,24 @@ def user_delete(user_id):
 
 @app.route('/quiz', methods=['GET'])
 def get_quiz():
-    # we receive the topics selected by the user and user rating from the front end
-    with open ("quiz_data.json","r") as file:
-        result=json.load(file)
-    return jsonify(result)
+   
+    skill = request.args.get('skill')
+    rating = request.args.get('rating')
+
+    if skill is None or rating is None:
+        return jsonify({"error": "Both value1 and value2 are required"}), 400
+        
+    try:
+        quiz_response = quiz_gen.generate_quiz(5, "Multiple-choice", skill)
+        return jsonify(json.loads(quiz_response))
+    except Exception as e:    
+        with open ("quiz_data.json","r") as file:
+            result=json.load(file)
+        return jsonify(result)
+
+
+
+
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True) # In some cases you may get errors, try changing the port number if your app is not working

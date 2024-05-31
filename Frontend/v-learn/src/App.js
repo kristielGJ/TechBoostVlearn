@@ -8,6 +8,7 @@ import LeaderBoardPage from './pages/LeaderboardPage';
 import Quiz from './pages/Quiz';
 import LoginPage from './pages/LoginPage';
 import { useState } from 'react';
+import Quizzes from './pages/QuizPage';
 
 function App() {
   const [loggedIn,setLoggedIn] = useState(false);
@@ -30,7 +31,8 @@ function App() {
           <Route path="/learn" element={<LearnPage />}/>
           <Route path="/profile" element={<ProfilePage />}/>
           <Route path="/leaderboard" element={<LeaderBoardPage />}/>
-          <Route path="/quiz" element={<Quiz topic={"Python"}/>}/>
+          <Route path="/quiz:id" element={<Quiz topic={"python"}/>}/>
+          <Route path="/quizzes" element={<Quizzes/>}/>
           <Route path="/login" element={<LoginPage callback={loginHandle}/>}/>
         </Routes>
       </div>

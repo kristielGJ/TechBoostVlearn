@@ -1,16 +1,34 @@
 import CourseGenerator from "../components/CourseGenerator"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+
 
 const LearnPage = () => {
+    const navigate = useNavigate();
+
+
+    const handle = (skills) => {
+        console.log("found", skills);
+        const advancedSkills = Object.fromEntries(
+            Object.entries(skills).filter(([key, value]) => value >= 3)
+        );
+        const beginnerSkills = Object.fromEntries(
+            Object.entries(skills).filter(([key, value]) => value < 3)
+        );
+        const arrayfromList = Object.keys(advancedSkills)
+        if (arrayfromList.length > 0) {
+            navigate("/quizzes", { state: { skill: advancedSkills } });
+        } else {
+            //TODO PUSH VALUES TO BACKEND
+            console.log("No Quiz Needed")
+        }
+    }
+
     return (
-        <div className="grid grid-cols-5 min-h-screen bg-gradient-to-br from-vf-red to-red-600 ">
-            <div className="col-span-3">
-                <CourseGenerator className="col-span-4 p-16 mx-auto  mt-10 boarder rounded boarder-neutral-200 bg-white w-6/12 text-center align-center" />
+        <div className="flex flex-col min-h-screen bg-gradient-to-br from-vf-red to-red-600 ">
+            <div className="flex flex-row  justify-center items-center">
+                <CourseGenerator callback={handle} className="flex p-16 mx-auto  mt-10 boarder rounded boarder-neutral-200 bg-white h-1/2 text-center align-center" />
             </div>
-            <Link to="/quiz" className="col-span-3">
-                <button> Press Me </button>
-            </Link>
-            
+
         </div>
     )
 }
