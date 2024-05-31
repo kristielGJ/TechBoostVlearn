@@ -1,0 +1,29 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Working with Strings",
+    "questions": [
+        {
+            "education": "Strings are a sequence of characters, such as letters, numbers, and symbols. In programming, strings are often used to store and manipulate text data. Working with strings involves various operations like concatenation, splitting, and searching for specific characters or substrings.",
+            "question": "Which method is used to concatenate two strings in Python?",
+            "options": {
+                "a": "join()",
+                "b": "concat()",
+                "c": "merge()",
+                "d": "append()"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "education": "In programming, indexing is a common way to access individual characters in a string. Indexing starts at 0 for the first character and goes up sequentially. For example, the string 'hello' has 'h' at index 0 and 'o' at index 4.",
+            "question": "What is the character at index 2 in the string 'programming'?",
+            "options": {
+                "a": "o",
+                "b": "g",
+                "c": "r",
+                "d": "a"
+            },
+            "correctAnswer": "c"
+        }
+    ],
+    "nextTopic": "Working with Sets"
+}

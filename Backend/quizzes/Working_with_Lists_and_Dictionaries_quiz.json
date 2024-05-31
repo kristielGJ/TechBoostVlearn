@@ -1,0 +1,29 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Working with Lists and Dictionaries",
+    "questions": [
+        {
+            "education": "Lists and dictionaries are fundamental data structures in programming. Lists are ordered collections of items that can be of different data types. Dictionaries, on the other hand, are unordered collections of key-value pairs. In Python, lists are defined using square brackets [] and dictionaries using curly braces {}. Lists are indexed starting from 0, while dictionaries are accessed using keys. Understanding how to work with lists and dictionaries is essential for efficient data manipulation and storage.",
+            "question": "What is the correct way to define a list in Python?",
+            "options": {
+                "a": "Using parentheses ()",
+                "b": "Using square brackets []",
+                "c": "Using curly braces {}",
+                "d": "Using angle brackets <>"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "education": "Lists and dictionaries offer different functionalities in programming. While lists are suitable for storing ordered collections of items, dictionaries excel in storing key-value pairs for efficient data retrieval. It is important to understand the differences between lists and dictionaries to choose the appropriate data structure for a given task.",
+            "question": "Which data structure is best suited for storing key-value pairs in Python?",
+            "options": {
+                "a": "Lists",
+                "b": "Tuples",
+                "c": "Dictionaries",
+                "d": "Sets"
+            },
+            "correctAnswer": "c"
+        }
+    ],
+    "nextTopic": "File Handling"
+}

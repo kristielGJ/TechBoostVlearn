@@ -29,25 +29,52 @@ Press CTRL+C to quit
 import json
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity
+from dotenv import load_dotenv
+import os
 from cv_parser import CVParser
 from course_generator import CourseGenerator
 from database import db
 from generate_quiz import QuizGenerator
+from users.routes import users
+from auth.routes import auth
 
 app = Flask(__name__)
+app.register_blueprint(users)
+app.register_blueprint(auth)
 CORS(app)  # Allow CORS for all routes
 
-# configure the SQLite database, relative to the app instance folder
+# configure the SQLite database, and JWT keys
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
+
+load_dotenv()
+
+jwt_secret_key = os.getenv("JWT_SECRET_KEY")
+secret_key = os.getenv("SECRET_KEY")
+
+if jwt_secret_key is None or secret_key is None:
+    print("Please set the JWT_SECRET_KEY and SECRET_KEY environment variables")
+    exit(1)
+
+app.config["SECRET_KEY"] = jwt_secret_key
+app.config["JWT_SECRET_KEY"] = secret_key
+app.config["JWT_TOKEN_LOCATION"] = ["headers"]
 
 # initialize the app with the extension
 db.init_app(app)
+jwt = JWTManager(app)
 
 with app.app_context():
     from model import User
     db.create_all()
 
 quiz_gen = QuizGenerator()
+
+@app.route('/protected', methods=['GET'])
+@jwt_required()
+def protected():
+    current_user = get_jwt_identity()
+    return jsonify(logged_in_as=current_user), 200
 
 @app.route('/detect_skills', methods=['POST'])
 def detect_skills():
@@ -75,40 +102,6 @@ def display_course():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-@app.route("/users")
-def user_list():
-    users = db.session.query(User).order_by(User.username).all()
-    # Convert user objects to dictionaries
-    user_data = [user.serialize() for user in users]
-    return jsonify(user_data)
- 
-@app.route("/users/create", methods=["GET", "POST"])
-def user_create():
-    if request.method == "POST":
-        user = User(
-            username=request.form["username"],
-            email=request.form["email"],
-            password=request.form["password"]
-        )
-        db.session.add(user)
-        db.session.commit()
-        # Return user data as JSON
-        return jsonify(user.serialize())
- 
-    return jsonify({"message": "User created"})  # Optional message for GET
-
-@app.route('/users/<int:user_id>', methods=['DELETE'])
-def user_delete(user_id):
-
-    user = User.query.get(user_id)
-
-    if not user:
-        return jsonify({'error': 'User not found'})
- 
-    db.session.delete(user)
-    db.session.commit()
-
-    return jsonify({'success': 'User and associated user role deleted'})
 
 @app.route('/quiz', methods=['GET'])
 def get_quiz():

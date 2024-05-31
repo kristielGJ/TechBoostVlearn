@@ -1,0 +1,29 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Exception Handling",
+    "questions": [
+        {
+            "education": "Exception handling is a mechanism to handle runtime errors in a program. When an exception occurs, the program execution is transferred to a specific block of code known as the 'exception handler'. This allows the program to gracefully handle errors and prevent abrupt termination. There are different types of exceptions such as checked exceptions and unchecked exceptions.",
+            "question": "What is the purpose of exception handling?",
+            "options": {
+                "a": "To ignore errors and continue execution",
+                "b": "To gracefully handle errors and prevent abrupt termination",
+                "c": "To introduce bugs in the program",
+                "d": "To slow down the program execution"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "education": "In exception handling, the 'try-catch' block is commonly used. The 'try' block contains the code that may throw an exception, and the 'catch' block handles the exception if it occurs. Additionally, there is an optional 'finally' block that is executed regardless of whether an exception is thrown or not. This block is used for cleanup tasks like closing files or releasing resources.",
+            "question": "What is the purpose of the 'finally' block in exception handling?",
+            "options": {
+                "a": "To handle exceptions",
+                "b": "To ignore errors",
+                "c": "To execute cleanup tasks regardless of exceptions",
+                "d": "To slow down the program execution"
+            },
+            "correctAnswer": "c"
+        }
+    ],
+    "nextTopic": "Object-Oriented Programming (OOP)"
+}

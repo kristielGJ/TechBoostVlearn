@@ -1,0 +1,29 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Working with Variables and Data Types",
+    "questions": [
+        {
+            "education": "In programming, variables are used to store data that can be referenced and manipulated. Data types define the type of data that can be stored in a variable, such as integers, strings, or booleans. Understanding how to work with variables and data types is essential for writing efficient and effective code.",
+            "question": "What is the data type used to store whole numbers in programming?",
+            "options": {
+                "a": "Integer",
+                "b": "String",
+                "c": "Boolean",
+                "d": "Float"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "education": "Strings are used to store text data in programming. They are sequences of characters enclosed in single or double quotes. Manipulating strings is a common task when working with variables and data types.",
+            "question": "Which data type is used to store text data in programming?",
+            "options": {
+                "a": "Integer",
+                "b": "String",
+                "c": "Boolean",
+                "d": "Float"
+            },
+            "correctAnswer": "b"
+        }
+    ],
+    "nextTopic": "Control Flow and Loops"
+}

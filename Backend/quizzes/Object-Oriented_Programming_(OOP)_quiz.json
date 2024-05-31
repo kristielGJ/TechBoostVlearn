@@ -1,0 +1,29 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Object-Oriented Programming (OOP)",
+    "questions": [
+        {
+            "education": "Object-Oriented Programming (OOP) is a programming paradigm based on the concept of 'objects', which can contain data in the form of fields (attributes or properties) and code in the form of procedures (methods or functions). Objects are instances of classes, which define the structure and behavior of the objects. OOP promotes modularity, reusability, and extensibility in software development.",
+            "question": "What is an object in Object-Oriented Programming?",
+            "options": {
+                "a": "A variable that stores data",
+                "b": "An instance of a class that contains data and code",
+                "c": "A function that performs a specific task",
+                "d": "A conditional statement"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "education": "Inheritance is a key concept in Object-Oriented Programming that allows a class to inherit attributes and methods from another class. This promotes code reusability and helps in creating a hierarchy of classes. The derived class (subclass) inherits properties and behaviors from the base class (superclass) and can also have its own unique attributes and methods.",
+            "question": "What is inheritance in Object-Oriented Programming?",
+            "options": {
+                "a": "Copying code from one class to another",
+                "b": "Creating new objects from existing objects",
+                "c": "Allowing a class to inherit attributes and methods from another class",
+                "d": "Defining new classes based on existing classes"
+            },
+            "correctAnswer": "c"
+        }
+    ],
+    "nextTopic": "Working with Strings"
+}

@@ -8,6 +8,7 @@ if present the skill is linked to reccomendations that are then returned
 alongside the skill detected.
 
 WIP, could generate this section or put the dictionaries into a database.
+To do- correct skill detection and connect to course generation
 
 '''
 class ExtractSkills:

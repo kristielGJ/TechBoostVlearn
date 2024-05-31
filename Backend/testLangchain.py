@@ -1,5 +1,8 @@
 
-'''uses pip install jupyterlab python-dotenv langchain openai'''
+'''uses pip install jupyterlab python-dotenv langchain openai
+Author: Gera Jahja
+IGNORE THIS FILE, IT IS FOR TESTING CONCEPTS , NOT PART OF BACKEND FUNCTIONALITY
+'''
 import os
 from dotenv import load_dotenv
 import openai

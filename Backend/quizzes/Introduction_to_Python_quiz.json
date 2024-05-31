@@ -1,0 +1,29 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Introduction to Python",
+    "questions": [
+        {
+            "education": "Python is a high-level programming language known for its simplicity and readability. It is widely used in various fields such as web development, data science, artificial intelligence, and more. Python uses indentation to define code blocks, making it easy to read and understand. Let's test your knowledge with the following question:",
+            "question": "What is the output of the following code snippet?\n\nprint(3+5*2)",
+            "options": {
+                "a": "13",
+                "b": "16",
+                "c": "11",
+                "d": "10"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "education": "Python provides a rich set of built-in functions and libraries that make it powerful and versatile. One of the key features of Python is its dynamic typing, allowing variables to change types during execution. Let's see if you can answer the following question:",
+            "question": "Which of the following is a valid variable name in Python?",
+            "options": {
+                "a": "my_variable",
+                "b": "2nd_variable",
+                "c": "variable-3",
+                "d": "variable@4"
+            },
+            "correctAnswer": "a"
+        }
+    ],
+    "nextTopic": "Working with Variables and Data Types"
+}

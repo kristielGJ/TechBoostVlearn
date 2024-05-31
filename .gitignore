@@ -40,6 +40,7 @@ yarn-error.log*\
 Backend/.env
 Backend/instance/project.db
 Backend/__pycache__
+.env
 
 
 

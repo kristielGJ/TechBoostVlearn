@@ -3,8 +3,8 @@ from sqlalchemy.orm import Mapped, mapped_column
 from database import db
 
 enrollment = db.Table('enrollment',
+    db.Column('user_id', db.Integer, db.ForeignKey('users.id'), primary_key=True),
     db.Column('enrolled_course_id', db.Integer, db.ForeignKey('enrolled_courses.id'), primary_key=True),
-    db.Column('course_id', db.Integer, db.ForeignKey('courses.course_id'), primary_key=True)
 )
 
 
@@ -14,14 +14,16 @@ class User(db.Model):
     username = db.Column(db.String(255), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), unique=True, nullable=False)
+    total_score = db.Column(db.Integer)
     user_role = db.relationship('UserRole', back_populates='user', uselist=False, cascade="all, delete, delete-orphan")
     enrolled_courses = db.relationship('EnrolledCourse', back_populates='user', cascade="all, delete-orphan")
-
+    
     def serialize(self):
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            'total_score': self.total_score
         }
  
 class UserRole(db.Model):
@@ -41,7 +43,14 @@ class Role(db.Model):
 
 class EnrolledCourse(db.Model):
     __tablename__ = 'enrolled_courses'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.String(255), primary_key=True, unique=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    completion = db.Column(db.Float, nullable=False, default=0)
     user = db.relationship('User', back_populates='enrolled_courses')
+
+    def serialize(self):
+        return {
+            'id': self.id,
+            'completion': self.completion
+        }
  
