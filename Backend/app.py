@@ -27,11 +27,13 @@ Press CTRL+C to quit
  * Debugger PIN: 118-649-118
 '''
 import json
+import atexit
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity
 from dotenv import load_dotenv
 import os
+from initialiseDB import create_users_and_skills
 from cv_parser import CVParser
 from course_generator import CourseGenerator
 from database import db
@@ -69,6 +71,13 @@ jwt = JWTManager(app)
 with app.app_context():
     from model import User
     db.create_all()
+    try:
+        create_users_and_skills(app,db)
+    except Exception as error:
+         print(f"An error occurred while creating users and skills: {error}")
+
+
+
 
 quiz_gen = QuizGenerator()
 
@@ -122,6 +131,17 @@ def get_quiz():
             result=json.load(file)
         return jsonify(result)
 
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db.session.remove()
+
+def remove_db():
+    db_path = './instance/project.db'
+    if os.path.exists(db_path):
+        os.remove(db_path)
+        print(f'Database file {db_path} has been removed.')
+
+atexit.register(remove_db)
 
 
 

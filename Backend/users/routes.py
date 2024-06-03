@@ -10,7 +10,7 @@ users = Blueprint('users', __name__)
 @users.route("/users")
 def user_list_get():
     try:
-        users = db.session.query(User).order_by(User.username).all()
+        users = db.session.query(User).order_by(User.id).all()
         # Convert user objects to dictionaries
         user_data = [user.serialize() for user in users]
         return jsonify(user_data), 200
