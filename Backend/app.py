@@ -72,7 +72,7 @@ with app.app_context():
     from model import User
     db.create_all()
     try:
-        create_users_and_skills(app,db)
+        create_users_and_skills(app,db) #Adds 10 dummy users to database
     except Exception as error:
          print(f"An error occurred while creating users and skills: {error}")
 
