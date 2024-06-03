@@ -38,10 +38,12 @@ from database import db
 from generate_quiz import QuizGenerator
 from users.routes import users
 from auth.routes import auth
+from skills.routes import skills
 
 app = Flask(__name__)
 app.register_blueprint(users)
 app.register_blueprint(auth)
+app.register_blueprint(skills)
 CORS(app)  # Allow CORS for all routes
 
 # configure the SQLite database, and JWT keys
@@ -52,9 +54,9 @@ load_dotenv()
 jwt_secret_key = os.getenv("JWT_SECRET_KEY")
 secret_key = os.getenv("SECRET_KEY")
 
-if jwt_secret_key is None or secret_key is None:
-    print("Please set the JWT_SECRET_KEY and SECRET_KEY environment variables")
-    exit(1)
+# if jwt_secret_key is None or secret_key is None:
+#     print("Please set the JWT_SECRET_KEY and SECRET_KEY environment variables")
+#     exit(1)
 
 app.config["SECRET_KEY"] = jwt_secret_key
 app.config["JWT_SECRET_KEY"] = secret_key

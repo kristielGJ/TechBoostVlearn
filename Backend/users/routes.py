@@ -14,8 +14,8 @@ def user_list_get():
         # Convert user objects to dictionaries
         user_data = [user.serialize() for user in users]
         return jsonify(user_data), 200
-    except:
-        return jsonify({"message": "Cannot get all users"}), 500
+    except Exception as e:
+        return jsonify({"message":str(e)}), 500
 
  
 @users.route("/users/create", methods=["GET", "POST"])
