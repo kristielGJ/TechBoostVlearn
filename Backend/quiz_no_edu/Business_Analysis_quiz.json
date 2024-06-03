@@ -1,0 +1,56 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Test your knowledge on Business Analysis",
+    "questions": [
+        {
+            "question": "What is the primary goal of business analysis?",
+            "options": {
+                "a": "To increase profits",
+                "b": "To reduce costs",
+                "c": "To identify business needs and find solutions",
+                "d": "To create marketing campaigns"
+            },
+            "correctAnswer": "c"
+        },
+        {
+            "question": "Which of the following is NOT a task typically performed by a business analyst?",
+            "options": {
+                "a": "Gathering requirements",
+                "b": "Developing software code",
+                "c": "Analyzing data",
+                "d": "Creating process models"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "question": "What is SWOT analysis used for in business analysis?",
+            "options": {
+                "a": "To analyze competitors",
+                "b": "To assess internal strengths and weaknesses, and external opportunities and threats",
+                "c": "To create financial reports",
+                "d": "To track project progress"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "question": "Which technique is commonly used to prioritize requirements in business analysis?",
+            "options": {
+                "a": "MoSCoW method",
+                "b": "Agile methodology",
+                "c": "Six Sigma",
+                "d": "Waterfall approach"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "What is the purpose of a business case in business analysis?",
+            "options": {
+                "a": "To justify the investment in a project",
+                "b": "To document meeting minutes",
+                "c": "To create a project schedule",
+                "d": "To design user interfaces"
+            },
+            "correctAnswer": "a"
+        }
+    ]
+}

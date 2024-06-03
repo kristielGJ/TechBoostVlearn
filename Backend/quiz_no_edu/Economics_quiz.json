@@ -1,0 +1,56 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Economics",
+    "questions": [
+        {
+            "question": "What is the basic economic problem?",
+            "options": {
+                "a": "Scarcity",
+                "b": "Abundance",
+                "c": "Equality",
+                "d": "Efficiency"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "Which of the following is not a factor of production?",
+            "options": {
+                "a": "Land",
+                "b": "Labor",
+                "c": "Money",
+                "d": "Capital"
+            },
+            "correctAnswer": "c"
+        },
+        {
+            "question": "What does GDP stand for?",
+            "options": {
+                "a": "Gross Domestic Product",
+                "b": "General Demand Projection",
+                "c": "Government Development Plan",
+                "d": "Global Distribution Process"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "What is inflation?",
+            "options": {
+                "a": "Decrease in the general price level",
+                "b": "Increase in the general price level",
+                "c": "Stable prices over time",
+                "d": "No change in prices"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "question": "What is the law of demand?",
+            "options": {
+                "a": "As price increases, quantity demanded decreases",
+                "b": "As price increases, quantity demanded increases",
+                "c": "As price decreases, quantity demanded decreases",
+                "d": "As price decreases, quantity demanded increases"
+            },
+            "correctAnswer": "a"
+        }
+    ]
+}

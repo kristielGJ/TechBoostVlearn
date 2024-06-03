@@ -3,7 +3,7 @@ const ProfileInfo = () => {
     return (
         <div className="bg-white bg-opacity-70 rounded-lg min-h-80  drop-shadow-2xl shadow-red-100 flex flex-row align-center  items-center">
             <div className="pl-10 ">
-                <img src={avatar} alt="avatar" className="border rounded-full w-50 h-50" />
+                <img src={avatar} alt="avatar" className="border rounded-full w-40 h-40" />
             </div>
             <div className="ml-10 ">
                 <div className="flex flex-row">

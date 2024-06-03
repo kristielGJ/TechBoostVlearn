@@ -1,0 +1,56 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Test your knowledge on Cloud Computing",
+    "questions": [
+        {
+            "question": "What is Cloud Computing?",
+            "options": {
+                "a": "Storing data on physical servers",
+                "b": "Accessing and storing data over the internet",
+                "c": "Using floppy disks for data storage",
+                "d": "None of the above"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "question": "Which of the following is a benefit of Cloud Computing?",
+            "options": {
+                "a": "Increased security risks",
+                "b": "Limited scalability",
+                "c": "Cost savings",
+                "d": "Slow data access"
+            },
+            "correctAnswer": "c"
+        },
+        {
+            "question": "What is an example of a popular Cloud Computing service provider?",
+            "options": {
+                "a": "Microsoft Azure",
+                "b": "IBM Watson",
+                "c": "Oracle Database",
+                "d": "Adobe Creative Cloud"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "Which of the following is not a Cloud Computing deployment model?",
+            "options": {
+                "a": "Public Cloud",
+                "b": "Private Cloud",
+                "c": "Hybrid Cloud",
+                "d": "Local Cloud"
+            },
+            "correctAnswer": "d"
+        },
+        {
+            "question": "What is the main advantage of using Cloud Computing for businesses?",
+            "options": {
+                "a": "Limited accessibility",
+                "b": "High upfront costs",
+                "c": "Scalability and flexibility",
+                "d": "Slow data processing"
+            },
+            "correctAnswer": "c"
+        }
+    ]
+}

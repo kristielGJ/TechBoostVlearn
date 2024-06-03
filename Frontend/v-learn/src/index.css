@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn-black{
+        @apply  rounded-full text-white  bg-black min-h-10 min-w-60
+    }
+}

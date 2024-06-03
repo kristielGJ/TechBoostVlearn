@@ -14,7 +14,7 @@ class User(db.Model):
     username = db.Column(db.String(255), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), unique=True, nullable=False)
-    total_score = db.Column(db.Integer)
+    total_score = db.Column(db.Integer,default=0)
     user_role = db.relationship('UserRole', back_populates='user', uselist=False, cascade="all, delete, delete-orphan")
     enrolled_courses = db.relationship('EnrolledCourse', back_populates='user', cascade="all, delete-orphan")
     
@@ -24,6 +24,20 @@ class User(db.Model):
             'username': self.username,
             'email': self.email,
             'total_score': self.total_score
+        }
+
+class Skill(db.Model):
+    __tablename__ = 'skills'
+    
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key=True)
+    skill_name = db.Column(db.String(80), primary_key=True)
+    rating = db.Column(db.Integer, nullable=False)
+    
+    def serialize(self):
+        return {
+            'user_id': self.user_id,
+            'skill_name': self.skill_name,
+            'rating': self.rating
         }
  
 class UserRole(db.Model):

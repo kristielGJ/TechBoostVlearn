@@ -14,7 +14,7 @@ const Stage = (props) => {
                 </div>)
         case 1:
             return (
-                <div className="flex flex-row justify-center items-center bg-gray-400 shadow-lg rounded max-h-20 px-3 py-3">
+                <div className="flex flex-row justify-center items-center bg-gray-400 shadow-lg rounded max-h-20 min-w-min px-3 py-3">
                     <img className="max-h-20 max-w-20" src={goldmedal} alt="gold"></img>
                     <p className="text-right">{props.username}</p>
                 </div>)

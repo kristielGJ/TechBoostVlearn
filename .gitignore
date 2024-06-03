@@ -39,6 +39,7 @@ yarn-error.log*\
 *.pyc
 Backend/.env
 Backend/instance/project.db
+Backend/__pycache__
 .env
 
 

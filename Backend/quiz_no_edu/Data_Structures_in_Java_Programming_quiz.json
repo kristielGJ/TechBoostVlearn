@@ -1,11 +1,11 @@
 {
     "quizType": "Multiple-choice",
-    "quizContext": "Test your knowledge on Data Structures in Java Programming.",
+    "quizContext": "Test your knowledge on Data Structures in Java Programming",
     "questions": [
         {
             "question": "What is a data structure in Java?",
             "options": {
-                "a": "A way to store and organize data in memory",
+                "a": "A way to store and organize data",
                 "b": "A programming language",
                 "c": "A type of loop in Java",
                 "d": "A Java library"
@@ -16,8 +16,8 @@
             "question": "Which data structure is used to store elements in a sorted order in Java?",
             "options": {
                 "a": "Array",
-                "b": "Linked List",
-                "c": "Stack",
+                "b": "LinkedList",
+                "c": "HashMap",
                 "d": "TreeSet"
             },
             "correctAnswer": "d"
@@ -33,24 +33,24 @@
             "correctAnswer": "a"
         },
         {
-            "question": "Which data structure uses LIFO (Last In First Out) principle in Java?",
+            "question": "Which data structure uses LIFO (Last In First Out) order in Java?",
             "options": {
                 "a": "Queue",
                 "b": "Stack",
-                "c": "LinkedList",
-                "d": "HashMap"
+                "c": "Set",
+                "d": "Map"
             },
             "correctAnswer": "b"
         },
         {
-            "question": "What is the main advantage of using a HashMap in Java?",
+            "question": "What is the purpose of a HashMap in Java?",
             "options": {
-                "a": "Allows duplicate keys",
-                "b": "Maintains insertion order",
-                "c": "Provides constant-time performance for basic operations",
-                "d": "Automatically sorts elements"
+                "a": "To store elements in a sorted order",
+                "b": "To store key-value pairs",
+                "c": "To store elements in a stack",
+                "d": "To store elements in a queue"
             },
-            "correctAnswer": "c"
+            "correctAnswer": "b"
         }
     ]
 }

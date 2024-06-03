@@ -26,6 +26,7 @@ Press CTRL+C to quit
  * Debugger is active!
  * Debugger PIN: 118-649-118
 '''
+import json
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity
@@ -34,12 +35,15 @@ import os
 from cv_parser import CVParser
 from course_generator import CourseGenerator
 from database import db
+from generate_quiz import QuizGenerator
 from users.routes import users
 from auth.routes import auth
+from skills.routes import skills
 
 app = Flask(__name__)
 app.register_blueprint(users)
 app.register_blueprint(auth)
+app.register_blueprint(skills)
 CORS(app)  # Allow CORS for all routes
 
 # configure the SQLite database, and JWT keys
@@ -50,9 +54,9 @@ load_dotenv()
 jwt_secret_key = os.getenv("JWT_SECRET_KEY")
 secret_key = os.getenv("SECRET_KEY")
 
-if jwt_secret_key is None or secret_key is None:
-    print("Please set the JWT_SECRET_KEY and SECRET_KEY environment variables")
-    exit(1)
+# if jwt_secret_key is None or secret_key is None:
+#     print("Please set the JWT_SECRET_KEY and SECRET_KEY environment variables")
+#     exit(1)
 
 app.config["SECRET_KEY"] = jwt_secret_key
 app.config["JWT_SECRET_KEY"] = secret_key
@@ -66,6 +70,7 @@ with app.app_context():
     from model import User
     db.create_all()
 
+quiz_gen = QuizGenerator()
 
 @app.route('/protected', methods=['GET'])
 @jwt_required()
@@ -101,9 +106,25 @@ def display_course():
 
 
 @app.route('/quiz', methods=['GET'])
-def get_quiz(User_Skills, User_Rankings):
-    # we receive the topics selected by the user and user rating from the front end
-    return jsonify(User_Skills, User_Rankings)
+def get_quiz():
+   
+    skill = request.args.get('skill')
+    rating = request.args.get('rating')
+
+    if skill is None or rating is None:
+        return jsonify({"error": "Both value1 and value2 are required"}), 400
+        
+    try:
+        quiz_response = quiz_gen.generate_quiz(5, "Multiple-choice", skill)
+        return jsonify(json.loads(quiz_response))
+    except Exception as e:    
+        with open ("quiz_data.json","r") as file:
+            result=json.load(file)
+        return jsonify(result)
+
+
+
+
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True) # In some cases you may get errors, try changing the port number if your app is not working

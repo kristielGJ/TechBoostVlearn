@@ -1,0 +1,56 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Test your Math skills with these questions",
+    "questions": [
+        {
+            "question": "What is the value of pi (\u03c0) approximately?",
+            "options": {
+                "a": "3.14",
+                "b": "2.71",
+                "c": "1.62",
+                "d": "4.56"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "What is the result of 5 x 8?",
+            "options": {
+                "a": "40",
+                "b": "13",
+                "c": "25",
+                "d": "56"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "Solve for x: 2x + 5 = 11",
+            "options": {
+                "a": "3",
+                "b": "2",
+                "c": "6",
+                "d": "4"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "What is the square root of 64?",
+            "options": {
+                "a": "8",
+                "b": "6",
+                "c": "4",
+                "d": "10"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "What is the value of 3^4?",
+            "options": {
+                "a": "81",
+                "b": "12",
+                "c": "27",
+                "d": "64"
+            },
+            "correctAnswer": "d"
+        }
+    ]
+}
