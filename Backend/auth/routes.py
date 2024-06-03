@@ -13,12 +13,9 @@ def test():
 def login():
     email = request.form["email"]
     password = request.form["password"]
-    
-    print('Received data:', email, password)
-    
+        
     user = User.query.filter_by(email=email).first()
     
-    print(password, user.password)
     
     if user and (password == user.password):
         access_token = create_access_token(identity=email)
