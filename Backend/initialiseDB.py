@@ -4,17 +4,18 @@ from model import User, Skill
 def create_users_and_skills(app, db):
     with app.app_context():
         users_data = [
-            {"username": "john_doe", "email": "john.doe@vodafone.com", "password": "password1"},
-            {"username": "jane_smith", "email": "jane.smith@vodafone.com", "password": "password2"},
-            {"username": "alice_wonderland", "email": "alice.wonderland@vodafone.com", "password": "password3"},
-            {"username": "bob_carpenter", "email": "bob.carpenter@vodafone.com", "password": "password4"},
-            {"username": "emma_jones", "email": "emma.jones@vodafone.com", "password": "password5"},
-            {"username": "michael_scott", "email": "michael.scott@vodafone.com", "password": "password6"},
-            {"username": "pam_beesly", "email": "pam.beesly@vodafone.com", "password": "password7"},
-            {"username": "dwight_schrute", "email": "dwight.schrute@vodafone.com", "password": "password8"},
-            {"username": "stanley_hudson", "email": "stanley.hudson@vodafone.com", "password": "password9"},
-            {"username": "kevin_malone", "email": "kevin.malone@vodafone.com", "password": "password10"}
-        ]
+    {"username": "john_doe", "email": "john.doe@vodafone.com", "password": "password1", "jobs": "software engineer, devops engineer", "interests": "cloud computing, ai, machine learning, accounting"},
+    {"username": "jane_smith", "email": "jane.smith@vodafone.com", "password": "password2", "jobs": "network engineer, systems administrator", "interests": "big data, cybersecurity, accounting"},
+    {"username": "alice_wonderland", "email": "alice.wonderland@vodafone.com", "password": "password3", "jobs": "QA tester, product manager", "interests": "web development, blockchain, mobile development"},
+    {"username": "bob_carpenter", "email": "bob.carpenter@vodafone.com", "password": "password4", "jobs": "product manager, UX designer", "interests": "data analysis, accounting, machine learning"},
+    {"username": "emma_jones", "email": "emma.jones@vodafone.com", "password": "password5", "jobs": "database administrator, QA tester", "interests": "mobile development, ai, cloud computing"},
+    {"username": "michael_scott", "email": "michael.scott@vodafone.com", "password": "password6", "jobs": "product manager, systems administrator", "interests": "data analysis, blockchain, mobile development"},
+    {"username": "pam_beesly", "email": "pam.beesly@vodafone.com", "password": "password7", "jobs": "devops engineer, database administrator", "interests": "blockchain, ai, big data"},
+    {"username": "dwight_schrute", "email": "dwight.schrute@vodafone.com", "password": "password8", "jobs": "UX designer, data scientist", "interests": "data analysis, ai, mobile development"},
+    {"username": "stanley_hudson", "email": "stanley.hudson@vodafone.com", "password": "password9", "jobs": "network engineer, software engineer", "interests": "blockchain, machine learning, big data"},
+    {"username": "kevin_malone", "email": "kevin.malone@vodafone.com", "password": "password10", "jobs": "QA tester, systems administrator", "interests": "data analysis, cloud computing, web development"}
+    ]
+
 
         for user_data in users_data:
             user = User(**user_data)

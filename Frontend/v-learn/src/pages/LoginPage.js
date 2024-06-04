@@ -13,11 +13,23 @@ const LoginPage = ({callback}) => {
         setSignUpForm(!signUpForm);
     }
 
-    const loginHandler = (name,pass) => {
-        console.log('Username:', name);
-        console.log('Password:', pass);
-        callback(true)
-
+    const loginHandler = (email,pass) => {
+        const formData= new FormData();
+        formData.append("email", email)
+        formData.append("password", pass)
+        axios
+        .post('http://localhost:8000/auth/login',formData, {
+            headers: {
+            'Content-Type': 'multipart/form-data'
+            }})
+        .then((response)=>{
+            console.log(response)
+            if(response.status===HttpStatusCode.Ok){
+                callback(response.data.access_token,response.data.id)
+            }})
+        .catch((error) => {
+            console.log(error); })
+            
     };
 
     const signUpHandler = async (name,pass,email) => {

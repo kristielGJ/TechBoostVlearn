@@ -1,26 +1,26 @@
 import { useState } from "react";
 const LoginForm = ({callback}) =>{
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit =(event) =>
     {
         event.preventDefault();
-        callback(username,password)
+        callback(email,password)
     }
     
     return(
         <form onSubmit={handleSubmit} className="w-full">
             <div className="mb-4">
-                <label className=" mb-2 text-sm font-medium text-gray-700" htmlFor="username">
-                    Username
+                <label className=" mb-2 text-sm font-medium text-gray-700" htmlFor="email">
+                    E-mail
                 </label>
                 <input
-                    id="username"
+                    id="email"
                     type="text"
                     className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                 />
             </div>
