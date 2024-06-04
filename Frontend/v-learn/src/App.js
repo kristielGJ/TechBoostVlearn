@@ -11,13 +11,29 @@ import { useState } from 'react';
 import Quizzes from './pages/QuizPage';
 
 function App() {
-  const [loggedIn,setLoggedIn] = useState(false);
+  
+  const [loggedIn,setLoggedIn] = useState(
+    localStorage.getItem("access_token")!==null 
+  );
   const navigate = useNavigate();
+  console.log("AM I LOGGED IN:",loggedIn);
 
-  const loginHandle =()=>{
-    setLoggedIn(true)
-    navigate(`/`)
+  
+  const loginHandle =(access_token, id)=>{
+    localStorage.setItem('access_token', access_token)
+    localStorage.setItem('user_id', id)
+    setLoggedIn(true);
+    navigate("/")
   }
+
+  const handleLogout = () => {
+    localStorage.clear();
+    setLoggedIn(false)
+    navigate("/")
+};
+
+  
+
 
   return (
     <div>
@@ -29,7 +45,7 @@ function App() {
           <Route path="/" element={<WelcomePage />}/>
           <Route path="/" element={<LeaderBoardPage/>}/>
           <Route path="/learn" element={<LearnPage />}/>
-          <Route path="/profile" element={<ProfilePage />}/>
+          <Route path="/profile" element={<ProfilePage callback={handleLogout} />}/>
           <Route path="/leaderboard" element={<LeaderBoardPage />}/>
           <Route path="/quiz:id" element={<Quiz topic={"python"}/>}/>
           <Route path="/quizzes" element={<Quizzes/>}/>

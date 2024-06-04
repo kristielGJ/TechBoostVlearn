@@ -10,7 +10,7 @@ users = Blueprint('users', __name__)
 @users.route("/users")
 def user_list_get():
     try:
-        users = db.session.query(User).order_by(User.username).all()
+        users = db.session.query(User).order_by(User.id).all()
         # Convert user objects to dictionaries
         user_data = [user.serialize() for user in users]
         return jsonify(user_data), 200
@@ -64,13 +64,16 @@ def user_update(user_id):
             user.email = request.form.get('email', user.email)
             user.password = request.form.get('password', user.password)
             total_score = request.form.get('total_score')
+            user.jobs= request.form.get('jobs',user.jobs)
+            user.interests = request.form.get('interests',user.interests)
+            
             if total_score is not None:
                 user.total_score = total_score
             db.session.commit()
             return jsonify({'success': 'User updated'}), 200
         return jsonify({'message': 'Invalid request method'}), 405
-    except:
-        return jsonify({'error': 'Cannot update user'}), 500
+    except Exception as error:
+        return jsonify({'error': error}), 500
 
 @users.route('/users/<int:user_id>', methods=['DELETE'])
 def user_delete(user_id):

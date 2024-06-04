@@ -27,11 +27,13 @@ Press CTRL+C to quit
  * Debugger PIN: 118-649-118
 '''
 import json
+import atexit
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity
 from dotenv import load_dotenv
 import os
+from initialiseDB import create_users_and_skills
 from cv_parser import CVParser
 from course_generator import CourseGenerator
 from database import db
@@ -51,15 +53,13 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
 
 load_dotenv()
 
-jwt_secret_key = os.getenv("JWT_SECRET_KEY")
 secret_key = os.getenv("SECRET_KEY")
 
-# if jwt_secret_key is None or secret_key is None:
-#     print("Please set the JWT_SECRET_KEY and SECRET_KEY environment variables")
-#     exit(1)
+if  secret_key is None:
+    print("Please set the JWT_SECRET_KEY and SECRET_KEY environment variables")
+    exit(1)
 
-app.config["SECRET_KEY"] = jwt_secret_key
-app.config["JWT_SECRET_KEY"] = secret_key
+app.config["SECRET_KEY"] = secret_key
 app.config["JWT_TOKEN_LOCATION"] = ["headers"]
 
 # initialize the app with the extension
@@ -69,6 +69,13 @@ jwt = JWTManager(app)
 with app.app_context():
     from model import User
     db.create_all()
+    try:
+        create_users_and_skills(app,db) #Adds 10 dummy users to database
+    except Exception as error:
+         print(f"An error occurred while creating users and skills: {error}")
+
+
+
 
 quiz_gen = QuizGenerator()
 
@@ -122,6 +129,17 @@ def get_quiz():
             result=json.load(file)
         return jsonify(result)
 
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db.session.remove()
+
+def remove_db():
+    db_path = './instance/project.db'
+    if os.path.exists(db_path):
+        os.remove(db_path)
+        print(f'Database file {db_path} has been removed.')
+
+atexit.register(remove_db)
 
 
 

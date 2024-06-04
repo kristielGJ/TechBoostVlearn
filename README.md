@@ -4,6 +4,14 @@ Generate personalised courses using langchain based on a user's personal experie
 V1.0 - 21/03- Skill detection via CV Upload
 
 # Backend
+## Prerequisites
+Before running ensure you install all requirements using the following command 
+- pip install --r requirements.txt
+
+### Evvironment file (.env)
+We will need to create an environment file with two variaples 
+  - OPENAI_API_KEY: key to access OPen AI via Azure
+  - SECRET_KEY: 16byte key to encrypt JWT Tokens. Can be generated using the command--> openssl rand -hex 16 (on MAC).
 ## app.py (*Backend/app.py*)
 This runs the flask app, please cd to this folder in your terminal, ensure you are in the backend folder 
 ### Requirements: 

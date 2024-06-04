@@ -14,6 +14,8 @@ class User(db.Model):
     username = db.Column(db.String(255), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), unique=True, nullable=False)
+    interests = db.Column(db.Text, default='')
+    jobs = db.Column(db.Text, default='')
     total_score = db.Column(db.Integer,default=0)
     user_role = db.relationship('UserRole', back_populates='user', uselist=False, cascade="all, delete, delete-orphan")
     enrolled_courses = db.relationship('EnrolledCourse', back_populates='user', cascade="all, delete-orphan")
@@ -23,7 +25,9 @@ class User(db.Model):
             'id': self.id,
             'username': self.username,
             'email': self.email,
-            'total_score': self.total_score
+            'total_score': self.total_score,
+            'jobs': self.jobs,
+            'interests': self.interests,
         }
 
 class Skill(db.Model):
