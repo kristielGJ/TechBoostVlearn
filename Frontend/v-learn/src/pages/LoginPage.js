@@ -23,7 +23,6 @@ const LoginPage = ({callback}) => {
             'Content-Type': 'multipart/form-data'
             }})
         .then((response)=>{
-            console.log(response)
             if(response.status===HttpStatusCode.Ok){
                 callback(response.data.access_token,response.data.id)
             }})

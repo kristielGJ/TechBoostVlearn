@@ -122,9 +122,9 @@ def get_quiz():
         return jsonify({"error": "Both value1 and value2 are required"}), 400
         
     try:
-        quiz_response = quiz_gen.generate_quiz(5, "Multiple-choice", skill)
+        quiz_response = quiz_gen.generate_quiz(5, "Multiple-choice", skill," ")
         return jsonify(json.loads(quiz_response))
-    except Exception as e:    
+    except Exception as e: 
         with open ("quiz_data.json","r") as file:
             result=json.load(file)
         return jsonify(result)

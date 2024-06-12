@@ -13,12 +13,12 @@ const Question = ({ number, question, callback}) => {
 
 
     return (
-        <div className="flex flex-col my-3 bg-white rounded-xl mx-5 max-w-3xl">
+        <div className="flex flex-col  bg-white border rounded-xl mx-5 max-w-3xl shadow-xl my-10">
             <div className="flex flex-row justify-start items-center text-xl text-gray-500 px-10">
                 <p className="">{number + 1}.</p>
                 <p className="ml-2">{question.question}</p>
             </div>
-            <div className="text-lg pl-16 text-black">
+            <div className="text-base pl-20 text-black pb-5">
                 {Object.entries(question.options).map(([key, value]) => (
                     <div key={key} >
                         <input
@@ -33,7 +33,6 @@ const Question = ({ number, question, callback}) => {
                     </div>
                     
                 ))}
-                    <p>Selected Option: {selectedOption && answerCorrect+" "+ selectedOption}</p>
             </div>
             
 

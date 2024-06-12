@@ -63,7 +63,7 @@ def user_update(user_id):
             user.username = request.form.get('username', user.username)
             user.email = request.form.get('email', user.email)
             user.password = request.form.get('password', user.password)
-            total_score = request.form.get('total_score')
+            total_score = request.form.get('total_score',user.total_score)
             user.jobs= request.form.get('jobs',user.jobs)
             user.interests = request.form.get('interests',user.interests)
             

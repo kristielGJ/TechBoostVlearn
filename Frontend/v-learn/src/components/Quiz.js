@@ -1,7 +1,7 @@
 
 import axios from "axios"
 import React, { useState, useEffect } from "react"
-import Question from "../components/Question"
+import Question from "./Question"
 
 
 
@@ -48,8 +48,8 @@ const Quiz = ({ topic, rating , callback, index }) => {
 
     return (
         
-        <div className="flex flex-col min-h-screen  ">
-            <div className="text-3xl text-white">
+        <div className="flex flex-col min-h-screen my-5 ">
+            <div className="text-3xl text-black">
                 {dataRetrieved ? topic : topic}
                 {quizIncomplete? quizQuestions.map((item, index) => (
                 <div key={index}>
@@ -59,7 +59,7 @@ const Quiz = ({ topic, rating , callback, index }) => {
                 }
             </div>
             {quizIncomplete && <div>
-                <button className="btn-black" onClick={handleClick}> Submit</button>
+                <button className="btn-black my-5" onClick={handleClick}> Submit</button>
             </div>}
 
         </div>

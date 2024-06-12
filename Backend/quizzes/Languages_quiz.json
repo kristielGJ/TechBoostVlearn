@@ -1,0 +1,62 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Languages",
+    "questions": [
+        {
+            "education": "Languages are systems of communication used by humans to convey meaning. They can be spoken, written, or signed, and are essential for human interaction and expression. There are thousands of languages spoken around the world, each with its own unique grammar, vocabulary, and cultural significance.",
+            "question": "Which language is the most widely spoken in the world?",
+            "options": {
+                "a": "English",
+                "b": "Mandarin Chinese",
+                "c": "Spanish",
+                "d": "Hindi"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "education": "Language families are groups of languages that share a common ancestor. They are used to classify and study the relationships between different languages. Some well-known language families include the Indo-European, Sino-Tibetan, and Afro-Asiatic families.",
+            "question": "Which language family does English belong to?",
+            "options": {
+                "a": "Indo-European",
+                "b": "Sino-Tibetan",
+                "c": "Afro-Asiatic",
+                "d": "Austronesian"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "education": "Sign languages are visual-gestural languages used by Deaf communities around the world. They rely on handshapes, movements, and facial expressions to convey meaning. American Sign Language (ASL) and British Sign Language (BSL) are two well-known sign languages.",
+            "question": "Which country primarily uses British Sign Language (BSL)?",
+            "options": {
+                "a": "United States",
+                "b": "United Kingdom",
+                "c": "Australia",
+                "d": "Canada"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "education": "Constructed languages, or conlangs, are languages created for fictional worlds, international communication, or artistic expression. Examples include Klingon from Star Trek and Dothraki from Game of Thrones. These languages often have their own grammar rules and vocabulary.",
+            "question": "Which TV series features the constructed language Dothraki?",
+            "options": {
+                "a": "Breaking Bad",
+                "b": "Stranger Things",
+                "c": "Game of Thrones",
+                "d": "The Walking Dead"
+            },
+            "correctAnswer": "c"
+        },
+        {
+            "education": "Language preservation is the effort to maintain and revitalize endangered languages at risk of extinction. Organizations and communities work to document, teach, and promote these languages to ensure their survival for future generations.",
+            "question": "Which organization is dedicated to preserving endangered languages worldwide?",
+            "options": {
+                "a": "UNESCO",
+                "b": "WHO",
+                "c": "NASA",
+                "d": "EU"
+            },
+            "correctAnswer": "a"
+        }
+    ],
+    "nextTopic": " "
+}

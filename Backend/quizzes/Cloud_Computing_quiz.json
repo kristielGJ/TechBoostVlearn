@@ -1,0 +1,62 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Cloud Computing",
+    "questions": [
+        {
+            "education": "Cloud computing is the delivery of computing services over the internet, offering resources like servers, storage, databases, networking, software, and more. These services are provided on a pay-as-you-go basis, allowing users to access and utilize resources without the need for owning and maintaining physical infrastructure. Cloud computing offers scalability, flexibility, cost-effectiveness, and accessibility from anywhere with an internet connection.",
+            "question": "What is the main advantage of cloud computing?",
+            "options": {
+                "a": "Scalability",
+                "b": "Physical infrastructure ownership",
+                "c": "Limited accessibility",
+                "d": "High maintenance costs"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "education": "Cloud computing services are typically categorized into three main models: Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). Each model offers different levels of control, management, and responsibility for the users. IaaS provides virtualized computing resources over the internet, PaaS offers a platform for developers to build, deploy, and manage applications, and SaaS delivers software applications over the internet on a subscription basis.",
+            "question": "Which cloud computing model allows developers to build and deploy applications?",
+            "options": {
+                "a": "IaaS",
+                "b": "PaaS",
+                "c": "SaaS",
+                "d": "None of the above"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "education": "Cloud computing offers different deployment models, including public cloud, private cloud, hybrid cloud, and multi-cloud. Public cloud services are provided by third-party providers over the internet, private cloud services are dedicated to a single organization, hybrid cloud combines public and private cloud services, and multi-cloud involves using multiple cloud providers for different services.",
+            "question": "Which cloud deployment model is dedicated to a single organization?",
+            "options": {
+                "a": "Public cloud",
+                "b": "Private cloud",
+                "c": "Hybrid cloud",
+                "d": "Multi-cloud"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "education": "Cloud computing offers various benefits, including cost savings, flexibility, scalability, disaster recovery, automatic updates, and increased collaboration. Organizations can reduce capital expenses, scale resources based on demand, recover data in case of disasters, receive software updates automatically, and enable remote collaboration among teams.",
+            "question": "Which benefit of cloud computing allows organizations to adjust resources based on demand?",
+            "options": {
+                "a": "Cost savings",
+                "b": "Flexibility",
+                "c": "Scalability",
+                "d": "Disaster recovery"
+            },
+            "correctAnswer": "c"
+        },
+        {
+            "education": "Cloud computing security is a critical aspect of cloud services, ensuring the protection of data, applications, and infrastructure from cyber threats and unauthorized access. Security measures include encryption, access control, identity management, compliance certifications, and regular security audits to maintain the confidentiality, integrity, and availability of cloud resources.",
+            "question": "Which security measure helps protect data from unauthorized access?",
+            "options": {
+                "a": "Encryption",
+                "b": "Compliance certifications",
+                "c": "Regular security audits",
+                "d": "Identity management"
+            },
+            "correctAnswer": "a"
+        }
+    ],
+    "nextTopic": ""
+}

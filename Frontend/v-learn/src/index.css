@@ -6,4 +6,17 @@
     .btn-black{
         @apply  rounded-full text-white  bg-black min-h-10 min-w-60
     }
+    .btn-black-disabled{
+        @apply  rounded-full text-white  bg-slate-200 min-h-10 min-w-60
+    }
+    
+    .role-btn-green{
+        @apply  rounded-md text-green-600 border-green-600 border-2 mx-2 my-1 px-2 hover:border-red-500 hover:bg-red-500 hover:text-white
+    }
+    .role-btn-blue{
+        @apply  rounded-md text-blue-400 border-blue-300 border-2 mx-2 my-1 px-2 hover:bg-blue-500 hover:text-white
+    }
+
+    
+    
 }

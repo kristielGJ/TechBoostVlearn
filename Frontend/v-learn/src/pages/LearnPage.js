@@ -1,32 +1,90 @@
+import { useState } from "react";
 import CourseGenerator from "../components/CourseGenerator"
-import { Link, useNavigate } from "react-router-dom"
+import QuizPage from '../components/QuizPage'
+import Interest from "../components/Interest";
+import axios, { HttpStatusCode } from "axios";
 
 
 const LearnPage = () => {
-    const navigate = useNavigate();
+    const [index, setIndex] = useState(0);
+    const [skills, setSkills] = useState();
+    const [advancedSkills, setAdvancedSkills] = useState();
+    const [jobs, setJobs] = useState([]);
+    const [interests, setInterests] = useState([]);
+    const [category, setCategory] = useState([]);
 
 
-    const handle = (skills) => {
-        console.log("found", skills);
-        const advancedSkills = Object.fromEntries(
+
+
+    const handleRatingsSubmit = (skills) => {
+        const uuid = localStorage.getItem("user_id")
+        Object.keys(skills).forEach((key) => {
+            const formData= new FormData;
+            formData.append("skill_name", key)
+            formData.append("rating",skills[key])
+            axios
+            .post("http://127.0.0.1:8000/users/"+uuid+"/skills",formData)
+            .then((response)=>{
+                if(response.status===HttpStatusCode.Ok){
+                    console.log("Skill Added ", key)
+                } 
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+        })
+        const filteredSkills = Object.fromEntries(
             Object.entries(skills).filter(([key, value]) => value >= 3)
         );
-        const beginnerSkills = Object.fromEntries(
-            Object.entries(skills).filter(([key, value]) => value < 3)
-        );
-        const arrayfromList = Object.keys(advancedSkills)
-        if (arrayfromList.length > 0) {
-            navigate("/quizzes", { state: { skill: advancedSkills } });
-        } else {
-            //TODO PUSH VALUES TO BACKEND
-            console.log("No Quiz Needed")
-        }
+
+        const updatedSkillsObject = Object.entries(filteredSkills).map(([skill, value]) => ({
+            name: skill,
+            value,
+            complete: false,
+            score: 0,
+        }));
+        setSkills(skills)
+        setAdvancedSkills(updatedSkillsObject)
+        handleNext()
     }
 
+    const quizStateNextHandle = (data) => {
+        setAdvancedSkills(data)
+        handleNext()
+    }
+
+
+    const handleBack = () => {
+        console.log("back called")
+        const val = (index === 0) ? 0 : index - 1
+        setIndex(val)
+    }
+
+    const handleNext = () => {
+        const val = (index === 2) ? 2 : index + 1
+        setIndex(val)
+    }
+
+    const handleInterestBack = (jobs, interest, category) => {
+        setInterests(interests);
+        setJobs(jobs);
+        setCategory(category)
+        handleBack();
+    }
+
+
+
+
+    let test =
+        [<CourseGenerator skillCallback={handleRatingsSubmit} className="flex p-16 mx-auto  mt-10 boarder rounded boarder-neutral-200 h-1/2  border" />,
+        <QuizPage advSkills={advancedSkills} back={handleBack} next={quizStateNextHandle} />,
+        <Interest back={handleInterestBack} jobs={jobs} interests={interests} category={category} />]
+
+
     return (
-        <div className="flex flex-col min-h-screen bg-gradient-to-br from-vf-red to-red-600 ">
-            <div className="flex flex-row  justify-center items-center">
-                <CourseGenerator callback={handle} className="flex p-16 mx-auto  mt-10 boarder rounded boarder-neutral-200 bg-white h-1/2 text-center align-center" />
+        <div className="flex flex-col items-center min-h-screen bg-gradient-to-br from-10% to-80% to-vf-red from-black ">
+            <div className="flex flex-col justify-center items-center bg-slate-50 w-10/12 px-14 py-10 my-10 rounded-lg">
+                {test[index]}
             </div>
 
         </div>

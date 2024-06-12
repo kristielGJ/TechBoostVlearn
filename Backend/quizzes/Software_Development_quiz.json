@@ -1,0 +1,62 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Software Development",
+    "questions": [
+        {
+            "education": "Software development is the process of creating, designing, programming, testing, and maintaining software applications. It involves various stages such as requirements gathering, design, implementation, testing, deployment, and maintenance. One of the key principles in software development is the use of version control systems to track changes and collaborate with other developers. Git is a popular version control system used by developers worldwide.",
+            "question": "What is the purpose of a version control system in software development?",
+            "options": {
+                "a": "To track changes and collaborate with other developers",
+                "b": "To write code faster",
+                "c": "To test software applications",
+                "d": "To design user interfaces"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "education": "In software development, the Agile methodology is a popular approach that emphasizes iterative development, collaboration, and flexibility. Agile teams work in short iterations called sprints, where they deliver working software incrementally. Scrum is a specific framework within Agile that defines roles, events, and artifacts to help teams work effectively. Daily stand-up meetings, sprint planning, sprint review, and retrospective are key Scrum events.",
+            "question": "What is a key event in the Scrum framework?",
+            "options": {
+                "a": "Daily stand-up meetings",
+                "b": "Sprint testing",
+                "c": "Code refactoring",
+                "d": "User acceptance testing"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "education": "Object-oriented programming (OOP) is a programming paradigm that uses objects and classes to model real-world entities. Encapsulation, inheritance, and polymorphism are key principles in OOP. Encapsulation refers to bundling data and methods that operate on the data into a single unit. Inheritance allows a class to inherit properties and behavior from another class. Polymorphism enables objects to be treated as instances of their parent class.",
+            "question": "Which principle in object-oriented programming involves bundling data and methods into a single unit?",
+            "options": {
+                "a": "Encapsulation",
+                "b": "Inheritance",
+                "c": "Polymorphism",
+                "d": "Abstraction"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "education": "Software testing is a crucial phase in software development that ensures the quality and reliability of the software. Different types of testing include unit testing, integration testing, system testing, and acceptance testing. Unit testing focuses on testing individual units or components of the software in isolation. Test-driven development (TDD) is an approach where tests are written before the actual code to drive the development process.",
+            "question": "What is the primary focus of unit testing in software development?",
+            "options": {
+                "a": "Testing the entire software system",
+                "b": "Testing individual units or components",
+                "c": "Testing user interfaces",
+                "d": "Testing performance"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "education": "Continuous integration (CI) is a software development practice where developers integrate code changes into a shared repository frequently. Automated builds and tests are run on the integrated code to detect integration errors early. Continuous delivery (CD) extends CI by automating the deployment process to deliver software changes to production quickly and reliably. CI/CD pipelines are used to automate the build, test, and deployment processes.",
+            "question": "What is the main goal of continuous integration in software development?",
+            "options": {
+                "a": "Automate the deployment process",
+                "b": "Detect integration errors early",
+                "c": "Deliver software changes to production",
+                "d": "Integrate code changes frequently"
+            },
+            "correctAnswer": "b"
+        }
+    ],
+    "nextTopic": " "
+}

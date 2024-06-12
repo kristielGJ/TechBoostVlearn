@@ -38,7 +38,7 @@ const LeaderBoardPage = () => {
      topThreeGlobal.unshift(temp)
 
     return (
-        <div className="bg-logo min-h-screen w screen  py-10 px-10">
+        <div className="bg-gradient-to-br from-10% to-80% to-vf-red from-black min-h-screen w screen  py-10 px-10">
             <div className="grid grid-cols-2 space-x-5">
                 <div className="bg-white rounded-lg">
                     <div  className="w-full flex flex-row justify-center py-3">
