@@ -19,11 +19,11 @@ const WelcomePage = () => {
     }, { scope: container })
 
     return (
-        <div className=" bg-logo pb-10">
+        <div className=" bg-gradient-to-br from-10% to-80% to-vf-red from-black pb-10">
             <div className=" w-screen h-screen flex flex-col justify-center items-center">
                 <div ref={container} className="flex flex-col justify-center items-center">
-                    <p ref={text} className="text text-black text-5xl font-bold translate-x-96 ">Welcome to <span className="text-red-300">V</span>-Skills Hub</p>
-                    <p ref={text} className="text text-gray-950 mt-5 row-start-4 col-start-2 col-end-5 text-4xl translate-y-96 ">Your Platform to access content tailored to your existing skills and knowledge</p>
+                    <p ref={text} className="text text-white text-5xl font-bold translate-x-96 ">Welcome to <span className="text-red-300">V</span>-Skills Hub</p>
+                    <p ref={text} className="text text-white mt-5 row-start-4 col-start-2 col-end-5 text-4xl translate-y-96 ">Your Platform to access content tailored to your existing skills and knowledge</p>
                     <HashLink smooth to="/#about" ref={text} className="text text-white mt-5 text-2xl text-center border rounded border-white hover:border-black hover:text-red-500 hover:bg-white translate-y-96 "> Learn More</HashLink>
 
                 </div>

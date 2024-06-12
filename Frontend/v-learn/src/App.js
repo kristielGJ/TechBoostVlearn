@@ -5,10 +5,8 @@ import WelcomePage from './pages/WelcomePage';
 import LearnPage from './pages/LearnPage';
 import ProfilePage from './pages/ProfilePage';
 import LeaderBoardPage from './pages/LeaderboardPage';
-import Quiz from './pages/Quiz';
 import LoginPage from './pages/LoginPage';
 import { useState } from 'react';
-import Quizzes from './pages/QuizPage';
 
 function App() {
   
@@ -47,8 +45,6 @@ function App() {
           <Route path="/learn" element={<LearnPage />}/>
           <Route path="/profile" element={<ProfilePage callback={handleLogout} />}/>
           <Route path="/leaderboard" element={<LeaderBoardPage />}/>
-          <Route path="/quiz:id" element={<Quiz topic={"python"}/>}/>
-          <Route path="/quizzes" element={<Quizzes/>}/>
           <Route path="/login" element={<LoginPage callback={loginHandle}/>}/>
         </Routes>
       </div>

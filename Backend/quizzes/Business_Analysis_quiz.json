@@ -1,0 +1,62 @@
+{
+    "quizType": "Multiple-choice",
+    "quizContext": "Business Analysis",
+    "questions": [
+        {
+            "education": "Business Analysis is the practice of enabling change in an organizational context by defining needs and recommending solutions that deliver value to stakeholders. It involves identifying business needs, defining solutions, and facilitating the implementation of those solutions. Business analysts play a crucial role in bridging the gap between business stakeholders and IT teams.",
+            "question": "What is the primary goal of Business Analysis?",
+            "options": {
+                "a": "Identifying business needs and defining solutions",
+                "b": "Developing software applications",
+                "c": "Managing financial resources",
+                "d": "Marketing products"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "education": "One of the key tasks in Business Analysis is requirements elicitation. This involves gathering, analyzing, documenting, and validating the needs of stakeholders. Effective requirements elicitation ensures that the final solution meets the business needs and expectations.",
+            "question": "What is requirements elicitation in Business Analysis?",
+            "options": {
+                "a": "Developing marketing strategies",
+                "b": "Gathering and analyzing stakeholder needs",
+                "c": "Managing project timelines",
+                "d": "Testing software applications"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "education": "Business analysts use various techniques and tools to analyze and model business processes. Process modeling helps in understanding the current state of a business process, identifying areas for improvement, and designing future state processes to achieve business objectives.",
+            "question": "What is the purpose of process modeling in Business Analysis?",
+            "options": {
+                "a": "Developing financial reports",
+                "b": "Understanding current business processes",
+                "c": "Creating marketing campaigns",
+                "d": "Managing human resources"
+            },
+            "correctAnswer": "b"
+        },
+        {
+            "education": "SWOT analysis is a strategic planning tool used in Business Analysis to identify the Strengths, Weaknesses, Opportunities, and Threats related to a business or project. It helps in understanding the internal and external factors that can impact the success of a business initiative.",
+            "question": "What does SWOT analysis stand for in Business Analysis?",
+            "options": {
+                "a": "Strengths, Weaknesses, Opportunities, Threats",
+                "b": "Sales, Workforce, Operations, Technology",
+                "c": "Strategy, Workflow, Optimization, Training",
+                "d": "Security, Web, Online, Transactions"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "education": "Business analysts often work closely with stakeholders to prioritize requirements and ensure that the most critical needs are addressed first. Prioritization helps in managing project scope, budget, and timeline effectively.",
+            "question": "Why is requirement prioritization important in Business Analysis?",
+            "options": {
+                "a": "To increase project costs",
+                "b": "To delay project delivery",
+                "c": "To manage project scope effectively",
+                "d": "To ignore stakeholder needs"
+            },
+            "correctAnswer": "c"
+        }
+    ],
+    "nextTopic": " "
+}

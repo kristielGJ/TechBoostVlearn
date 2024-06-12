@@ -8,7 +8,7 @@ const QuizTile = ({callback, index,skill}) => {
   }
 
   return (
-    <div onClick={handleClick} className={`bg-white w-80 h-64 mx-3 my-3 rounded-lg ${skill.complete? 'pointer-events-none':''}`}>
+    <div onClick={handleClick} className={`bg-white w-80 h-64 mx-3 my-3 drop-shadow-2xl border rounded-lg ${skill.complete? 'pointer-events-none':''}`}>
             <img className={"w-48 h-40"} src={logo} alt={'logo'}></img>
             <p className='text-xl font-bold pl-5 '>{skill.name}</p>
             <div className='flex flex-row space-x-1.5'>

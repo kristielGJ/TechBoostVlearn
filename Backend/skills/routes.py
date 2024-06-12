@@ -17,10 +17,15 @@ def add_skill(user_id):
 
     if not skill_name or rating is None:
         return jsonify({"message": "Missing skill name or rating"}), 400
-
-    skill = Skill(user_id=user_id, skill_name=skill_name, rating=int(rating))
-    db.session.add(skill)
-    db.session.commit()
+    
+    skill = Skill.query.filter_by(user_id=user_id, skill_name=skill_name).first()
+    if not skill:
+        skill = Skill(user_id=user_id, skill_name=skill_name, rating=int(rating))
+        db.session.add(skill)
+        db.session.commit()
+    else:
+        skill.rating = int(rating)
+        db.session.commit()
 
     return jsonify(skill.serialize()), 201
 
