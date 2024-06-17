@@ -1,0 +1,362 @@
+{
+    "Introduction to Java": {
+        "Content": {
+            "Overview": "Java is a widely-used programming language known for its platform independence, versatility, and robustness. This course provides an introduction to Java programming basics, covering topics such as syntax, data types, control structures, object-oriented programming principles, and basic Java libraries.",
+            "Setting Up Java": "Installing the Java Development Kit (JDK), setting up the environment variables, and configuring an Integrated Development Environment (IDE) such as IntelliJ IDEA or Eclipse for Java development."
+        },
+        "Questions": [
+            {
+                "question": "What is a key feature of Java that contributes to its platform independence?",
+                "options": {
+                    "a": "It uses a virtual machine (JVM)",
+                    "b": "It is optimized for high-performance computing",
+                    "c": "It supports only Windows operating system",
+                    "d": "It requires a specific hardware architecture"
+                },
+                "correctAnswer": "a"
+            },
+            {
+                "question": "Which IDE is commonly used for Java development?",
+                "options": {
+                    "a": "VSCode",
+                    "b": "IntelliJ IDEA",
+                    "c": "Sublime Text",
+                    "d": "Atom"
+                },
+                "correctAnswer": "b"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Basic Syntax and Data Types": {
+        "Content": {
+            "Variables and Data Types": "Introduction to variables, primitive data types (int, float, double, char, boolean), and their usage. Understanding literals, type casting, and basic operations.",
+            "Operators": "Explaining arithmetic, relational, logical, and assignment operators in Java. Examples illustrating operator precedence and usage."
+        },
+        "Questions": [
+            {
+                "question": "Which operator is used for exponentiation in Java?",
+                "options": {
+                    "a": "**",
+                    "b": "^",
+                    "c": "^^",
+                    "d": "^^^"
+                },
+                "correctAnswer": "b"
+            },
+            {
+                "question": "What is the result of 10 % 3 in Java?",
+                "options": {
+                    "a": "3",
+                    "b": "1",
+                    "c": "0",
+                    "d": "10"
+                },
+                "correctAnswer": "b"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Control Flow Statements": {
+        "Content": {
+            "Conditional Statements": "Using if, else-if, and else statements to control the flow of a program based on conditions. Examples demonstrating logical operators (&&, ||, !) and switch-case statements.",
+            "Loops": "Understanding for, while, and do-while loops in Java. Exploring break, continue, and labeled break statements for loop control."
+        },
+        "Questions": [
+            {
+                "question": "Which loop is guaranteed to execute at least once in Java?",
+                "options": {
+                    "a": "for loop",
+                    "b": "while loop",
+                    "c": "do-while loop",
+                    "d": "foreach loop"
+                },
+                "correctAnswer": "c"
+            },
+            {
+                "question": "How do you terminate a loop in Java immediately, without completing the current iteration?",
+                "options": {
+                    "a": "break;",
+                    "b": "exit;",
+                    "c": "continue;",
+                    "d": "stop;"
+                },
+                "correctAnswer": "a"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Methods and Functions": {
+        "Content": {
+            "Defining Methods": "Creating methods with parameters and return types. Understanding method overloading, static methods, and the role of access modifiers (public, private, protected).",
+            "Passing Parameters": "Explaining pass-by-value in Java and the difference between primitive and reference types. Examples of method invocation and argument passing."
+        },
+        "Questions": [
+            {
+                "question": "Which keyword is used to define a method that does not return any value in Java?",
+                "options": {
+                    "a": "void",
+                    "b": "null",
+                    "c": "none",
+                    "d": "nil"
+                },
+                "correctAnswer": "a"
+            },
+            {
+                "question": "How are objects passed to methods in Java?",
+                "options": {
+                    "a": "By reference",
+                    "b": "By value",
+                    "c": "By pointer",
+                    "d": "By copy"
+                },
+                "correctAnswer": "b"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Object-Oriented Programming": {
+        "Content": {
+            "Classes and Objects": "Introduction to classes and objects in Java. Defining classes, creating objects, and accessing instance variables and methods.",
+            "Inheritance": "Using inheritance to create a hierarchy of classes. Explaining superclass, subclass relationships, and method overriding.",
+            "Polymorphism": "Understanding polymorphism through method overriding and method overloading. Examples illustrating runtime polymorphism."
+        },
+        "Questions": [
+            {
+                "question": "Which keyword is used to establish inheritance in Java?",
+                "options": {
+                    "a": "inherit",
+                    "b": "superclass",
+                    "c": "extends",
+                    "d": "inherits"
+                },
+                "correctAnswer": "c"
+            },
+            {
+                "question": "What is the ability of an object to take on many forms in Java?",
+                "options": {
+                    "a": "Encapsulation",
+                    "b": "Inheritance",
+                    "c": "Polymorphism",
+                    "d": "Abstraction"
+                },
+                "correctAnswer": "c"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Arrays and Collections": {
+        "Content": {
+            "Arrays": "Declaring and initializing arrays in Java. Understanding single-dimensional and multi-dimensional arrays. Exploring common array operations and methods.",
+            "ArrayList": "Introduction to ArrayList and other collections in Java (LinkedList, HashMap). Methods for adding, accessing, and manipulating elements in ArrayList."
+        },
+        "Questions": [
+            {
+                "question": "How do you declare a single-dimensional array in Java?",
+                "options": {
+                    "a": "int[] arr;",
+                    "b": "array arr[];",
+                    "c": "array<int> arr;",
+                    "d": "int arr();"
+                },
+                "correctAnswer": "a"
+            },
+            {
+                "question": "Which collection in Java allows dynamic resizing?",
+                "options": {
+                    "a": "Array",
+                    "b": "ArrayList",
+                    "c": "HashMap",
+                    "d": "HashSet"
+                },
+                "correctAnswer": "b"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Exception Handling": {
+        "Content": {
+            "Handling Exceptions": "Using try-catch blocks to handle exceptions in Java. Explaining checked vs unchecked exceptions and the role of finally block for cleanup operations.",
+            "Throw and Throws": "Throwing exceptions using the throw keyword and declaring exceptions with the throws clause. Best practices for exception handling."
+        },
+        "Questions": [
+            {
+                "question": "Which block is used to execute cleanup code in Java, regardless of whether an exception is thrown?",
+                "options": {
+                    "a": "try",
+                    "b": "catch",
+                    "c": "finally",
+                    "d": "cleanup"
+                },
+                "correctAnswer": "c"
+            },
+            {
+                "question": "What keyword is used to explicitly throw an exception in Java?",
+                "options": {
+                    "a": "raise",
+                    "b": "throw",
+                    "c": "exception",
+                    "d": "except"
+                },
+                "correctAnswer": "b"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "File Handling": {
+        "Content": {
+            "Reading and Writing Files": "Opening, reading, and writing to files in Java. Understanding file streams (FileInputStream, FileOutputStream) and handling exceptions related to file operations.",
+            "Working with Paths": "Using the Path and Files classes for manipulating file and directory paths. Best practices for file handling in Java."
+        },
+        "Questions": [
+            {
+                "question": "Which class is used to read character streams from a file in Java?",
+                "options": {
+                    "a": "FileReader",
+                    "b": "BufferedReader",
+                    "c": "InputStreamReader",
+                    "d": "FileInputStream"
+                },
+                "correctAnswer": "a"
+            },
+            {
+                "question": "Which class is used for manipulating file and directory paths in Java?",
+                "options": {
+                    "a": "Path",
+                    "b": "FilePath",
+                    "c": "FileUtils",
+                    "d": "Files"
+                },
+                "correctAnswer": "a"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Introduction to Java Libraries": {
+        "Content": {
+            "Java Standard Library": "Overview of commonly-used classes and packages in the Java Standard Library (java.lang, java.util, java.io). Examples of utility classes (String, StringBuilder, ArrayList, HashMap).",
+            "External Libraries": "Introduction to popular external libraries in Java such as Apache Commons, Google Guava, and Jackson JSON library. Exploring their functionalities and integration."
+        },
+        "Questions": [
+            {
+                "question": "Which package contains the String class in Java?",
+                "options": {
+                    "a": "java.lang",
+                    "b": "java.util",
+                    "c": "java.io",
+                    "d": "java.string"
+                },
+                "correctAnswer": "a"
+            },
+            {
+                "question": "Which external library is commonly used for JSON processing in Java?",
+                "options": {
+                    "a": "JUnit",
+                    "b": "Jackson",
+                    "c": "Log4j",
+                    "d": "Gson"
+                },
+                "correctAnswer": "b"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Concurrency in Java": {
+        "Content": {
+            "Threads and Multithreading": "Understanding threads in Java, creating threads using Thread class and Runnable interface. Synchronization and coordination using synchronized blocks and methods.",
+            "Concurrency Utilities": "Introduction to Java's concurrent utilities in java.util.concurrent package (Executor, ThreadPoolExecutor, Future). Managing concurrent tasks and thread pools."
+        },
+        "Questions": [
+            {
+                "question": "What is the process of controlling access to shared resources by multiple threads in Java?",
+                "options": {
+                    "a": "Thread synchronization",
+                    "b": "Thread coordination",
+                    "c": "Thread management",
+                    "d": "Thread safety"
+                },
+                "correctAnswer": "a"
+            },
+            {
+                "question": "Which package contains Java's concurrent utilities?",
+                "options": {
+                    "a": "java.lang",
+                    "b": "java.util",
+                    "c": "java.concurrent",
+                    "d": "java.threads"
+                },
+                "correctAnswer": "c"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Unit Testing in Java": {
+        "Content": {
+            "JUnit Framework": "Introduction to JUnit for writing and executing unit tests in Java. Creating test cases, using assertions (assertEquals, assertTrue, assertFalse), and organizing tests with annotations (@Before, @Test, @After)."
+        },
+        "Questions": [
+            {
+                "question": "Which framework is commonly used for unit testing in Java?",
+                "options": {
+                    "a": "TestNG",
+                    "b": "JUnit",
+                    "c": "Mockito",
+                    "d": "PowerMock"
+                },
+                "correctAnswer": "b"
+            },
+            {
+                "question": "What annotation is used to denote a method as a test method in JUnit?",
+                "options": {
+                    "a": "@Test",
+                    "b": "@Unit",
+                    "c": "@Case",
+                    "d": "@Method"
+                },
+                "correctAnswer": "a"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Final Project and Assessment": {
+        "Content": {
+            "Project Guidelines": "Details of the final project that integrates Java concepts learned throughout the course. Students will be asked to develop a small application, such as a console-based game, a CRUD application, or a simple web service.",
+            "Assessment Criteria": "Criteria for assessing the final project including functionality, code structure, adherence to Java best practices, and documentation. Instructions for submission and evaluation."
+        },
+        "Questions": [
+            {
+                "question": "What is the primary goal of the final project?",
+                "options": {
+                    "a": "To demonstrate understanding of Java syntax",
+                    "b": "To complete a specified number of tasks",
+                    "c": "To write a specific amount of code",
+                    "d": "To develop a functioning Java application"
+                },
+                "correctAnswer": "d"
+            },
+            {
+                "question": "Which factor is NOT considered in the assessment of the final project?",
+                "options": {
+                    "a": "Functionality",
+                    "b": "Code readability",
+                    "c": "Project size",
+                    "d": "Documentation"
+                },
+                "correctAnswer": "c"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    }
+}

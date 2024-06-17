@@ -23,13 +23,13 @@ const Question = ({ number, question, callback}) => {
                     <div key={key} >
                         <input
                             type="radio"
-                            id={`${number}-${key}`}
-                            name={`multipleChoice-${number}`}
+                            id={`${number}-${key}-${question.question}`}
+                            name={`multipleChoice-${number}-${question.question}`}
                             value={key}
                             checked={selectedOption === key}
                             onChange={handleOptionChange}
                         />
-                        <label htmlFor={`${number}-${key}`}>{value}</label>
+                        <label htmlFor={`${number}-${key}-${question.question}`}>{value}</label>
                     </div>
                     
                 ))}

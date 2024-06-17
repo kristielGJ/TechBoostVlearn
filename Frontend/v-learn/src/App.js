@@ -6,6 +6,7 @@ import LearnPage from './pages/LearnPage';
 import ProfilePage from './pages/ProfilePage';
 import LeaderBoardPage from './pages/LeaderboardPage';
 import LoginPage from './pages/LoginPage';
+import Courses  from './pages/CoursesPage';
 import { useState } from 'react';
 
 function App() {
@@ -41,10 +42,10 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<WelcomePage />}/>
-          <Route path="/" element={<LeaderBoardPage/>}/>
           <Route path="/learn" element={<LearnPage />}/>
           <Route path="/profile" element={<ProfilePage callback={handleLogout} />}/>
           <Route path="/leaderboard" element={<LeaderBoardPage />}/>
+          <Route path="/courses" element={<Courses />}/>
           <Route path="/login" element={<LoginPage callback={loginHandle}/>}/>
         </Routes>
       </div>
