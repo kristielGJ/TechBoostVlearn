@@ -1,0 +1,303 @@
+{
+    "Introduction to Python": {
+        "Content": {
+            "Overview": "Python is a versatile and widely-used programming language known for its simplicity and readability. It is used in various fields such as web development, data analysis, artificial intelligence, scientific computing, and more. This course will cover the basics of Python, including syntax, data types, control structures, functions, and basic modules.",
+            "Setting Up Python": "This section covers installing Python on your system, setting up a development environment, and writing your first Python script. Tools like IDLE, Jupyter Notebook, and VSCode will be introduced for writing and running Python code."
+        },
+        "Questions": [
+            {
+                "question": "What is Python primarily known for?",
+                "options": {
+                    "a": "Complex syntax and steep learning curve",
+                    "b": "Simplicity and readability",
+                    "c": "Limited use cases",
+                    "d": "High performance in all scenarios"
+                },
+                "correctAnswer": "b"
+            },
+            {
+                "question": "Which tool is a popular integrated development environment (IDE) for Python?",
+                "options": {
+                    "a": "Eclipse",
+                    "b": "NetBeans",
+                    "c": "VSCode",
+                    "d": "IntelliJ"
+                },
+                "correctAnswer": "c"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Basic Syntax and Data Types": {
+        "Content": {
+            "Variables and Data Types": "Introduction to variables, data types (integers, floats, strings, and booleans), and basic operations. Understanding type casting and common functions used with each data type.",
+            "Basic Syntax": "Writing and running simple Python scripts, understanding indentation, and the importance of whitespace in Python. Introduction to comments and basic input/output operations."
+        },
+        "Questions": [
+            {
+                "question": "Which of the following is a mutable data type in Python?",
+                "options": {
+                    "a": "String",
+                    "b": "Tuple",
+                    "c": "List",
+                    "d": "Integer"
+                },
+                "correctAnswer": "c"
+            },
+            {
+                "question": "How do you write a single-line comment in Python?",
+                "options": {
+                    "a": "// comment",
+                    "b": "/* comment */",
+                    "c": "# comment",
+                    "d": "<!-- comment -->"
+                },
+                "correctAnswer": "c"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Control Structures": {
+        "Content": {
+            "Conditional Statements": "Using if, elif, and else statements to control the flow of a program based on conditions. Examples of boolean expressions and logical operators.",
+            "Loops": "Understanding for and while loops, including the use of break and continue statements to control loop execution. Practical examples of loops for iteration over sequences."
+        },
+        "Questions": [
+            {
+                "question": "What keyword is used to check multiple conditions in Python?",
+                "options": {
+                    "a": "elseif",
+                    "b": "elif",
+                    "c": "else if",
+                    "d": "otherwise"
+                },
+                "correctAnswer": "b"
+            },
+            {
+                "question": "Which loop will continue executing as long as the condition is true?",
+                "options": {
+                    "a": "for loop",
+                    "b": "while loop",
+                    "c": "do-while loop",
+                    "d": "foreach loop"
+                },
+                "correctAnswer": "b"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Functions and Modules": {
+        "Content": {
+            "Defining Functions": "Creating and using functions in Python. Understanding parameters, return values, and scope of variables. Introduction to lambda functions for simple operations.",
+            "Modules and Packages": "Importing and using standard and third-party modules. Organizing code into reusable packages and understanding the Python Package Index (PyPI) for finding and installing packages."
+        },
+        "Questions": [
+            {
+                "question": "How do you define a function in Python?",
+                "options": {
+                    "a": "function myFunction():",
+                    "b": "def myFunction():",
+                    "c": "func myFunction():",
+                    "d": "define myFunction():"
+                },
+                "correctAnswer": "b"
+            },
+            {
+                "question": "Which command is used to install a third-party package in Python?",
+                "options": {
+                    "a": "pip install package-name",
+                    "b": "install package-name",
+                    "c": "python install package-name",
+                    "d": "import package-name"
+                },
+                "correctAnswer": "a"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Data Structures": {
+        "Content": {
+            "Lists": "Creating, accessing, and modifying lists. List methods and common operations like slicing, appending, and iterating through lists.",
+            "Dictionaries": "Understanding dictionaries and their key-value pairs. Methods for adding, accessing, and modifying dictionary entries.",
+            "Tuples and Sets": "Differences between tuples and lists, and when to use each. Basic operations with sets and their use cases."
+        },
+        "Questions": [
+            {
+                "question": "How do you add an element to the end of a list?",
+                "options": {
+                    "a": "list.append(element)",
+                    "b": "list.add(element)",
+                    "c": "list.insert(element)",
+                    "d": "list.push(element)"
+                },
+                "correctAnswer": "a"
+            },
+            {
+                "question": "Which data structure is used to store key-value pairs?",
+                "options": {
+                    "a": "List",
+                    "b": "Tuple",
+                    "c": "Dictionary",
+                    "d": "Set"
+                },
+                "correctAnswer": "c"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "File Handling": {
+        "Content": {
+            "Reading and Writing Files": "Opening, reading, and writing to files in Python. Understanding file modes (read, write, append) and working with different file types (text, binary).",
+            "Working with File Paths": "Handling file paths using the os module. Best practices for file handling, including exception handling and resource management using the with statement."
+        },
+        "Questions": [
+            {
+                "question": "Which method is used to read the entire content of a file?",
+                "options": {
+                    "a": "file.read()",
+                    "b": "file.readline()",
+                    "c": "file.readlines()",
+                    "d": "file.readall()"
+                },
+                "correctAnswer": "a"
+            },
+            {
+                "question": "Which module is commonly used for working with file paths?",
+                "options": {
+                    "a": "sys",
+                    "b": "os",
+                    "c": "path",
+                    "d": "file"
+                },
+                "correctAnswer": "b"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Error Handling and Debugging": {
+        "Content": {
+            "Error Handling": "Using try, except, else, and finally blocks to handle exceptions. Common exceptions and best practices for error handling.",
+            "Debugging Techniques": "Debugging Python code using print statements, logging, and debugging tools. Understanding how to use breakpoints and step through code using an IDE."
+        },
+        "Questions": [
+            {
+                "question": "Which statement is used to handle exceptions in Python?",
+                "options": {
+                    "a": "try-except",
+                    "b": "catch-try",
+                    "c": "try-catch",
+                    "d": "handle-exception"
+                },
+                "correctAnswer": "a"
+            },
+            {
+                "question": "What is a common method for inserting debug information in your code?",
+                "options": {
+                    "a": "print statements",
+                    "b": "assert statements",
+                    "c": "log files",
+                    "d": "breakpoints"
+                },
+                "correctAnswer": "a"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Object-Oriented Programming": {
+        "Content": {
+            "Classes and Objects": "Introduction to object-oriented programming concepts in Python. Defining classes, creating objects, and understanding attributes and methods.",
+            "Inheritance and Polymorphism": "Using inheritance to create a hierarchy of classes and understand polymorphism. Practical examples of overriding methods and using super() function."
+        },
+        "Questions": [
+            {
+                "question": "How do you define a class in Python?",
+                "options": {
+                    "a": "class MyClass:",
+                    "b": "def MyClass:",
+                    "c": "function MyClass:",
+                    "d": "define MyClass:"
+                },
+                "correctAnswer": "a"
+            },
+            {
+                "question": "Which keyword is used to inherit from a parent class?",
+                "options": {
+                    "a": "inherits",
+                    "b": "extends",
+                    "c": "super",
+                    "d": "class"
+                },
+                "correctAnswer": "c"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Libraries and Frameworks": {
+        "Content": {
+            "Popular Libraries": "Introduction to widely-used Python libraries such as NumPy for numerical computing, Pandas for data analysis, Matplotlib for plotting, and requests for making HTTP requests.",
+            "Web Development Frameworks": "Overview of popular web development frameworks like Django and Flask. Basic setup, creating simple web applications, and understanding the MVC architecture."
+        },
+        "Questions": [
+            {
+                "question": "Which library is used for data analysis in Python?",
+                "options": {
+                    "a": "NumPy",
+                    "b": "Pandas",
+                    "c": "Matplotlib",
+                    "d": "requests"
+                },
+                "correctAnswer": "b"
+            },
+            {
+                "question": "Which framework is known for building web applications quickly with minimal setup?",
+                "options": {
+                    "a": "Django",
+                    "b": "Flask",
+                    "c": "React",
+                    "d": "Angular"
+                },
+                "correctAnswer": "b"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    },
+    "Final Project and Assessment": {
+        "Content": {
+            "Project Guidelines": "Details of the final project that integrates the concepts learned throughout the course. Students will be asked to build a small Python application, such as a calculator, a to-do list, or a simple web scraper.",
+            "Assessment Criteria": "Criteria for assessing the final project including code quality, functionality, and adherence to Python best practices. Instructions for submitting the project and receiving feedback."
+        },
+        "Questions": [
+            {
+                "question": "What is the primary goal of the final project?",
+                "options": {
+                    "a": "To test theoretical knowledge",
+                    "b": "To implement a Python application",
+                    "c": "To write as much code as possible",
+                    "d": "To memorize syntax"
+                },
+                "correctAnswer": "b"
+            },
+            {
+                "question": "Which of the following is NOT a factor in the project assessment?",
+                "options": {
+                    "a": "Code quality",
+                    "b": "Functionality",
+                    "c": "Project size",
+                    "d": "Best practices adherence"
+                },
+                "correctAnswer": "c"
+            }
+        ],
+        "Score": 0,
+        "Complete": false
+    }
+}

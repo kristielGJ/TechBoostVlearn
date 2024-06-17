@@ -19,7 +19,12 @@ const NavBar = ({ loggedIn }) => {
                         <Link to="/learn" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-red-500 mr-4">
                             Learn
                         </Link>
-                        <Link to="/leaderboard" className='block mt-4 lg:inline-block lg:mt-0 text-white hover:text-red-500 mr-4'> Leader Board</Link>
+                        <Link to="/leaderboard" className='block mt-4 lg:inline-block lg:mt-0 text-white hover:text-red-500 mr-4'> 
+                        Leader Board
+                        </Link>
+                        <Link to="/courses" className='block mt-4 lg:inline-block lg:mt-0 text-white hover:text-red-500 mr-4'> 
+                        Courses
+                        </Link>
 
 
                     </div>}
